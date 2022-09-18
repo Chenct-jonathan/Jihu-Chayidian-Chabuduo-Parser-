@@ -10,7 +10,6 @@ The phrases containing keywords "Jihu", "Chiayidian" or "Chiabuduo" were extract
 
 ### Regular Expressions
 
----
 ```regex
 [０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*差一點\s*[０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*
 [０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*差不多\s*[０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*
