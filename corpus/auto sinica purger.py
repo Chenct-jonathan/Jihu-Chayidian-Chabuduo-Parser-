@@ -12,7 +12,7 @@ def sinica_purger(i):
     with open('sinicaCorpus_{}_raw.txt'.format(regexLIST[i][0]),encoding="utf-8") as f:
         lines = ''.join(f.readlines())
         purge = re.findall(r'{}'.format(regexLIST[i][1]), lines)
-    with open('sinicaCorpus_{}_purge03.txt'.format(regexLIST[i][0]),'w',encoding="utf-8") as g:
+    with open('sinicaCorpus_{}_purge.txt'.format(regexLIST[i][0]),'w',encoding="utf-8") as g:
         for j in range(len(purge)):
             g.write(purge[j].replace("\t","").replace("\s","").replace(" ","")+"\n")
             
