@@ -68,35 +68,11 @@ if __name__== "__main__":
 
     utteranceDICT = json.load(open("../corpus/utterance.json", encoding = "utf-8"))
 
-    if command.lower() in ("au", "lu", "apu"): #au stands for "addUtterance"; lu stands for "listUtterance"; apu stands for "addPurgedUtterance"
+    if command.lower() in ("au", "lu"): #au stands for "addUtterance"; lu stands for "listUtterance"; apu stands for "addPurgedUtterance"
         payloadDICT = json.load(open("account.info"))
         if command.lower() == "au":
             payloadDICT["intent"] = intent
             payloadDICT["utterance"] = utteranceDICT["jihu"]
-
-            if payloadDICT["utterance"] == []:
-                print("Well...I don't see any intent named {}.".format(intent))
-            else:
-                pprint(payloadDICT["utterance"])
-                response = addUtterance(payloadDICT)
-                if response["status"] == True:
-                    pass
-                else: #response["status"] == False
-                    print(response["msg"])
-                pprint(response)
-
-        #add purged utterances
-        elif command.lower() == "apu":
-            payloadDICT["intent"] = intent
-            payloadDICT["utterance"] = []
-
-            patt = re.compile(r"^purged.*?json$")
-            for jsn in os.listdir("../corpus"):
-                if patt.match(jsn):
-                    jsnLIST = json.load(open("C:/Users/chenj/OneDrive/桌面/Jihu-Chayidian-Chabuduo-Parser/corpus/utterance.json", encoding="utf-8"))
-                    for u in jsnLIST:
-                        if intent.lower() in u.keys() and u[intent.lower()] != []:
-                            payloadDICT["utterance"].extend(u[intent.lower()])
 
             if payloadDICT["utterance"] == []:
                 print("Well...I don't see any intent named {}.".format(intent))
