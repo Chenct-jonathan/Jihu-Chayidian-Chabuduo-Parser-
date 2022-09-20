@@ -64,13 +64,15 @@ if __name__== "__main__":
     args = parser.parse_args()
     command = args.command
     intent = args.intent
+    
+    utteranceDICT = json.load("C:/Users/chenj/OneDrive/桌面/Jihu-Chayidian-Chabuduo-Parser/corpus/utterance.json", encoding = "utf-8")
 
     if command.lower() in ("au", "lu", "apu"): #au stands for "addUtterance"; lu stands for "listUtterance"; apu stands for "addPurgedUtterance"
         payloadDICT = json.load(open("account.info"))
         if command.lower() == "au":
-            payloadDICT["intent"] = intent
-            payloadDICT["utterance"] = []
-            for i, jsn in enumerate(iglob("../corpus/*.json")):
+            payloadDICT["intent"] = "jihu"
+            payloadDICT["utterance"] = utteranceDICT["jihu"]
+            for i, jsn in enumerate(iglob("C:/Users/chenj/OneDrive/桌面/Jihu-Chayidian-Chabuduo-Parser/corpus/utterance.json")):
                 try:
                     jsnLIST = json.load(open(jsn))
                     for u in jsnLIST:
@@ -97,7 +99,7 @@ if __name__== "__main__":
             patt = re.compile(r"^purged.*?json$")
             for jsn in os.listdir("../corpus"):
                 if patt.match(jsn):
-                    jsnLIST = json.load(open("../corpus/" + jsn))
+                    jsnLIST = json.load(open("C:/Users/chenj/OneDrive/桌面/Jihu-Chayidian-Chabuduo-Parser/corpus/utterance.json", encoding="utf-8"))
                     for u in jsnLIST:
                         if intent.lower() in u.keys() and u[intent.lower()] != []:
                             payloadDICT["utterance"].extend(u[intent.lower()])
