@@ -70,7 +70,7 @@ if __name__== "__main__":
         if command.lower() == "au":
             payloadDICT["intent"] = intent
             payloadDICT["utterance"] = []
-            for i, jsn in enumerate(iglob("./corpus/*.json")):
+            for i, jsn in enumerate(iglob("../corpus/*.json")):
                 try:
                     jsnLIST = json.load(open(jsn))
                     for u in jsnLIST:
@@ -95,9 +95,9 @@ if __name__== "__main__":
             payloadDICT["utterance"] = []
 
             patt = re.compile(r"^purged.*?json$")
-            for jsn in os.listdir("./corpus"):
+            for jsn in os.listdir("../corpus"):
                 if patt.match(jsn):
-                    jsnLIST = json.load(open("./corpus/" + jsn))
+                    jsnLIST = json.load(open("../corpus/" + jsn))
                     for u in jsnLIST:
                         if intent.lower() in u.keys() and u[intent.lower()] != []:
                             payloadDICT["utterance"].extend(u[intent.lower()])
