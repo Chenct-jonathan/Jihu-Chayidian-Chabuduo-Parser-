@@ -31,9 +31,9 @@ def listUtterance(payloadDICT):
     return response
 
 def addUtterance(payloadDICT):
-    url = "https://api.droidtown.co/Loki/Utterance/"
+    url = "https://api.droidtown.co/Loki/Command/"
 
-    for i in range(0, len(payloadDICT["intent"]), 20):
+    for i in range(0, len(payloadDICT["utterance"]), 20):
         payload = {
             "username" : payloadDICT["username"],
             "loki_key" : payloadDICT["loki_key"],
@@ -43,6 +43,7 @@ def addUtterance(payloadDICT):
         response = post(url, json=payload).json()
         if response["status"] == True:
             sleep(0.5)
+            print("processed:{}\n".format("\n".join(payloadDICT["utterance"][i:i+20])))
         else:
             return response["msg"]
     return response
@@ -58,28 +59,21 @@ if __name__== "__main__":
         $ python3 loki_op.py apu postve_num
     """
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("command")
-    parser.add_argument("intent")
-    args = parser.parse_args()
-    command = args.command
-    intent = args.intent
-    
-    utteranceDICT = json.load("C:/Users/chenj/OneDrive/桌面/Jihu-Chayidian-Chabuduo-Parser/corpus/utterance.json", encoding = "utf-8")
+    #parser = argparse.ArgumentParser()
+    #parser.add_argument("command")
+    #parser.add_argument("intent")
+    #args = parser.parse_args()
+    command = "au" #args.command
+    intent = "jihu" #args.intent
+
+    utteranceDICT = json.load(open("../corpus/utterance.json", encoding = "utf-8"))
 
     if command.lower() in ("au", "lu", "apu"): #au stands for "addUtterance"; lu stands for "listUtterance"; apu stands for "addPurgedUtterance"
         payloadDICT = json.load(open("account.info"))
         if command.lower() == "au":
-            payloadDICT["intent"] = "jihu"
+            payloadDICT["intent"] = intent
             payloadDICT["utterance"] = utteranceDICT["jihu"]
-            for i, jsn in enumerate(iglob("C:/Users/chenj/OneDrive/桌面/Jihu-Chayidian-Chabuduo-Parser/corpus/utterance.json")):
-                try:
-                    jsnLIST = json.load(open(jsn))
-                    for u in jsnLIST:
-                        if u[intent.lower()] != []:
-                            payloadDICT["utterance"].extend(u[intent.lower()])
-                except:
-                    pass
+
             if payloadDICT["utterance"] == []:
                 print("Well...I don't see any intent named {}.".format(intent))
             else:
