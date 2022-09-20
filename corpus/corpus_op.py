@@ -2,57 +2,35 @@
 # -*- coding: utf-8 -*-
 
 import re
+import json 
 
-reDICT = {
-    "Chiayidian":'[「」０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*差一點[\s０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％…「」]*',
-    "Chiabuduo":'[「」０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*差不多[\s０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％…「」]*',
-    "Jihu":'[「」０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*幾乎[\s０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％…「」]*'
-}
+with open("corpus_op_re.json","r",encoding="utf-8") as f:
+    corpus_op_re = json.load(f)
+regexLIST = list(corpus_op_re.items())
 
-with open('sinicaCorpus_{}_raw.txt'.format("Chiabuduo"),encoding="utf-8") as f:
-    lines = ''.join(f.readlines())
-    purge = re.findall(r'{}'.format(reDICT["Chiabuduo"]), lines)
-
-with open('sinicaCorpus_{}_purge02.txt'.format("Chiabuduo"),'w',encoding="utf-8") as g:
-    for i in range(len(purge)):
-        g.write(str(i+1)+" "+purge[i].replace("\t","")+"\n")
-
-
-def jihu_purger():
-    '''
-    Extract sentences with Jihu(幾乎) from raw Sinica Corpus file, and save it into _purge file.
-    '''
-    with open('sinicaCorpus_Jihu.txt',encoding="utf-8") as f:
+def sinica_purger(i):
+    with open('sinicaCorpus_{}_raw.txt'.format(regexLIST[i][0]),encoding="utf-8") as f:
         lines = ''.join(f.readlines())
-        purge = re.findall(r'([０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*幾乎\t*[０-９ａ-ｚＡ-Ｚ\u4E00-\u9FFF％]*)', lines)
+        purge = re.findall(r'{}'.format(regexLIST[i][1]), lines)
+    with open('sinicaCorpus_{}_purged.txt'.format(regexLIST[i][0]),'w',encoding="utf-8") as g:
+        for j in range(len(purge)):
+            g.write(purge[j].replace("\t","").replace("\s","").replace(" ","")+"\n")
+            
 
-    with open('sinicaCorpus_Jihu_purge.txt','w',encoding="utf-8") as g:
-        for i in range(len(purge)):
-            g.write(str(i+1)+" "+purge[i].replace("\t","")+"\n")
-
-
-def main():
+def main(i):
     resultDICT = {"JiHu_status":True,
                   "ChaBuDuo_status":True,
                   "ChaYiDian_status":True
                   }
     try:
-        jihu_purger()
+        sinica_purger(i)
     except:
-        resultDICT["JiHu_status"] = False
+        resultDICT["{}_status".format(regexLIST[i][0])] = False
 
 
     return resultDICT
 
 if __name__ == "__main__":
-    main()
-
-
-
-
-
-
-
-
-
+    for i in range(len(corpus_op_re)):
+        main(i)
 
