@@ -41,7 +41,12 @@ def addUtterance(payloadDICT):
             "intent"   : payloadDICT["intent"],
             "utterance": payloadDICT["utterance"][i:i+20]
         }
-        response = post(url, json=payload).json()
+        try:
+            response = post(url, json=payload).json()
+        except Exception as e:
+            print("### ERROR MSG HERE", e)
+            print("utteranes:", payloadDICT["utterances"])
+
         if response["status"] == True:
             sleep(0.5)
             print("processed:{}\n".format("\n".join(payloadDICT["utterance"][i:i+20])))
