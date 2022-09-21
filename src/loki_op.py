@@ -12,6 +12,7 @@ except ModuleNotFoundError:
 from pprint import pprint
 from requests import post
 from time import sleep
+from json import JSONDecodeError
 
 
 def listUtterance(payloadDICT):
@@ -77,13 +78,16 @@ if __name__== "__main__":
             if payloadDICT["utterance"] == []:
                 print("Well...I don't see any intent named {}.".format(intent))
             else:
-                pprint(payloadDICT["utterance"])
-                response = addUtterance(payloadDICT)
-                if response["status"] == True:
-                    pass
-                else: #response["status"] == False
-                    print(response["msg"])
-                pprint(response)
+                try:
+                    pprint(payloadDICT["utterance"])
+                    response = addUtterance(payloadDICT)
+                    if response["status"] == True:
+                        pass
+                    else: #response["status"] == False
+                        print(response["msg"])
+                        pprint(response)
+                except JSONDecodeError:
+                    print(payloadDICT["utterance"][i])
 
         else: #command is "lu"
             payloadDICT["intent"] = [intent]
