@@ -1,0 +1,97 @@
+{
+    "language": "zh-tw",
+    "type": "basic",
+    "version": {
+        "atk": "v256",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_asNoun": [
+            "艾柏格",
+            "意念",
+            "卡子",
+            "隨從",
+            "身心",
+            "婦女支援組織"
+        ],
+        "_asVerb": [
+            "車畚斗",
+            "抽腳筋",
+            "打轉"
+        ],
+        "_extractFromPunc": [
+            "平分秋色",
+            "選秀狀元",
+            "仇人席",
+            "活古蹟",
+            "平分秋色",
+            "保守",
+            "大智若愚",
+            "眼淚歌后",
+            "鄉土",
+            "晚晴協會",
+            "拉一把"
+        ]
+    },
+    "utterance": {
+        "謝長亨差一點就是中華職棒第一個「選秀狀元」": {
+            "id": "e618fe70-e70f-49da-9188-2c01f8c76ee6",
+            "argument": [
+                {
+                    "pos": "ENTITY_person",
+                    "text": "謝長亨",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODIFIER",
+                    "text": "差一點",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "AUX",
+                    "text": "就是",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_noun",
+                    "text": "中華",
+                    "checked": true,
+                    "checkbox": true
+                },
+                {
+                    "pos": "ENTITY_nounHead",
+                    "text": "職棒",
+                    "checked": true,
+                    "checkbox": true
+                },
+                {
+                    "pos": "ENTITY_DetPhrase",
+                    "text": "第一個",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "PUNCTUATION",
+                    "text": "「",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "UserDefined",
+                    "text": "選秀狀元",
+                    "checked": true,
+                    "checkbox": true
+                },
+                {
+                    "pos": "PUNCTUATION",
+                    "text": "」",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        }
+    }
+}
