@@ -39,23 +39,6 @@
         ]
     },
     "utterance": {
-        "即使差一點": {
-            "id": "9054702b-dd7d-4c89-8b0f-abdd38e00e34",
-            "argument": [
-                {
-                    "pos": "FUNC_inter",
-                    "text": "即使",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "差一點",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "差一點忘了": {
             "id": "78ac1b11-ef4d-4437-9e93-47a5d9c22b1d",
             "argument": [
@@ -158,22 +141,12 @@
                             "checked": true
                         },
                         {
-                            "text": "滑倒",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
                             "text": "病倒",
                             "level": "word2vec",
                             "checked": true
                         },
                         {
-                            "text": "吐血",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "癱軟",
+                            "text": "滑倒",
                             "level": "word2vec",
                             "checked": true
                         },
@@ -183,7 +156,17 @@
                             "checked": false
                         },
                         {
+                            "text": "癱軟",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
                             "text": "摔車",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
+                            "text": "吐血",
                             "level": "word2vec",
                             "checked": true
                         },
@@ -415,7 +398,22 @@
                             "checked": true
                         },
                         {
+                            "text": "撞上了",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
+                            "text": "撞到",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
                             "text": "輾過",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
+                            "text": "撞毀",
                             "level": "word2vec",
                             "checked": true
                         },
@@ -430,14 +428,9 @@
                             "checked": false
                         },
                         {
-                            "text": "撞上了",
+                            "text": "撞入",
                             "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "撞到",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "撞",
@@ -445,19 +438,9 @@
                             "checked": false
                         },
                         {
-                            "text": "撞入",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "撞進",
                             "level": "word2vec",
                             "checked": false
-                        },
-                        {
-                            "text": "撞毀",
-                            "level": "word2vec",
-                            "checked": true
                         },
                         {
                             "text": "輾",
@@ -860,22 +843,7 @@
                             "checked": false
                         },
                         {
-                            "text": "熄火了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "照做了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "得獎了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "收工了",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -885,12 +853,12 @@
                             "checked": false
                         },
                         {
-                            "text": "犯錯了",
+                            "text": "出軌了",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "出軌了",
+                            "text": "熄火了",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -900,12 +868,27 @@
                             "checked": false
                         },
                         {
-                            "text": "增選了",
+                            "text": "得獎了",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
                             "text": "謝謝了",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "收工了",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "增選了",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "犯錯了",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -1388,17 +1371,22 @@
                             "checked": false
                         },
                         {
-                            "text": "招認",
+                            "text": "發覺",
                             "level": "word2vec",
                             "checked": false
+                        },
+                        {
+                            "text": "誤認",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "指認",
+                            "level": "word2vec",
+                            "checked": true
                         },
                         {
                             "text": "通姦",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "發覺",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -1408,22 +1396,17 @@
                             "checked": false
                         },
                         {
-                            "text": "原諒",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "指證",
                             "level": "word2vec",
                             "checked": true
                         },
                         {
-                            "text": "指認",
+                            "text": "原諒",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
-                            "text": "誤認",
+                            "text": "招認",
                             "level": "word2vec",
                             "checked": false
                         }
@@ -1484,32 +1467,7 @@
                             "checked": false
                         },
                         {
-                            "text": "去",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "來語",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "性來",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "來文",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "端來",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "出來",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -1519,12 +1477,37 @@
                             "checked": false
                         },
                         {
-                            "text": "值來",
+                            "text": "來文",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "去",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "端來",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
                             "text": "學來",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "來語",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "出來",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "值來",
                             "level": "word2vec",
                             "checked": false
                         }
@@ -1586,42 +1569,12 @@
                             "checked": true
                         },
                         {
-                            "text": "發動了",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "執行過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "啟動了",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "動用了",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
                             "text": "制訂了",
                             "level": "word2vec",
                             "checked": true
                         },
                         {
-                            "text": "制定了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "測試了",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "批准了",
                             "level": "word2vec",
                             "checked": true
                         },
@@ -1631,9 +1584,39 @@
                             "checked": true
                         },
                         {
+                            "text": "啟動了",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
                             "text": "完成了",
                             "level": "word2vec",
                             "checked": true
+                        },
+                        {
+                            "text": "發動了",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
+                            "text": "動用了",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
+                            "text": "批准了",
+                            "level": "word2vec",
+                            "checked": true
+                        },
+                        {
+                            "text": "執行過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "制定了",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "實施",
@@ -1687,119 +1670,6 @@
                         }
                     ],
                     "text": "執行了",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "若是評估質素差一點的": {
-            "id": "d096e216-243e-4947-9b0e-5f5270a250b6",
-            "argument": [
-                {
-                    "pos": "FUNC_inter",
-                    "text": "若",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "AUX",
-                    "text": "是",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "估量",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "品評",
-                            "level": "tier_1",
-                            "checked": true
-                        },
-                        {
-                            "text": "評價",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "評定",
-                            "level": "tier_1",
-                            "checked": true
-                        },
-                        {
-                            "text": "測試",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "審查",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "評量",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "檢核",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "分析",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "檢討",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "審視",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "考量",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "審核",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "檢視",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "評估",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "UserDefined",
-                    "text": "質素",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "差一點",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inner",
-                    "text": "的",
                     "checked": false,
                     "checkbox": false
                 }

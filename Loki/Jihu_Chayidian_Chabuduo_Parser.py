@@ -41,30 +41,34 @@
             ]
         }
 """
-
+import json
 from requests import post
 from requests import codes
 import math
 import re
 try:
-    from intent import Loki_jihu
-    from intent import Loki_jihu_punc
+    #from intent import Loki_jihu
+    #from intent import Loki_jihu_punc
     from intent import Loki_chiayidian
     from intent import Loki_chiayidian_punc
-    from intent import Loki_chiabuduo
+    #from intent import Loki_chiabuduo
     from intent import Loki_chiabuduo_punc
+    from intent import Loki_ad_hoc_chiayidian
 except:
-    from .intent import Loki_jihu
-    from .intent import Loki_jihu_punc
+    #from .intent import Loki_jihu
+    #from .intent import Loki_jihu_punc
     from .intent import Loki_chiayidian
     from .intent import Loki_chiayidian_punc
-    from .intent import Loki_chiabuduo
+    #from .intent import Loki_chiabuduo
     from .intent import Loki_chiabuduo_punc
+    from .intent import Loki_ad_hoc_chiayidian
 
+with open("account.info", "r", encoding="utf-8") as f:
+    accountDICT = json.load(f)
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
-USERNAME = ""
-LOKI_KEY = ""
+USERNAME = accountDICT["username"]
+LOKI_KEY = accountDICT["lokikey"]
 # 意圖過濾器說明
 # INTENT_FILTER = []        => 比對全部的意圖 (預設)
 # INTENT_FILTER = [intentN] => 僅比對 INTENT_FILTER 內的意圖
@@ -207,6 +211,10 @@ def runLoki(inputLIST, filterLIST=[]):
                 if lokiRst.getIntent(index, resultIndex) == "chiabuduo_punc":
                     resultDICT = Loki_chiabuduo_punc.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
+                # ad_hoc_chiayidian
+                if lokiRst.getIntent(index, resultIndex) == "ad_hoc_chiayidian":
+                    resultDICT = Loki_ad_hoc_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
     return resultDICT
@@ -313,11 +321,19 @@ def testIntent():
 
 if __name__ == "__main__":
     # 測試所有意圖
-    testIntent()
+    #testIntent()
 
     # 測試其它句子
-    filterLIST = []
-    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
-    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
+    #filterLIST = []
+    #splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
+    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
+
+
+    inputSTR = "七歲的弟弟差一點被兩個壞人"
+    resultDICT = runLoki([inputSTR])
+    print("\n==========Semantic Checking===============")
+    print("INPUT:{}".format(inputSTR))
+    for k in resultDICT:
+        print("Compatible with『{}』? {}".format(k, resultDICT[k]))

@@ -1,0 +1,173 @@
+{
+    "language": "zh-tw",
+    "type": "basic",
+    "version": {
+        "atk": "v257",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_asNoun": [
+            "卡子",
+            "婦女支援組織",
+            "意念",
+            "艾柏格",
+            "身心",
+            "隨從"
+        ],
+        "_asVerb": [
+            "打轉",
+            "抽腳筋",
+            "車畚斗",
+            "陰溝裡翻船"
+        ],
+        "_tmpToken": [
+            "畢業生",
+            "盛況",
+            "質素"
+        ],
+        "_extractFromPunc": [
+            "仇人席",
+            "保守",
+            "大智若愚",
+            "平分秋色",
+            "拉一把",
+            "晚晴協會",
+            "活古蹟",
+            "眼淚歌后",
+            "選秀狀元",
+            "鄉土"
+        ]
+    },
+    "utterance": {
+        "即使差一點": {
+            "id": "c6faa73b-5b8e-4bd9-97ab-5a56a163a997",
+            "argument": [
+                {
+                    "pos": "FUNC_inter",
+                    "text": "即使",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODIFIER",
+                    "text": "差一點",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "若是評估質素差一點的": {
+            "id": "9ae9dd31-22e9-41d4-83ae-10e8c8bb733f",
+            "argument": [
+                {
+                    "pos": "FUNC_inter",
+                    "text": "若",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "AUX",
+                    "text": "是",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "估量",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "品評",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "評價",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "評定",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "測試",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "審查",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "評量",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "檢核",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "分析",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "檢討",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "審視",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "考量",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "審核",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "檢視",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "評估",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "UserDefined",
+                    "text": "質素",
+                    "checked": true,
+                    "checkbox": true
+                },
+                {
+                    "pos": "MODIFIER",
+                    "text": "差一點",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_inner",
+                    "text": "的",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        }
+    }
+}
