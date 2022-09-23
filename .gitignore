@@ -1,3 +1,5 @@
 account.info
 __pycache__
 ArticutDemo.py
+.*
+._*
