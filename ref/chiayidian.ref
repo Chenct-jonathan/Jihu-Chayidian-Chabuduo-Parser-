@@ -2,35 +2,40 @@
     "language": "zh-tw",
     "type": "basic",
     "version": {
-        "atk": "v256",
+        "atk": "v257",
         "intent": "1.0"
     },
     "user_defined": {
         "_asNoun": [
-            "艾柏格",
-            "意念",
             "卡子",
-            "隨從",
+            "婦女支援組織",
+            "意念",
+            "艾柏格",
             "身心",
-            "婦女支援組織"
+            "隨從"
         ],
         "_asVerb": [
-            "車畚斗",
+            "打轉",
             "抽腳筋",
-            "打轉"
+            "車畚斗",
+            "陰溝裡翻船"
+        ],
+        "_tmpToken": [
+            "畢業生",
+            "盛況",
+            "質素"
         ],
         "_extractFromPunc": [
-            "平分秋色",
-            "選秀狀元",
             "仇人席",
-            "活古蹟",
-            "平分秋色",
             "保守",
             "大智若愚",
-            "眼淚歌后",
-            "鄉土",
+            "平分秋色",
+            "拉一把",
             "晚晴協會",
-            "拉一把"
+            "活古蹟",
+            "眼淚歌后",
+            "選秀狀元",
+            "鄉土"
         ]
     },
     "utterance": {
@@ -278,7 +283,7 @@
                         {
                             "text": "見到",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "見美",
@@ -293,7 +298,7 @@
                         {
                             "text": "看到",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "見古",
@@ -313,7 +318,7 @@
                         {
                             "text": "見了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "看見",
@@ -1688,7 +1693,7 @@
             ]
         },
         "若是評估質素差一點的": {
-            "id": "6bbe37db-f35d-4c81-9031-bcaa7bbcd5c7",
+            "id": "d096e216-243e-4947-9b0e-5f5270a250b6",
             "argument": [
                 {
                     "pos": "FUNC_inter",
@@ -1708,7 +1713,7 @@
                         {
                             "text": "估量",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "品評",
@@ -1718,7 +1723,7 @@
                         {
                             "text": "評價",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "評定",
@@ -1728,12 +1733,12 @@
                         {
                             "text": "測試",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "審查",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "評量",
@@ -1748,7 +1753,7 @@
                         {
                             "text": "分析",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "檢討",
@@ -1763,7 +1768,7 @@
                         {
                             "text": "考量",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "審核",
@@ -1773,7 +1778,7 @@
                         {
                             "text": "檢視",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "評估",
@@ -1781,16 +1786,10 @@
                     "checkbox": false
                 },
                 {
-                    "pos": "ENTITY_nouny",
-                    "text": "質",
+                    "pos": "UserDefined",
+                    "text": "質素",
                     "checked": true,
                     "checkbox": true
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "素",
-                    "checked": false,
-                    "checkbox": false
                 },
                 {
                     "pos": "MODIFIER",
@@ -2286,7 +2285,7 @@
             ]
         },
         "沙琰翎差一點陰溝裡翻船": {
-            "id": "91b46b4d-5a97-4b62-8502-f039b6743043",
+            "id": "751859cb-b128-4883-9f2d-b6ead50d9165",
             "argument": [
                 {
                     "pos": "ENTITY_oov",
@@ -2301,89 +2300,10 @@
                     "checkbox": false
                 },
                 {
-                    "pos": "ENTITY_nouny",
-                    "text": "陰溝",
+                    "pos": "UserDefined",
+                    "text": "陰溝裡翻船",
                     "checked": true,
                     "checkbox": true
-                },
-                {
-                    "pos": "RANGE_locality",
-                    "text": "裡",
-                    "checked": true,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "翻倒",
-                            "level": "tier_1",
-                            "checked": true
-                        },
-                        {
-                            "text": "翻沉",
-                            "level": "tier_1",
-                            "checked": true
-                        },
-                        {
-                            "text": "翻覆",
-                            "level": "tier_1",
-                            "checked": true
-                        },
-                        {
-                            "text": "溺死",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "滑倒",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "落海",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "翻車",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "送命",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "自摔",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "溺斃",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "溺水",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "摔車",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "觸電",
-                            "level": "word2vec",
-                            "checked": true
-                        }
-                    ],
-                    "text": "翻船",
-                    "checked": false,
-                    "checkbox": false
                 }
             ]
         },
@@ -3300,17 +3220,17 @@
                         {
                             "text": "引燃",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "引發",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "引起",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "爆炸",
@@ -3325,7 +3245,7 @@
                         {
                             "text": "使得",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "孕育",
@@ -3335,22 +3255,22 @@
                         {
                             "text": "害得",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "導出",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "導致",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "帶來",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "火燒",
@@ -3360,12 +3280,12 @@
                         {
                             "text": "燃燒",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "牽動",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "生出",
@@ -3380,12 +3300,12 @@
                         {
                             "text": "誘發",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "觸發",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "炸死",
@@ -3395,32 +3315,32 @@
                         {
                             "text": "熄滅",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "引爆了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "點燃了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "炸開",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "點燃",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "觸發了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "引爆",
@@ -3439,12 +3359,12 @@
                         {
                             "text": "流標",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "兌現",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "凍漲",
@@ -3454,37 +3374,37 @@
                         {
                             "text": "落空",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "喊停",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "停建",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "破局",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "超支",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "喊卡",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "破功",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "跳票",
@@ -3568,52 +3488,52 @@
                         {
                             "text": "強姦",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "姦殺",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "凌虐",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "性侵",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "非禮",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "毒打",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "強吻",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "掌摑",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "調戲",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "姦淫",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "強暴",
@@ -3666,12 +3586,12 @@
                         {
                             "text": "跑去",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "去",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "去了",
@@ -3681,7 +3601,7 @@
                         {
                             "text": "跑來",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "想來",
@@ -3739,7 +3659,7 @@
                         {
                             "text": "衝進",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "碰見",
@@ -3749,7 +3669,7 @@
                         {
                             "text": "潛入了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "誤入",
@@ -3759,7 +3679,7 @@
                         {
                             "text": "鬧",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "閒逛",
@@ -3769,12 +3689,12 @@
                         {
                             "text": "溜進",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "潛入",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "大鬧",
@@ -3833,7 +3753,7 @@
                         {
                             "text": "搶了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "丟掉了",
@@ -3843,12 +3763,12 @@
                         {
                             "text": "拿了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "放下了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "偷了",
@@ -3863,12 +3783,12 @@
                         {
                             "text": "要了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "拿走了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "搶走了",
@@ -3888,7 +3808,7 @@
                         {
                             "text": "放下",
                             "level": "word2vec",
-                            "checked": false
+                            "checked": true
                         },
                         {
                             "text": "偷",
@@ -5130,69 +5050,11 @@
             ]
         },
         "畢業生的一位曾經在美濃溪差一點溺水": {
-            "id": "475f3d2f-faa6-43ef-aebd-8c630d7b1e09",
+            "id": "8390976b-7c03-4b2b-a2a8-92875e3f1a48",
             "argument": [
                 {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "肄業",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "就讀",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "考入",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "結訓",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "唸完",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "入讀",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "轉讀",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "考進",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "升讀",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "考取",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "畢業",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "生",
+                    "pos": "UserDefined",
+                    "text": "畢業生",
                     "checked": true,
                     "checkbox": true
                 },
@@ -5238,57 +5100,57 @@
                         {
                             "text": "溺死",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "淹死",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "墜崖",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "落水",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "落海",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "染病",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "失足",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "遇溺",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "溺斃",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "翻船",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "觸電",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "溺水",

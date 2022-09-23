@@ -2,35 +2,40 @@
     "language": "zh-tw",
     "type": "basic",
     "version": {
-        "atk": "v256",
+        "atk": "v257",
         "intent": "1.0"
     },
     "user_defined": {
         "_asNoun": [
-            "艾柏格",
-            "意念",
             "卡子",
-            "隨從",
+            "婦女支援組織",
+            "意念",
+            "艾柏格",
             "身心",
-            "婦女支援組織"
+            "隨從"
         ],
         "_asVerb": [
-            "車畚斗",
+            "打轉",
             "抽腳筋",
-            "打轉"
+            "車畚斗",
+            "陰溝裡翻船"
+        ],
+        "_tmpToken": [
+            "畢業生",
+            "盛況",
+            "質素"
         ],
         "_extractFromPunc": [
-            "平分秋色",
-            "選秀狀元",
             "仇人席",
-            "活古蹟",
-            "平分秋色",
             "保守",
             "大智若愚",
-            "眼淚歌后",
-            "鄉土",
+            "平分秋色",
+            "拉一把",
             "晚晴協會",
-            "拉一把"
+            "活古蹟",
+            "眼淚歌后",
+            "選秀狀元",
+            "鄉土"
         ]
     },
     "utterance": {
@@ -96,57 +101,67 @@
                         {
                             "text": "具有",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "兼有",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "存有",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "帶有",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "懷有",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "持有",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "擁有",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "有了",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "有著",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "保留",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "存在著",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "含有",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "有過",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "有同",
@@ -154,19 +169,9 @@
                             "checked": false
                         },
                         {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "存在著",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
                             "text": "存在",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "有",
@@ -753,17 +758,7 @@
                             "checked": false
                         },
                         {
-                            "text": "調情",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "親暱",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "偷情",
+                            "text": "疏離",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -773,12 +768,17 @@
                             "checked": false
                         },
                         {
-                            "text": "熱戀",
+                            "text": "愛慕",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "愛慕",
+                            "text": "偷情",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "親暱",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -788,12 +788,17 @@
                             "checked": false
                         },
                         {
+                            "text": "調情",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
                             "text": "真做",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "疏離",
+                            "text": "熱戀",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -896,17 +901,17 @@
                         {
                             "text": "回想",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "回溯",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "追憶",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "想起來",
@@ -916,7 +921,7 @@
                         {
                             "text": "感念",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "留念",
@@ -929,14 +934,19 @@
                             "checked": false
                         },
                         {
-                            "text": "憶起",
+                            "text": "緬懷",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "感嘆",
+                            "text": "自述",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "憶起",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "懷念",
@@ -944,14 +954,9 @@
                             "checked": false
                         },
                         {
-                            "text": "難忘",
+                            "text": "感嘆",
                             "level": "word2vec",
                             "checked": false
-                        },
-                        {
-                            "text": "沉思",
-                            "level": "word2vec",
-                            "checked": true
                         },
                         {
                             "text": "想起",
@@ -959,14 +964,14 @@
                             "checked": false
                         },
                         {
-                            "text": "自述",
+                            "text": "沉思",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
-                            "text": "緬懷",
+                            "text": "難忘",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "回憶",
@@ -985,32 +990,32 @@
                         {
                             "text": "取回",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "挽回",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "收回",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "追回",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "尋獲",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "收復",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "追繳",
@@ -1020,50 +1025,50 @@
                         {
                             "text": "重獲",
                             "level": "tier_2",
-                            "checked": true
-                        },
-                        {
-                            "text": "喚回",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "贏回",
                             "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "重拾",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "拿回",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
-                            "text": "喚醒",
+                            "text": "找回了",
                             "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "拾回",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "奪回",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "尋回",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
-                            "text": "找回了",
+                            "text": "奪回",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "重拾",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "喚回",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "拾回",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "喚醒",
                             "level": "word2vec",
                             "checked": false
                         }
@@ -1142,7 +1147,7 @@
                         {
                             "text": "稱讚",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "誇稱",
@@ -1152,7 +1157,32 @@
                         {
                             "text": "頌讚",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "待見",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "追捧",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "喜愛",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "注目",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "熱捧",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "邀請",
@@ -1160,44 +1190,19 @@
                             "checked": false
                         },
                         {
-                            "text": "注目",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "矚目",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "待見",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "喜愛",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
                             "text": "愛戴",
                             "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "熱捧",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "尊敬",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
-                            "text": "追捧",
+                            "text": "矚目",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "歡迎",
@@ -1263,82 +1268,82 @@
                         {
                             "text": "指導",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "教導",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "勸諫",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "執教",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "灌輸",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "管教",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "苦諫",
                             "level": "tier_2",
-                            "checked": true
-                        },
-                        {
-                            "text": "媒合",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "督導",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "培訓",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "訪視",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "諮詢",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "轉介",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "諮商",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "照護",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "培訓",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "媒合",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "諮商",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "訪視",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "諮詢",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "轉介",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "轉銜",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "督導",
+                            "level": "word2vec",
+                            "checked": false
                         }
                     ],
                     "text": "輔導",
@@ -1351,52 +1356,52 @@
                         {
                             "text": "離異",
                             "level": "tier_1",
-                            "checked": true
-                        },
-                        {
-                            "text": "成婚",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "訂婚",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "結婚",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "再婚",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "復合",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "復婚",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "分手",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "結婚",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "復婚",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "復合",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "再婚",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "成婚",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "訂婚",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "分居",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "私奔",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "離婚",
@@ -1415,117 +1420,117 @@
                         {
                             "text": "行走",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "走入",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "走動",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "走去",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "走步",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "走秀",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "走路",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "經過",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "踏進",
                             "level": "tier_2",
-                            "checked": true
-                        },
-                        {
-                            "text": "走過了",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "渡過了",
                             "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "走到",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "度過了",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "跑過",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "走來",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "走出",
-                            "level": "word2vec",
-                            "checked": true
-                        },
-                        {
-                            "text": "走出了",
-                            "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "經歷過",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "走來",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "走出了",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "走到了",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
+                        },
+                        {
+                            "text": "走出",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "走到",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "度過了",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "跑過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "走過了",
+                            "level": "word2vec",
+                            "checked": false
                         },
                         {
                             "text": "渡過",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "經歷",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "度過",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "跑",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "走過",
@@ -1573,32 +1578,7 @@
                             "checked": false
                         },
                         {
-                            "text": "創立",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "續創",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "指創",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "同創",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "迭創",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "幫創",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -1608,12 +1588,37 @@
                             "checked": false
                         },
                         {
+                            "text": "創立",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "迭創",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
                             "text": "論創",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
+                            "text": "幫創",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
                             "text": "創等",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "指創",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "續創",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -1686,12 +1691,12 @@
                             "checked": false
                         },
                         {
-                            "text": "領導",
+                            "text": "促進",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "促進",
+                            "text": "領導",
                             "level": "word2vec",
                             "checked": false
                         }
@@ -1742,42 +1747,42 @@
                         {
                             "text": "創立",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "建立",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "樹立",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "設立",
                             "level": "tier_1",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "創建",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "創記錄",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "創設",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "創辦",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "創造",
@@ -1822,7 +1827,7 @@
                         {
                             "text": "締造",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "編製",
@@ -1842,7 +1847,7 @@
                         {
                             "text": "設攤",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "開創",
@@ -1852,22 +1857,17 @@
                         {
                             "text": "開站",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "開辦",
                             "level": "tier_2",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "開闢",
                             "level": "tier_2",
                             "checked": false
-                        },
-                        {
-                            "text": "開設",
-                            "level": "word2vec",
-                            "checked": true
                         },
                         {
                             "text": "設立了",
@@ -1880,6 +1880,11 @@
                             "checked": false
                         },
                         {
+                            "text": "開設",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
                             "text": "成立了",
                             "level": "word2vec",
                             "checked": false
@@ -1887,12 +1892,12 @@
                         {
                             "text": "設立",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         },
                         {
                             "text": "創立",
                             "level": "word2vec",
-                            "checked": true
+                            "checked": false
                         }
                     ],
                     "text": "成立",
