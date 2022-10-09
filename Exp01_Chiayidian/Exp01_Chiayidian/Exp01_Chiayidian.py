@@ -41,31 +41,22 @@
             ]
         }
 """
-import json
+
 from requests import post
 from requests import codes
 import math
 import re
+import json
 try:
-    #from intent import Loki_jihu
-    #from intent import Loki_jihu_punc
     from intent import Loki_chiayidian
-    from intent import Loki_chiayidian_punc
-    #from intent import Loki_chiabuduo
-    from intent import Loki_chiabuduo_punc
-    from intent import Loki_ad_hoc_chiayidian
+    from intent import Loki_chiyidian_adv
 except:
-    #from .intent import Loki_jihu
-    #from .intent import Loki_jihu_punc
     from .intent import Loki_chiayidian
-    from .intent import Loki_chiayidian_punc
-    #from .intent import Loki_chiabuduo
-    from .intent import Loki_chiabuduo_punc
-    from .intent import Loki_ad_hoc_chiayidian
+    from .intent import Loki_chiyidian_adv
 
 with open("account.info", "r", encoding="utf-8") as f:
-    accountDICT = json.load(f)
-
+        accountDICT = json.load(f)
+    
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 USERNAME = accountDICT["username"]
 LOKI_KEY = accountDICT["lokikey"]
@@ -187,33 +178,13 @@ def runLoki(inputLIST, filterLIST=[]):
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # jihu
-                #if lokiRst.getIntent(index, resultIndex) == "jihu":
-                    #resultDICT = Loki_jihu.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
-                # jihu_punc
-                #if lokiRst.getIntent(index, resultIndex) == "jihu_punc":
-                    #resultDICT = Loki_jihu_punc.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
                 # chiayidian
                 if lokiRst.getIntent(index, resultIndex) == "chiayidian":
                     resultDICT = Loki_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
-                # chiayidian_punc
-                if lokiRst.getIntent(index, resultIndex) == "chiayidian_punc":
-                    resultDICT = Loki_chiayidian_punc.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
-                # chiabuduo
-                #if lokiRst.getIntent(index, resultIndex) == "chiabuduo":
-                    #resultDICT = Loki_chiabuduo.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
-                # chiabuduo_punc
-                if lokiRst.getIntent(index, resultIndex) == "chiabuduo_punc":
-                    resultDICT = Loki_chiabuduo_punc.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
-                # ad_hoc_chiayidian
-                if lokiRst.getIntent(index, resultIndex) == "ad_hoc_chiayidian":
-                    resultDICT = Loki_ad_hoc_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                # chiyidian_adv
+                if lokiRst.getIntent(index, resultIndex) == "chiyidian_adv":
+                    resultDICT = Loki_chiyidian_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
@@ -282,58 +253,26 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # jihu
-    print("[TEST] jihu")
-    inputLIST = ['侵犯工會權利幾乎全球各國都不能免除']
-    testLoki(inputLIST, ['jihu'])
-    print("")
-
-    # jihu_punc
-    print("[TEST] jihu_punc")
-    inputLIST = ['是使中共相信鄭浪平的「一九九五年閏八月」幾乎成為事實']
-    testLoki(inputLIST, ['jihu_punc'])
-    print("")
-
     # chiayidian
     print("[TEST] chiayidian")
-    inputLIST = ['爭三連霸的瑞典名將艾柏格則差一點落馬']
+    inputLIST = ['差一點忘了','差一點昏倒','差一點笑出來','差一點見上面','差一點就抽腳筋','差一點就撞上他','差一點就沒命了','差一點就車畚斗','差一點遭到截肢','差一點沒到九十分','當年差一點回不來','原來他差一點摔倒了','我差一點就笑了起來','我差一點被抓去坐牢','我差一點認不出她來','居然只差一點被執行了','可是我差一點被卡子抓走','否則差一點看不到新中國','我的隨從差一點就傷了妳','把經理差一點嚇昏了過去','沙琰翎差一點陰溝裡翻船','雖然差一點而沒挑戰成功','差一點沒把手指頭當菜切了','還差一點旅行社才開門辦公','差一點就放棄再騎下去的意念','她差一點栽在印度芭娜姬的手中','差一點提前引爆華隆跳票的引信','七歲的妹妹差一點被二個壞人強暴','三個年輕人差一點就要去大鬧天宮','在這場危險風暴中差一點丟了性命','差一點就讓這種傳統工藝走不回來','差一點把爸爸心愛的上等酒給打翻了','我真的感動得眼淚都差一點掉下來了','只差一點沒和那漂亮女人做成一回好事','差一點他那神父爸爸便不能認這個孩子','最後還差一點就當選高雄區的立法委員','畢業生的一位曾經在美濃溪差一點溺水','爭三連霸的瑞典名將艾柏格則差一點落馬','卻真實地讓他以為差一點就跌入了萬丈深淵','又曾經在泳渡深潭時不慎捲入旋渦差一點溺死','這些胎生的小苗萬一在第一次落下運氣差一點']
     testLoki(inputLIST, ['chiayidian'])
     print("")
 
-    # chiayidian_punc
-    print("[TEST] chiayidian_punc")
-    inputLIST = ['謝長亨差一點就是中華職棒第一個「選秀狀元」']
-    testLoki(inputLIST, ['chiayidian_punc'])
-    print("")
-
-    # chiabuduo
-    print("[TEST] chiabuduo")
-    inputLIST = ['跟我阿媽差不多大了']
-    testLoki(inputLIST, ['chiabuduo'])
-    print("")
-
-    # chiabuduo_punc
-    print("[TEST] chiabuduo_punc")
-    inputLIST = ['差不多……好了……']
-    testLoki(inputLIST, ['chiabuduo_punc'])
+    # chiyidian_adv
+    print("[TEST] chiyidian_adv")
+    inputLIST = ['差一點昏倒','差一點就沒命了','差一點沒到九十分','居然只差一點被執行了','否則差一點看不到新中國','差一點把爸爸心愛的上等酒給打翻了']
+    testLoki(inputLIST, ['chiyidian_adv'])
     print("")
 
 
 if __name__ == "__main__":
     # 測試所有意圖
-    #testIntent()
+    testIntent()
 
     # 測試其它句子
-    #filterLIST = []
-    #splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
-    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
-
-
-    inputSTR = "我差一點被跑步"
-    resultDICT = runLoki([inputSTR])
-    print("\n==========Semantic Checking===============")
-    print("INPUT:{}".format(inputSTR))
-    for k in resultDICT:
-        print("Compatible with『{}』? {}".format(k, resultDICT[k]))
+    filterLIST = []
+    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
+    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
