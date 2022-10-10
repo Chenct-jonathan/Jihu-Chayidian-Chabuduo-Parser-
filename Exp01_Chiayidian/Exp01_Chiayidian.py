@@ -46,20 +46,21 @@ from requests import post
 from requests import codes
 import math
 import re
-import json
 try:
-    from intent import Loki_chiayidian
-    from intent import Loki_chiyidian_adv
+    from intent import Loki_sinica_chiyidian_adv
+    from intent import Loki_sinica_chiayidian
+    from intent import Loki_sinica_chiayidian_punc
+    from intent import Loki_extend_chiayidian_adv
 except:
-    from .intent import Loki_chiayidian
-    from .intent import Loki_chiyidian_adv
+    from .intent import Loki_sinica_chiyidian_adv
+    from .intent import Loki_sinica_chiayidian
+    from .intent import Loki_sinica_chiayidian_punc
+    from .intent import Loki_extend_chiayidian_adv
 
-with open("account.info", "r", encoding="utf-8") as f:
-        accountDICT = json.load(f)
-    
+
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
-USERNAME = accountDICT["username"]
-LOKI_KEY = accountDICT["lokikey"]
+USERNAME = ""
+LOKI_KEY = ""
 # 意圖過濾器說明
 # INTENT_FILTER = []        => 比對全部的意圖 (預設)
 # INTENT_FILTER = [intentN] => 僅比對 INTENT_FILTER 內的意圖
@@ -178,13 +179,21 @@ def runLoki(inputLIST, filterLIST=[]):
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # chiayidian
-                if lokiRst.getIntent(index, resultIndex) == "chiayidian":
-                    resultDICT = Loki_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                # sinica_chiyidian_adv
+                if lokiRst.getIntent(index, resultIndex) == "sinica_chiyidian_adv":
+                    resultDICT = Loki_sinica_chiyidian_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
-                # chiyidian_adv
-                if lokiRst.getIntent(index, resultIndex) == "chiyidian_adv":
-                    resultDICT = Loki_chiyidian_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                # sinica_chiayidian
+                if lokiRst.getIntent(index, resultIndex) == "sinica_chiayidian":
+                    resultDICT = Loki_sinica_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # sinica_chiayidian_punc
+                if lokiRst.getIntent(index, resultIndex) == "sinica_chiayidian_punc":
+                    resultDICT = Loki_sinica_chiayidian_punc.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # extend_chiayidian_adv
+                if lokiRst.getIntent(index, resultIndex) == "extend_chiayidian_adv":
+                    resultDICT = Loki_extend_chiayidian_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
@@ -253,16 +262,28 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # chiayidian
-    print("[TEST] chiayidian")
-    inputLIST = ['差一點忘了','差一點昏倒','差一點笑出來','差一點見上面','差一點就抽腳筋','差一點就撞上他','差一點就沒命了','差一點就車畚斗','差一點遭到截肢','差一點沒到九十分','當年差一點回不來','原來他差一點摔倒了','我差一點就笑了起來','我差一點被抓去坐牢','我差一點認不出她來','居然只差一點被執行了','可是我差一點被卡子抓走','否則差一點看不到新中國','我的隨從差一點就傷了妳','把經理差一點嚇昏了過去','沙琰翎差一點陰溝裡翻船','雖然差一點而沒挑戰成功','差一點沒把手指頭當菜切了','還差一點旅行社才開門辦公','差一點就放棄再騎下去的意念','她差一點栽在印度芭娜姬的手中','差一點提前引爆華隆跳票的引信','七歲的妹妹差一點被二個壞人強暴','三個年輕人差一點就要去大鬧天宮','在這場危險風暴中差一點丟了性命','差一點就讓這種傳統工藝走不回來','差一點把爸爸心愛的上等酒給打翻了','我真的感動得眼淚都差一點掉下來了','只差一點沒和那漂亮女人做成一回好事','差一點他那神父爸爸便不能認這個孩子','最後還差一點就當選高雄區的立法委員','畢業生的一位曾經在美濃溪差一點溺水','爭三連霸的瑞典名將艾柏格則差一點落馬','卻真實地讓他以為差一點就跌入了萬丈深淵','又曾經在泳渡深潭時不慎捲入旋渦差一點溺死','這些胎生的小苗萬一在第一次落下運氣差一點']
-    testLoki(inputLIST, ['chiayidian'])
+    # sinica_chiyidian_adv
+    print("[TEST] sinica_chiyidian_adv")
+    inputLIST = ['差一點昏倒','差一點見上面','差一點就沒命了','差一點沒到九十分','居然只差一點被執行了','否則差一點看不到新中國','她差一點栽在印度芭娜姬的手中','差一點把爸爸心愛的上等酒給打翻了','差一點他那神父爸爸便不能認這個孩子','畢業生的一位曾經在美濃溪差一點溺水']
+    testLoki(inputLIST, ['sinica_chiyidian_adv'])
     print("")
 
-    # chiyidian_adv
-    print("[TEST] chiyidian_adv")
-    inputLIST = ['差一點昏倒','差一點就沒命了','差一點沒到九十分','居然只差一點被執行了','否則差一點看不到新中國','差一點把爸爸心愛的上等酒給打翻了']
-    testLoki(inputLIST, ['chiyidian_adv'])
+    # sinica_chiayidian
+    print("[TEST] sinica_chiayidian")
+    inputLIST = ['差一點忘了','差一點昏倒','差一點笑出來','差一點見上面','差一點就抽腳筋','差一點就撞上他','差一點就沒命了','差一點就車畚斗','差一點遭到截肢','差一點沒到九十分','當年差一點回不來','原來他差一點摔倒了','我差一點就笑了起來','我差一點被抓去坐牢','我差一點認不出她來','居然只差一點被執行了','可是我差一點被卡子抓走','否則差一點看不到新中國','我的隨從差一點就傷了妳','把經理差一點嚇昏了過去','沙琰翎差一點陰溝裡翻船','雖然差一點而沒挑戰成功','差一點沒把手指頭當菜切了','還差一點旅行社才開門辦公','差一點就放棄再騎下去的意念','她差一點栽在印度芭娜姬的手中','差一點提前引爆華隆跳票的引信','七歲的妹妹差一點被二個壞人強暴','三個年輕人差一點就要去大鬧天宮','在這場危險風暴中差一點丟了性命','差一點就讓這種傳統工藝走不回來','差一點把爸爸心愛的上等酒給打翻了','我真的感動得眼淚都差一點掉下來了','只差一點沒和那漂亮女人做成一回好事','差一點他那神父爸爸便不能認這個孩子','最後還差一點就當選高雄區的立法委員','畢業生的一位曾經在美濃溪差一點溺水','爭三連霸的瑞典名將艾柏格則差一點落馬','卻真實地讓他以為差一點就跌入了萬丈深淵','又曾經在泳渡深潭時不慎捲入旋渦差一點溺死','這些胎生的小苗萬一在第一次落下運氣差一點']
+    testLoki(inputLIST, ['sinica_chiayidian'])
+    print("")
+
+    # sinica_chiayidian_punc
+    print("[TEST] sinica_chiayidian_punc")
+    inputLIST = ['謝長亨差一點就是中華職棒第一個「選秀狀元」']
+    testLoki(inputLIST, ['sinica_chiayidian_punc'])
+    print("")
+
+    # extend_chiayidian_adv
+    print("[TEST] extend_chiayidian_adv")
+    inputLIST = ['差一點一個人去']
+    testLoki(inputLIST, ['extend_chiayidian_adv'])
     print("")
 
 
