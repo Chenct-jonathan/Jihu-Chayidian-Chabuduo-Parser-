@@ -17,6 +17,11 @@
 import json
 import os
 
+from ArticutAPI import Articut
+with open("account.info", "r", encoding="utf-8") as f:
+    accountDICT = json.load(f)
+articut = Articut(username=accountDICT["username"], apikey=accountDICT["apikey"])
+
 DEBUG_sinica_chiyidian_adv = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
@@ -27,6 +32,12 @@ except:
 def debugInfo(inputSTR, utterance):
     if DEBUG_sinica_chiyidian_adv:
         print("[sinica_chiyidian_adv] {} ===> {}".format(inputSTR, utterance))
+
+def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
+    spliterDICT = {}
+    spliterDICT["prior"] = "".join(inputSTR.split(spliterSTR)[:1])
+    spliterDICT["post"] = "".join(inputSTR.split(spliterSTR)[1:2])
+    return spliterDICT
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
@@ -39,7 +50,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         pass
 
     if utterance == "居然只差一點被執行了":
-        # write your code here
+        print(inputSTRSpliter(inputSTR))
         pass
 
     if utterance == "差一點他那神父爸爸便不能認這個孩子":

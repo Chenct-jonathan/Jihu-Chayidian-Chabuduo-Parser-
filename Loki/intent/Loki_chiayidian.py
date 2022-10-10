@@ -86,8 +86,6 @@ def telicyCheck(priorSTR, postSTR):
         resultBOOL[1] = True
     return resultBOOL
 
-
-
 def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
     resultLIST = [None, None]
     resultLIST = inputSTR.split(spliterSTR)[:2]

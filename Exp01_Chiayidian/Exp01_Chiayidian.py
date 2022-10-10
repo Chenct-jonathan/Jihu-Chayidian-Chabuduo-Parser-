@@ -46,21 +46,25 @@ from requests import post
 from requests import codes
 import math
 import re
+import json
 try:
     from intent import Loki_sinica_chiyidian_adv
-    from intent import Loki_sinica_chiayidian
-    from intent import Loki_sinica_chiayidian_punc
+    #from intent import Loki_sinica_chiayidian
+    #from intent import Loki_sinica_chiayidian_punc
     from intent import Loki_extend_chiayidian_adv
 except:
     from .intent import Loki_sinica_chiyidian_adv
-    from .intent import Loki_sinica_chiayidian
-    from .intent import Loki_sinica_chiayidian_punc
+    #from .intent import Loki_sinica_chiayidian
+    #from .intent import Loki_sinica_chiayidian_punc
     from .intent import Loki_extend_chiayidian_adv
 
 
+with open("account.info", "r", encoding="utf-8") as f:
+    accountDICT = json.load(f)
+    
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
-USERNAME = ""
-LOKI_KEY = ""
+USERNAME = accountDICT["username"]
+LOKI_KEY = accountDICT["lokikey"]
 # 意圖過濾器說明
 # INTENT_FILTER = []        => 比對全部的意圖 (預設)
 # INTENT_FILTER = [intentN] => 僅比對 INTENT_FILTER 內的意圖
@@ -184,12 +188,12 @@ def runLoki(inputLIST, filterLIST=[]):
                     resultDICT = Loki_sinica_chiyidian_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
                 # sinica_chiayidian
-                if lokiRst.getIntent(index, resultIndex) == "sinica_chiayidian":
-                    resultDICT = Loki_sinica_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                #if lokiRst.getIntent(index, resultIndex) == "sinica_chiayidian":
+                    #resultDICT = Loki_sinica_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
                 # sinica_chiayidian_punc
-                if lokiRst.getIntent(index, resultIndex) == "sinica_chiayidian_punc":
-                    resultDICT = Loki_sinica_chiayidian_punc.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                #if lokiRst.getIntent(index, resultIndex) == "sinica_chiayidian_punc":
+                    #resultDICT = Loki_sinica_chiayidian_punc.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
                 # extend_chiayidian_adv
                 if lokiRst.getIntent(index, resultIndex) == "extend_chiayidian_adv":
@@ -289,11 +293,14 @@ def testIntent():
 
 if __name__ == "__main__":
     # 測試所有意圖
-    testIntent()
+    #testIntent()
 
-    # 測試其它句子
-    filterLIST = []
-    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
-    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
+    with open("../corpus/sinicaCorpus_Chiayidian_purged.txt", encoding="utf-8") as k:
+        lines = ''.join(k.readlines()).split("\n")
+    #for i in range(len(lines)):
+        #inputSTR = (lines[i])
+        #print("{}:".format(i+1))
+        #runLoki([inputSTR])
+        
+    inputSTR ="差一點被跑步"
+    runLoki([inputSTR])
