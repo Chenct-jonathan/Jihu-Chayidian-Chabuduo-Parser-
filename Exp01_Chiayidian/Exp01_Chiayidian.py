@@ -297,10 +297,10 @@ if __name__ == "__main__":
 
     with open("../corpus/sinicaCorpus_Chiayidian_purged.txt", encoding="utf-8") as k:
         lines = ''.join(k.readlines()).split("\n")
-    #for i in range(len(lines)):
-        #inputSTR = (lines[i])
-        #print("{}:".format(i+1))
-        #runLoki([inputSTR])
+    for i in range(len(lines)):
+        inputSTR = (lines[i])
+        print("{}:".format(i+1))
+        runLoki([inputSTR])
         
-    inputSTR ="差一點被跑步"
-    runLoki([inputSTR])
+    #inputSTR ="差一點被跑步"
+    #runLoki([inputSTR])
