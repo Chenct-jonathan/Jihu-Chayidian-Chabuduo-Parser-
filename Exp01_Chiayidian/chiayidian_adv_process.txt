@@ -11,6 +11,7 @@
 差一點沒把手指頭當菜切了*
 差一點把爸爸心愛的上等酒給打翻了
 差一點昏倒
+<(MODIFIER|ModifierP)>差一點</(MODIFIER|ModifierP)>(<ACTION_verb>[^<]*?</ACTION_verb>)?(<RANGE_period>[^<]*?</RANGE_period>)?<(ACTION_verb|VerbP)>[^<]*?[上下出入了昏倒出來去爆死亡完光掉好]+</(ACTION_verb|VerbP)>
 原來他差一點摔倒了
 又曾經在泳渡深潭時不慎捲入旋渦差一點溺死
 卻真實地讓他以為差一點就跌入了萬丈深淵

@@ -16,6 +16,7 @@
 
 import json
 import os
+import re
 
 from ArticutAPI import Articut
 with open("account.info", "r", encoding="utf-8") as f:
@@ -39,7 +40,7 @@ def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
     spliterDICT["post"] = "".join(inputSTR.split(spliterSTR)[1:2])
     return spliterDICT
 
-def getResult(inputSTR, utterance, args, resultDICT):
+def getResult(inputSTR, utterance, pat, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "否則差一點看不到新中國":
         # write your code here
@@ -51,6 +52,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
     if utterance == "居然只差一點被執行了":
         print(inputSTRSpliter(inputSTR))
+        outputDICT = articut.parse(inputSTR, level="lv2")
+        print(outputDICT['result_pos'])
+        print(pat)
+        print(re.findall(pat,"".join(outputDICT['result_pos'])))
         pass
 
     if utterance == "差一點他那神父爸爸便不能認這個孩子":
@@ -58,7 +63,8 @@ def getResult(inputSTR, utterance, args, resultDICT):
         pass
 
     if utterance == "差一點就沒命了":
-        # write your code here
+        chiyidianPat = re.compile(pat) #get re from webpage
+        #articut.parse()
         pass
 
     if utterance == "差一點把爸爸心愛的上等酒給打翻了":

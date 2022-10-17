@@ -185,7 +185,7 @@ def runLoki(inputLIST, filterLIST=[]):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
                 # sinica_chiyidian_adv
                 if lokiRst.getIntent(index, resultIndex) == "sinica_chiyidian_adv":
-                    resultDICT = Loki_sinica_chiyidian_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_sinica_chiyidian_adv.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getPattern(index, resultIndex), resultDICT)
 
                 # sinica_chiayidian
                 #if lokiRst.getIntent(index, resultIndex) == "sinica_chiayidian":
@@ -295,12 +295,12 @@ if __name__ == "__main__":
     # 測試所有意圖
     #testIntent()
 
-    with open("../corpus/sinicaCorpus_Chiayidian_purged.txt", encoding="utf-8") as k:
-        lines = ''.join(k.readlines()).split("\n")
-    for i in range(len(lines)):
-        inputSTR = (lines[i])
-        print("{}:".format(i+1))
-        runLoki([inputSTR])
+    #with open("../corpus/sinicaCorpus_Chiayidian_purged.txt", encoding="utf-8") as k:
+        #lines = ''.join(k.readlines()).split("\n")
+    #for i in range(len(lines)):
+        #inputSTR = (lines[i])
+        #print("{}:".format(i+1))
+        #runLoki([inputSTR])
         
-    #inputSTR ="差一點被跑步"
-    #runLoki([inputSTR])
+    inputSTR ="我差一點被跑步"
+    runLoki([inputSTR])
