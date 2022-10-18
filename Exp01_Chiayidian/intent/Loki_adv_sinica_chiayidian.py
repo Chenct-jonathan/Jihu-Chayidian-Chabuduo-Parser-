@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-    Loki module for sinica_chiyidian_adv
+    Loki module for adv_sinica_chiayidian
 
     Input:
         inputSTR      str,
@@ -16,14 +16,8 @@
 
 import json
 import os
-import re
 
-from ArticutAPI import Articut
-with open("account.info", "r", encoding="utf-8") as f:
-    accountDICT = json.load(f)
-articut = Articut(username=accountDICT["username"], apikey=accountDICT["apikey"])
-
-DEBUG_sinica_chiyidian_adv = True
+DEBUG_adv_sinica_chiayidian = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
@@ -31,31 +25,17 @@ except:
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
-    if DEBUG_sinica_chiyidian_adv:
-        print("[sinica_chiyidian_adv] {} ===> {}".format(inputSTR, utterance))
+    if DEBUG_adv_sinica_chiayidian:
+        print("[adv_sinica_chiayidian] {} ===> {}".format(inputSTR, utterance))
 
-def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
-    spliterDICT = {}
-    spliterDICT["prior"] = "".join(inputSTR.split(spliterSTR)[:1])
-    spliterDICT["post"] = "".join(inputSTR.split(spliterSTR)[1:2])
-    return spliterDICT
-
-def getResult(inputSTR, utterance, pat, resultDICT):
+def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
+    if utterance == "只差一點沒和那漂亮女人做成一回好事":
+        # write your code here
+        pass
+
     if utterance == "否則差一點看不到新中國":
         # write your code here
-        pass
-
-    if utterance == "她差一點栽在印度芭娜姬的手中":
-        # write your code here
-        pass
-
-    if utterance == "居然只差一點被執行了":
-        print(inputSTRSpliter(inputSTR))
-        outputDICT = articut.parse(inputSTR, level="lv2")
-        print(outputDICT['result_pos'])
-        print(pat)
-        print(re.findall(pat,"".join(outputDICT['result_pos'])))
         pass
 
     if utterance == "差一點他那神父爸爸便不能認這個孩子":
@@ -63,8 +43,11 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         pass
 
     if utterance == "差一點就沒命了":
-        chiyidianPat = re.compile(pat) #get re from webpage
-        #articut.parse()
+        # write your code here
+        pass
+
+    if utterance == "差一點就讓這種傳統工藝走不回來":
+        # write your code here
         pass
 
     if utterance == "差一點把爸爸心愛的上等酒給打翻了":
@@ -75,15 +58,23 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         # write your code here
         pass
 
-    if utterance == "差一點沒到九十分":
+    if utterance == "差一點遭到截肢":
         # write your code here
         pass
 
-    if utterance == "差一點見上面":
+    if utterance == "最後還差一點就當選高雄區的立法委員":
         # write your code here
         pass
 
-    if utterance == "畢業生的一位曾經在美濃溪差一點溺水":
+    if utterance == "爭三連霸的瑞典名將艾柏格則差一點落馬":
+        # write your code here
+        pass
+
+    if utterance == "謝長亨差一點就是中華職棒第一個「選秀狀元」":
+        # write your code here
+        pass
+
+    if utterance == "雖然差一點而沒挑戰成功":
         # write your code here
         pass
 

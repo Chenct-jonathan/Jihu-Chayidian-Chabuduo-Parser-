@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-    Loki module for sinica_chiayidian_punc
+    Loki module for adv_extend_chiayidian
 
     Input:
         inputSTR      str,
@@ -17,7 +17,7 @@
 import json
 import os
 
-DEBUG_sinica_chiayidian_punc = True
+DEBUG_adv_extend_chiayidian = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
@@ -25,12 +25,28 @@ except:
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
-    if DEBUG_sinica_chiayidian_punc:
-        print("[sinica_chiayidian_punc] {} ===> {}".format(inputSTR, utterance))
+    if DEBUG_adv_extend_chiayidian:
+        print("[adv_extend_chiayidian] {} ===> {}".format(inputSTR, utterance))
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[謝長亨][差一點]就是[中華][職棒][第一個]「[選秀狀元]」":
+    if utterance == "差一點站不穩":
+        # write your code here
+        pass
+
+    if utterance == "差一點站不起來":
+        # write your code here
+        pass
+
+    if utterance == "差一點被執行":
+        # write your code here
+        pass
+
+    if utterance == "差一點被抓":
+        # write your code here
+        pass
+
+    if utterance == "差一點跑不動":
         # write your code here
         pass
 
