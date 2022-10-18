@@ -60,6 +60,7 @@
       3. 差一點提前引爆華隆跳票的引信 (*)
       4. 七歲的妹妹差一點被二個壞人強暴
     * ```<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?(<(ACTION_verb|VerbP)>遭到</(ACTION_verb|VerbP)>|<ACTION_lightVerb>[遭被]</ACTION_lightVerb>)```
+      
       1. 差一點遭到截肢
 
 ----
