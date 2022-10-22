@@ -54,11 +54,15 @@ def formMSG(tmpInputSTR, pat):
 def getResult(inputSTR, utterance, pat, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "只差一點沒和那漂亮女人做成一回好事":
-        tmpInputSTR = inputSTRSpliter(inputSTR)
-        tmpPosSTR = formMSG(tmpInputSTR, pat)
-        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(2)
-        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件 (accomplishment) 語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
-        resultDICT["key"] = "結束體(accomplishment)"
+        if "inputSTR" in resultDICT.keys():
+            pass
+        else:
+            tmpInputSTR = inputSTRSpliter(inputSTR)
+            tmpPosSTR = formMSG(tmpInputSTR, pat)
+            resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(2)
+            resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件 (accomplishment) 語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
+            resultDICT["key"] = "結束體(accomplishment)"
+
 
 
     if utterance == "否則差一點看不到新中國":
@@ -71,7 +75,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
     if utterance == "差一點他那神父爸爸便不能認這個孩子":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
-        resultDICT["negation"] = re.search(pat,tmpPosSTR).group(14) 
+        resultDICT["negation"] = re.search(pat,tmpPosSTR).group(14)
         resultDICT["modal"] = re.search(pat,tmpPosSTR).group(16)
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(18)
         print(re.findall(pat,tmpPosSTR ))
@@ -97,7 +101,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]".format(resultDICT["modifier"]+resultDICT["aspect"])
         resultDICT["key"] = "結束體(accomplishment)"
-    
+
     if utterance == "差一點就讓這種傳統工藝走不回來":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
@@ -153,7 +157,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
         resultDICT["key"] = "結束體(accomplishment)"
-        
+
     if utterance == "最後還差一點就當選高雄區的立法委員":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
@@ -161,7 +165,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
         resultDICT["key"] = "結束體(accomplishment)"
-        
+
     if utterance == "爭三連霸的瑞典名將艾柏格則差一點落馬":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
