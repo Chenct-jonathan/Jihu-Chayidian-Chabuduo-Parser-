@@ -55,7 +55,37 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(跑|往跑|屬跑|慢跑|小跑|跑步|跑賽|奔跑|跑等|跑手|到跑)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(動|動性|新動|溜放|動等|動亦|去產|大動|作動|驅動|費功)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>?(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><FUNC_negation>([^<]*?)</FUNC_negation>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><FUNC_negation>([^<]*?)</FUNC_negation>"
+        },
+        "差一點就沒時間了": {
+            "id": "0abd632a-2a6c-4da1-865f-a192c8a4a76f",
+            "pos": "<MODIFIER>差一點</MODIFIER><FUNC_inner>就</FUNC_inner><FUNC_negation>沒</FUNC_negation><ENTITY_noun>時間</ENTITY_noun><ASPECT>了</ASPECT>",
+            "lexy": [],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<FUNC_negation>(沒)</FUNC_negation><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]*?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><ASPECT>([^<]*?)</ASPECT>"
+        },
+        "差一點就使這種傳統工藝走不回來": {
+            "id": "c643dee2-0a97-4409-ab84-a0690760875f",
+            "pos": "<MODIFIER>差一點</MODIFIER><FUNC_inner>就</FUNC_inner><ACTION_lightVerb>使</ACTION_lightVerb><ENTITY_DetPhrase>這種</ENTITY_DetPhrase><ENTITY_nouny>傳統工藝</ENTITY_nouny><ACTION_verb>走不回來</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(走不回來|)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<ACTION_lightVerb>使</ACTION_lightVerb>.+?(?!(?:<ACTION_verb>).)*?(<ACTION_lightVerb>[給被]/ACTION_lightVerb>)?<ACTION_verb>([^<]*?)</ACTION_verb>"
+        },
+        "差一點沒和那漂亮女人看一部電影": {
+            "id": "20f7a88b-9717-4482-8c01-b3534c9077c1",
+            "pos": "<MODIFIER>差一點</MODIFIER><FUNC_negation>沒</FUNC_negation><FUNC_conjunction>和</FUNC_conjunction><FUNC_determiner>那</FUNC_determiner><MODIFIER>漂亮</MODIFIER><ENTITY_noun>女人</ENTITY_noun><ACTION_verb>看</ACTION_verb><ENTITY_classifier>一部</ENTITY_classifier><ENTITY_nouny>電影</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看|探看|收看|看守|看戲|看望|看護|看顧|觀看|光顧|探望)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(?!(?:<ACTION_lightVerb>[把被讓]</ACTION_lightVerb>|<VerbP>|<ACTION_verb>).)+?.+?<ACTION_verb>([^<]*?[^上下出入了昏倒斃出來去爆死亡完光掉好到成走]+)</ACTION_verb><ENTITY_classifier>([^<]*?)</ENTITY_classifier>"
+        },
+        "差一點他那神父爸爸便看到這個孩子": {
+            "id": "0fce468d-2326-4f78-a4e6-19a03e069251",
+            "pos": "<MODIFIER>差一點</MODIFIER><ENTITY_pronoun>他</ENTITY_pronoun><FUNC_determiner>那</FUNC_determiner><ENTITY_nouny>神父</ENTITY_nouny><ENTITY_pronoun>爸爸</ENTITY_pronoun><MODAL>便</MODAL><ACTION_verb>看到</ACTION_verb><ENTITY_DetPhrase>這個</ENTITY_DetPhrase><ENTITY_noun>孩子</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看到|看見|見到|睇見|瞅見|瞧見|感覺到|看見了|聽見|瞥見|看到了)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<ENTITY_pronoun>([^<]+?)</ENTITY_pronoun>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?.+?(?!(?:<(ACTION_verb|VerbP)>).)*?(<FUNC_negation>(不)</FUNC_negation>)?(<MODAL>(能)</MODAL>)?<(ACTION_verb|VerbP)>([^<]+?[上下出入了昏倒到出走來去爆死亡完光掉好成棄]+)</(ACTION_verb|VerbP)>"
         }
     }
 }
