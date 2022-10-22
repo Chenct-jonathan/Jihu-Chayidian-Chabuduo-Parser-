@@ -38,67 +38,97 @@ def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
     resultLIST = inputSTR.split(spliterSTR)[:2]
     return resultLIST
 
+def formMSG(tmpInputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json", pat):
+    parseSTR = ''.join(articut.parse(tmpInputR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+    resultDICT["Verb"] = re.search(patat, parseSTR).group(5)
+    return resultDICT
+
 def getResult(inputSTR, utterance, pat, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "只差一點沒和那漂亮女人做成一回好事":
-        pass
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        print(formMSG(tmpInputSTR,userDefinedDictFILE = "./intent/USER_DEFINED.json",lokiPat = pat))
+
 
     if utterance == "否則差一點看不到新中國":
-        # write your code here
-        pass
-
-    if utterance == "差一點他那神父爸爸便不能認這個孩子":
-        # write your code here
-        pass
-
-    if utterance == "差一點就沒命了":
-        # write your code here
-        pass
-
-    if utterance == "差一點就讓這種傳統工藝走不回來":
-        # write your code here
-        pass
-
-    if utterance == "差一點把爸爸心愛的上等酒給打翻了":
-        # write your code here
-        pass
-
-    if utterance == "差一點提前引爆華隆跳票的引信":
-        # write your code here
-        pass
-
-    if utterance == "差一點昏倒":#2,5
         resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
         resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
         parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        print(parseSTR)
+        resultDICT["Parsed inputSTR"] = parseSTR
+
+    if utterance == "差一點他那神父爸爸便不能認這個孩子":
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
+
+    if utterance == "差一點就沒命了":
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
+
+    if utterance == "差一點就讓這種傳統工藝走不回來":
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
+
+    if utterance == "差一點把爸爸心愛的上等酒給打翻了":
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
+    if utterance == "差一點提前引爆華隆跳票的引信":
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
+
+    if utterance == "差一點昏倒":#2,5
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        print(formMSG(tmpInputSTR = tmpInputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json",pat))
 
     if utterance == "差一點沒把手指頭當菜切了":
-        # write your code here
-        pass
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
 
     if utterance == "差一點遭到截肢":
-        # write your code here
-        pass
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
 
     if utterance == "差一點陰溝裡翻船":
-        # write your code here
-        pass
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
 
     if utterance == "最後還差一點就當選高雄區的立法委員":
-        # write your code here
-        pass
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
 
     if utterance == "爭三連霸的瑞典名將艾柏格則差一點落馬":
-        # write your code here
-        pass
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
 
     if utterance == "謝長亨差一點就是中華職棒第一個「選秀狀元」":
-        # write your code here
-        pass
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
 
     if utterance == "雖然差一點而沒挑戰成功":
-        # write your code here
-        pass
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        resultDICT["Parsed inputSTR"] = parseSTR
 
     return resultDICT

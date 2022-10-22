@@ -183,15 +183,15 @@ def runLoki(inputLIST, filterLIST=[]):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
                 # adv_sinica_chiayidian
                 if lokiRst.getIntent(index, resultIndex) == "adv_sinica_chiayidian":
-                    resultDICT = Loki_adv_sinica_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_adv_sinica_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getPattern(index, resultIndex), resultDICT)
 
                 # ad_hoc_chayidian
                 if lokiRst.getIntent(index, resultIndex) == "ad_hoc_chayidian":
-                    resultDICT = Loki_ad_hoc_chayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_ad_hoc_chayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getPattern(index, resultIndex), resultDICT)
 
                 # adv_extend_chiayidian
                 if lokiRst.getIntent(index, resultIndex) == "adv_extend_chiayidian":
-                    resultDICT = Loki_adv_extend_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_adv_extend_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getPattern(index, resultIndex), resultDICT)
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}

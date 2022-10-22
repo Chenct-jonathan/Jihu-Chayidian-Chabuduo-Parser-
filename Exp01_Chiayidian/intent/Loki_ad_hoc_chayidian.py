@@ -37,18 +37,18 @@ def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "即使差一點":
         resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
-        pass
+        
 
     if utterance == "若是評估質素差一點的":
         resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
-        pass
+        
 
     if utterance == "這些胎生的小苗萬一在第一次落下運氣差一點":
         resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
-        pass
+        
 
     if utterance == "還差一點旅行社才開門辦公":
         resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
-        pass
+        
 
     return resultDICT
