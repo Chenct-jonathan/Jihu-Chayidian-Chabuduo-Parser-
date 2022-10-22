@@ -21,6 +21,7 @@ from ArticutAPI import Articut
 
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
+userDefinedDictFILE = "./intent/USER_DEFINED.json"
 
 DEBUG_adv_sinica_chiayidian = True
 try:
@@ -35,13 +36,21 @@ def debugInfo(inputSTR, utterance):
 
 def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
     resultLIST = [None, None]
-    resultLIST = inputSTR.split(spliterSTR)[:2]
-    return resultLIST
+    tmpInputSTR = inputSTR.split(spliterSTR)[-1]
+    return "差一點"+tmpInputSTR
 
-def formMSG(tmpInputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json", pat):
-    parseSTR = ''.join(articut.parse(tmpInputR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-    resultDICT["Verb"] = re.search(patat, parseSTR).group(5)
-    return resultDICT
+def formMSG(tmpInputSTR, pat):
+    '''
+    input: 我差一點跌倒ㄟ
+    output : <MODIFIER>差一點</MODIFIER><ACTION_verb>跌倒</ACTION_verb><ENTITY_nouny>ㄟ</ENTITY_nouny>
+    把 inputSTR 轉成 Articut 結果
+    '''
+    tmpresultDICT = articut.parse(tmpInputSTR, userDefinedDictFILE)
+    if tmpresultDICT["status"] == True:
+        posSTR = ''.join(tmpresultDICT["result_pos"])
+        return posSTR
+    else:
+        raise Exception("Invalid Articut result:{}".format(resultDICT["message"]))
 
 def getResult(inputSTR, utterance, pat, resultDICT):
     debugInfo(inputSTR, utterance)
@@ -87,7 +96,8 @@ def getResult(inputSTR, utterance, pat, resultDICT):
 
     if utterance == "差一點昏倒":#2,5
         tmpInputSTR = inputSTRSpliter(inputSTR)
-        print(formMSG(tmpInputSTR = tmpInputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json",pat))
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["First Verb"] = re.search(pat,tmpPosSTR).group(5)
 
     if utterance == "差一點沒把手指頭當菜切了":
         resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
