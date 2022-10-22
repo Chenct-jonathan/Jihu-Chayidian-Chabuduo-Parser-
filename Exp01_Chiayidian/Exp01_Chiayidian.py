@@ -286,8 +286,8 @@ if __name__ == "__main__":
         #inputSTR = (lines[i])
         #print("{}:".format(i+1))
     #runLoki([inputSTR], filterLIST = [adv_sinica_chayidian, adv_extend_chayidian,])
-    inputSTR = "差一點就使這種傳統工藝走不回來"
-    resultDICT = runLoki([inputSTR])
+    inputSTR = "謝長亨差一點就是中華職棒第一個「選秀狀元」"
+    resultDICT = runLoki([inputSTR])#,filter = ["ad_hoc_chayidian"])
     print("說明：")
     if "reason" in resultDICT.keys():
         print("\t{}".format(resultDICT["reason"]))
