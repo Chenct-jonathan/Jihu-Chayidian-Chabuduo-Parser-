@@ -16,6 +16,11 @@
 
 import json
 import os
+import re
+from ArticutAPI import Articut
+
+accountDICT = json.load(open("account.info",encoding="utf-8"))
+articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
 
 DEBUG_adv_sinica_chiayidian = True
 try:
@@ -28,10 +33,14 @@ def debugInfo(inputSTR, utterance):
     if DEBUG_adv_sinica_chiayidian:
         print("[adv_sinica_chiayidian] {} ===> {}".format(inputSTR, utterance))
 
-def getResult(inputSTR, utterance, args, resultDICT):
+def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
+    resultLIST = [None, None]
+    resultLIST = inputSTR.split(spliterSTR)[:2]
+    return resultLIST
+
+def getResult(inputSTR, utterance, pat, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "只差一點沒和那漂亮女人做成一回好事":
-        # write your code here
         pass
 
     if utterance == "否則差一點看不到新中國":
@@ -54,11 +63,25 @@ def getResult(inputSTR, utterance, args, resultDICT):
         # write your code here
         pass
 
-    if utterance == "差一點昏倒":
+    if utterance == "差一點提前引爆華隆跳票的引信":
+        # write your code here
+        pass
+
+    if utterance == "差一點昏倒":#2,5
+        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
+        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
+        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
+        print(parseSTR)
+
+    if utterance == "差一點沒把手指頭當菜切了":
         # write your code here
         pass
 
     if utterance == "差一點遭到截肢":
+        # write your code here
+        pass
+
+    if utterance == "差一點陰溝裡翻船":
         # write your code here
         pass
 

@@ -45,19 +45,21 @@
 from requests import post
 from requests import codes
 import math
-import re
 import json
+import re
 try:
-    from intent import Loki_adv_extend_chiayidian
     from intent import Loki_adv_sinica_chiayidian
+    from intent import Loki_ad_hoc_chayidian
+    from intent import Loki_adv_extend_chiayidian
 except:
-    from .intent import Loki_adv_extend_chiayidian
     from .intent import Loki_adv_sinica_chiayidian
+    from .intent import Loki_ad_hoc_chayidian
+    from .intent import Loki_adv_extend_chiayidian
 
 
 with open("account.info", "r", encoding="utf-8") as f:
     accountDICT = json.load(f)
-        
+            
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 USERNAME = accountDICT["username"]
 LOKI_KEY = accountDICT["lokikey"]
@@ -179,13 +181,17 @@ def runLoki(inputLIST, filterLIST=[]):
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # adv_extend_chiayidian
-                if lokiRst.getIntent(index, resultIndex) == "adv_extend_chiayidian":
-                    resultDICT = Loki_adv_extend_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
                 # adv_sinica_chiayidian
                 if lokiRst.getIntent(index, resultIndex) == "adv_sinica_chiayidian":
                     resultDICT = Loki_adv_sinica_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # ad_hoc_chayidian
+                if lokiRst.getIntent(index, resultIndex) == "ad_hoc_chayidian":
+                    resultDICT = Loki_ad_hoc_chayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # adv_extend_chiayidian
+                if lokiRst.getIntent(index, resultIndex) == "adv_extend_chiayidian":
+                    resultDICT = Loki_adv_extend_chiayidian.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
@@ -254,33 +260,32 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # adv_extend_chiayidian
-    print("[TEST] adv_extend_chiayidian")
-    inputLIST = ['差一點被抓','差一點站不穩','差一點被執行','差一點跑不動','差一點站不起來']
-    testLoki(inputLIST, ['adv_extend_chiayidian'])
-    print("")
-
     # adv_sinica_chiayidian
     print("[TEST] adv_sinica_chiayidian")
-    inputLIST = ['差一點昏倒','差一點就沒命了','差一點遭到截肢','否則差一點看不到新中國','雖然差一點而沒挑戰成功','差一點就讓這種傳統工藝走不回來','差一點把爸爸心愛的上等酒給打翻了','只差一點沒和那漂亮女人做成一回好事','差一點他那神父爸爸便不能認這個孩子','最後還差一點就當選高雄區的立法委員','爭三連霸的瑞典名將艾柏格則差一點落馬','謝長亨差一點就是中華職棒第一個「選秀狀元」']
+    inputLIST = ['差一點昏倒','差一點就沒命了','差一點遭到截肢','差一點陰溝裡翻船','否則差一點看不到新中國','雖然差一點而沒挑戰成功','差一點沒把手指頭當菜切了','差一點提前引爆華隆跳票的引信','差一點就讓這種傳統工藝走不回來','差一點把爸爸心愛的上等酒給打翻了','只差一點沒和那漂亮女人做成一回好事','差一點他那神父爸爸便不能認這個孩子','最後還差一點就當選高雄區的立法委員','爭三連霸的瑞典名將艾柏格則差一點落馬','謝長亨差一點就是中華職棒第一個「選秀狀元」']
     testLoki(inputLIST, ['adv_sinica_chiayidian'])
+    print("")
+
+    # ad_hoc_chayidian
+    print("[TEST] ad_hoc_chayidian")
+    inputLIST = ['即使差一點','若是評估質素差一點的','還差一點旅行社才開門辦公','這些胎生的小苗萬一在第一次落下運氣差一點']
+    testLoki(inputLIST, ['ad_hoc_chayidian'])
+    print("")
+
+    # adv_extend_chiayidian
+    print("[TEST] adv_extend_chiayidian")
+    inputLIST = ['差一點站不穩','差一點跑不動']
+    testLoki(inputLIST, ['adv_extend_chiayidian'])
     print("")
 
 
 if __name__ == "__main__":
-    # 測試所有意圖
-    #testIntent()
-
-    # 測試其它句子
-    #filterLIST = []
-    #splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
-    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]
+    #with open("test_data.txt", encoding="utf-8") as k:
+        #lines = ''.join(k.readlines()).split("\n")
+    #for i in range(len(lines)):
+        #inputSTR = (lines[i])
+        #print("{}:".format(i+1))
+    #runLoki([inputSTR], filterLIST = [adv_sinica_chayidian, adv_extend_chayidian,])
+    inputSTR = "我差一點跌倒ㄟ"
+    runLoki([inputSTR])
     
-    with open("../corpus/sinicaCorpus_Chiayidian_purged.txt", encoding="utf-8") as k:
-        lines = ''.join(k.readlines()).split("\n")
-    for i in range(len(lines)):
-        inputSTR = (lines[i])
-        print("{}:".format(i+1))
-        runLoki([inputSTR])    

@@ -40,14 +40,6 @@
         ]
     },
     "utterance": {
-        "差一點被抓": {
-            "id": "3002cc8f-303b-4069-bbe0-103d9563a230",
-            "pos": "<MODIFIER>差一點</MODIFIER><ACTION_lightVerb>被</ACTION_lightVerb><ACTION_verb>抓</ACTION_verb>",
-            "lexy": [
-                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抓|抓包|抓姦|抓賊|懂得|捉住|捉姦|捉拿|捕拿|捕捉|捕撈)</(ACTION_verb|VerbP)>"
-            ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<ACTION_lightVerb>被</ACTION_lightVerb><(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)>"
-        },
         "差一點站不穩": {
             "id": "4dffb6ee-52c8-46e7-afb7-47f15eb6c0f3",
             "pos": "<MODIFIER>差一點</MODIFIER><ACTION_verb>站</ACTION_verb><MODIFIER>不穩</MODIFIER>",
@@ -55,14 +47,6 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(站|站間|站側|站亦|站共|站到|站出|原站|站約|站口|總站)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><MODIFIER>(不[^<]*?)</MODIFIER>"
-        },
-        "差一點被執行": {
-            "id": "b2ae98aa-052c-41e3-83c6-43fe95891e87",
-            "pos": "<MODIFIER>差一點</MODIFIER><ACTION_lightVerb>被</ACTION_lightVerb><ACTION_verb>執行</ACTION_verb>",
-            "lexy": [
-                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(執行|執法|實行|履行|施用|進行|執行了|辦理|行使|制定|實施)</(ACTION_verb|VerbP)>"
-            ],
-            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?((<ACTION_lightVerb>(被|遭)</ACTION_lightVerb>)|(<ACTION_verb>遭到</ACTION_verb>))<(ACTION_verb|VerbP)>([^落溺]+[^上下出入了昏倒出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>"
         },
         "差一點跑不動": {
             "id": "567dcf48-74aa-4a09-be1f-f3f6c4bae627",
@@ -72,14 +56,6 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(動|動性|新動|溜放|動等|動亦|去產|大動|作動|驅動|費功)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>?(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><FUNC_negation>([^<]*?)</FUNC_negation>"
-        },
-        "差一點站不起來": {
-            "id": "4e290961-3bbf-4387-8b03-51408d94f16f",
-            "pos": "<MODIFIER>差一點</MODIFIER><ACTION_verb>站不起來</ACTION_verb>",
-            "lexy": [
-                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(站不起來|發飆了|站不住|癢到|搞定了|發飆|搞定)</(ACTION_verb|VerbP)>"
-            ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?不[^<]*?)</(ACTION_verb|VerbP)>"
         }
     }
 }

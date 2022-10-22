@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-    Loki module for adv_extend_chiayidian
+    Loki module for ad_hoc_chayidian
 
     Input:
         inputSTR      str,
@@ -22,8 +22,7 @@ from ArticutAPI import Articut
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
 
-
-DEBUG_adv_extend_chiayidian = True
+DEBUG_ad_hoc_chayidian = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
@@ -31,17 +30,25 @@ except:
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
-    if DEBUG_adv_extend_chiayidian:
-        print("[adv_extend_chiayidian] {} ===> {}".format(inputSTR, utterance))
+    if DEBUG_ad_hoc_chayidian:
+        print("[ad_hoc_chayidian] {} ===> {}".format(inputSTR, utterance))
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "差一點站不穩":
-        # write your code here
+    if utterance == "即使差一點":
+        resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
         pass
 
-    if utterance == "差一點跑不動":
-        # write your code here
+    if utterance == "若是評估質素差一點的":
+        resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
+        pass
+
+    if utterance == "這些胎生的小苗萬一在第一次落下運氣差一點":
+        resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
+        pass
+
+    if utterance == "還差一點旅行社才開門辦公":
+        resultDICT["msg"] = "這個 [差一點] 不是討論範圍內的差一點。"
         pass
 
     return resultDICT
