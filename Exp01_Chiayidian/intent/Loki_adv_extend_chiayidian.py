@@ -73,21 +73,26 @@ def getResult(inputSTR, utterance, pat, resultDICT):
     if utterance == "差一點沒和那漂亮女人看一部電影":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
-        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(1) 
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(1)
         resultDICT["classifier"] = re.search(pat,tmpPosSTR).group(2)
         resultDICT["FirstVerbP"] = re.search(pat,tmpPosSTR).group(1)+ re.search(pat,tmpPosSTR).group(2)
         #print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一活動體事件 (activity) 語意，但其後的 [{}] 可使 [{}] 變成結束貌(achievement)，故可使用 [差一點]。".format(resultDICT["FirstVerb"],resultDICT["classifier"],resultDICT["FirstVerbP"])
         resultDICT["key"] = "結束貌(achievement)"
-        
+
     if utterance == "差一點他那神父爸爸便看到這個孩子":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
+<<<<<<< HEAD
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(17) 
         #print(re.findall(pat,tmpPosSTR ))
+=======
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(17)
+        print(re.findall(pat,tmpPosSTR ))
+>>>>>>> 96f266935fb9c415250fc3feaf1f165cb79bdf74
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件(accomplishment)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
         resultDICT["key"] = "結束體(accomplishment)"
-        
+
     if utterance == "差一點就沒時間了":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
@@ -97,8 +102,12 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         #print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]。".format(resultDICT["negation"]+resultDICT["nouny"]+resultDICT["aspect"])
         resultDICT["key"] = "完成貌 (perfective)"
-        
+
     if utterance == "差一點就使這種傳統工藝走不回來":
+        if "inputSTR" in resultDICT.keys():
+            pass
+        else:
+            resultDICT["inputSTR"] = inputSTR
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         #print(re.findall(pat,tmpPosSTR ))
