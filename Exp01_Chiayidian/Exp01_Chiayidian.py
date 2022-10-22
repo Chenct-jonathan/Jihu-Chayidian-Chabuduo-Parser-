@@ -286,6 +286,13 @@ if __name__ == "__main__":
         #inputSTR = (lines[i])
         #print("{}:".format(i+1))
     #runLoki([inputSTR], filterLIST = [adv_sinica_chayidian, adv_extend_chayidian,])
-    inputSTR = "我差一點跌倒ㄟ"
-    runLoki([inputSTR])
-    
+    inputSTR = "差一點就使這種傳統工藝走不回來"
+    resultDICT = runLoki([inputSTR])
+    print("說明：")
+    if "reason" in resultDICT.keys():
+        print("\t{}".format(resultDICT["reason"]))
+        print("\t註：{}帶有一終點。".format(resultDICT["key"]))
+    else:
+        print("根據 sinica corpus 平衡與料庫，此語句似乎不能和 [差一點] 連用")
+        print("若與您的語感判斷結果不相符，請聯繫 chenjonathan901210@gmail.com")
+        print(resultDICT)

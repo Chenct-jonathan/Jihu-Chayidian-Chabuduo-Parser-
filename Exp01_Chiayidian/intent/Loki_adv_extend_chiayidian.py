@@ -21,6 +21,7 @@ from ArticutAPI import Articut
 
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
+userDefinedDictFILE = "./intent/USER_DEFINED.json"
 
 
 DEBUG_adv_extend_chiayidian = True
@@ -34,14 +35,74 @@ def debugInfo(inputSTR, utterance):
     if DEBUG_adv_extend_chiayidian:
         print("[adv_extend_chiayidian] {} ===> {}".format(inputSTR, utterance))
 
-def getResult(inputSTR, utterance, args, resultDICT):
+def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
+    tmpInputSTR = inputSTR.split(spliterSTR)[-1]
+    return "差一點"+tmpInputSTR
+
+def formMSG(tmpInputSTR, pat):
+    '''
+    input: 我差一點跌倒ㄟ
+    output : <MODIFIER>差一點</MODIFIER><ACTION_verb>跌倒</ACTION_verb><ENTITY_nouny>ㄟ</ENTITY_nouny>
+    把 inputSTR 轉成 Articut 結果
+    '''
+    tmpresultDICT = articut.parse(tmpInputSTR, userDefinedDictFILE=userDefinedDictFILE)
+    if tmpresultDICT["status"] == True:
+        posSTR = ''.join(tmpresultDICT["result_pos"])
+        return posSTR
+    else:
+        raise Exception("Invalid Articut result:{}".format(resultDICT["message"]))
+
+def getResult(inputSTR, utterance, pat, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "差一點站不穩":
-        # write your code here
-        pass
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(3)+re.search(pat,tmpPosSTR).group(5)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     if utterance == "差一點跑不動":
-        # write your code here
-        pass
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
+
+    if utterance == "差一點沒和那漂亮女人看一部電影":
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(1) 
+        resultDICT["classifier"] = re.search(pat,tmpPosSTR).group(2)
+        resultDICT["FirstVerbP"] = re.search(pat,tmpPosSTR).group(1)+ re.search(pat,tmpPosSTR).group(2)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一活動體事件 (activity) 語意，但其後的 [{}] 可使 [{}] 變成結束貌(achievement)，故可使用 [差一點]。".format(resultDICT["FirstVerb"],resultDICT["classifier"],resultDICT["FirstVerbP"])
+        resultDICT["key"] = "結束貌(achievement)"
+        
+    if utterance == "差一點他那神父爸爸便看到這個孩子":
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(17) 
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件(accomplishment)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
+        
+    if utterance == "差一點就沒時間了":
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["negation"] = re.search(pat,tmpPosSTR).group(2)#待更改
+        resultDICT["nouny"] = re.search(pat,tmpPosSTR).group(5)
+        resultDICT["aspect"] = re.search(pat,tmpPosSTR).group(8)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]。".format(resultDICT["negation"]+resultDICT["nouny"]+resultDICT["aspect"])
+        resultDICT["key"] = "完成貌 (perfective)"
+        
+    if utterance == "差一點就使這種傳統工藝走不回來":
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的子句 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]。".format("使"+tmpInputSTR.split("使")[1])
+        resultDICT["key"] = "完成貌 (perfective)"
 
     return resultDICT

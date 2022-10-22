@@ -22,7 +22,7 @@ from ArticutAPI import Articut
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
 
-DEBUG_ad_hoc_chayidian = True
+DEBUG_ad_hoc_chayidian = False
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:

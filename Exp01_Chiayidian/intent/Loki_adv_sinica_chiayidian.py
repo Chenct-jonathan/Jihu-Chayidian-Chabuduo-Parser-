@@ -35,7 +35,6 @@ def debugInfo(inputSTR, utterance):
         print("[adv_sinica_chiayidian] {} ===> {}".format(inputSTR, utterance))
 
 def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
-    resultLIST = [None, None]
     tmpInputSTR = inputSTR.split(spliterSTR)[-1]
     return "差一點"+tmpInputSTR
 
@@ -45,7 +44,7 @@ def formMSG(tmpInputSTR, pat):
     output : <MODIFIER>差一點</MODIFIER><ACTION_verb>跌倒</ACTION_verb><ENTITY_nouny>ㄟ</ENTITY_nouny>
     把 inputSTR 轉成 Articut 結果
     '''
-    tmpresultDICT = articut.parse(tmpInputSTR, userDefinedDictFILE)
+    tmpresultDICT = articut.parse(tmpInputSTR, userDefinedDictFILE=userDefinedDictFILE)
     if tmpresultDICT["status"] == True:
         posSTR = ''.join(tmpresultDICT["result_pos"])
         return posSTR
@@ -56,89 +55,135 @@ def getResult(inputSTR, utterance, pat, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "只差一點沒和那漂亮女人做成一回好事":
         tmpInputSTR = inputSTRSpliter(inputSTR)
-        print(formMSG(tmpInputSTR,userDefinedDictFILE = "./intent/USER_DEFINED.json",lokiPat = pat))
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(2)
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件 (accomplishment) 語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
 
     if utterance == "否則差一點看不到新中國":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 符合 [V 不到] 詞彙結構，為一結束體事件(accomplishment)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     if utterance == "差一點他那神父爸爸便不能認這個孩子":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["negation"] = re.search(pat,tmpPosSTR).group(14) 
+        resultDICT["modal"] = re.search(pat,tmpPosSTR).group(16)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(18)
+        print(re.findall(pat,tmpPosSTR ))
+        if resultDICT["negation"] != None:
+            if resultDICT["modal"] != None:
+                resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 前有否定詞 [{}]，故 [{}] 為一經驗貌事件(experiencial)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"],resultDICT["negation"]+resultDICT["modal"], resultDICT["negation"]+resultDICT["modal"]+resultDICT["FirstVerb"])
+                resultDICT["key"] = "經驗貌(experiencial)"
+            else:
+                resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 前有否定詞 [{}]，故 [{}] 為一經驗貌事件(experiencial)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"],resultDICT["negation"], resultDICT["negation"]+resultDICT["FirstVerb"])
+                resultDICT["key"] = "經驗貌(experiencial)"
+        else:
+            if resultDICT["modal"] != None:
+                resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 前有 modality [{}]，故 [{}] 為一經驗貌事件(experiencial)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"],resultDICT["modal"], resultDICT["modal"]+resultDICT["FirstVerb"])
+                resultDICT["key"] = "經驗貌(experiencial)"
+            else:
+                pass
 
     if utterance == "差一點就沒命了":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
-
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["modifier"] = re.search(pat,tmpPosSTR).group(5)#待更改
+        resultDICT["aspect"] = re.search(pat,tmpPosSTR).group(7)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]".format(resultDICT["modifier"]+resultDICT["aspect"])
+        resultDICT["key"] = "結束體(accomplishment)"
+    
     if utterance == "差一點就讓這種傳統工藝走不回來":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的子句 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]。".format("讓"+tmpInputSTR.split("讓")[1])
+        resultDICT["key"] = "完成貌 (perfective)"
 
     if utterance == "差一點把爸爸心愛的上等酒給打翻了":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
-    if utterance == "差一點提前引爆華隆跳票的引信":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(7)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的 [把...] 字句 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]".format("把"+tmpInputSTR.split("把")[1])
+        resultDICT["key"] = "完成貌 (perfective)"
 
-    if utterance == "差一點昏倒":#2,5
+    if utterance == "差一點提前引爆華隆跳票的引信":
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(2)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
+
+    if utterance == "差一點昏倒":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         resultDICT["First Verb"] = re.search(pat,tmpPosSTR).group(5)
+        resultDICT["reason"] = "因為 [差一點] 後面的第一個動詞 [{}] 為達成體(achievement)語意，故可使用 [差一點]。 ".format(resultDICT["First Verb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     if utterance == "差一點沒把手指頭當菜切了":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        print(re.findall(pat,tmpPosSTR))
+        resultDICT["First Verb"] = re.search(pat,tmpPosSTR).group(12)
+        resultDICT["reason"] = "因為 [差一點] 後面的第一個動詞 [{}] 為結束體(accomplishment)語意，故可使用 [差一點]。 ".format(resultDICT["First Verb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     if utterance == "差一點遭到截肢":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(6)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     if utterance == "差一點陰溝裡翻船":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
-
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        print(tmpPosSTR)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(7)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
+        
     if utterance == "最後還差一點就當選高雄區的立法委員":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
-
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
+        
     if utterance == "爭三連霸的瑞典名將艾柏格則差一點落馬":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     if utterance == "謝長亨差一點就是中華職棒第一個「選秀狀元」":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(1)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     if utterance == "雖然差一點而沒挑戰成功":
-        resultDICT["priorSTR"] = inputSTRSpliter(inputSTR)[0]
-        resultDICT["postSTR"] = inputSTRSpliter(inputSTR)[1]
-        parseSTR = ''.join(articut.parse(inputSTR, userDefinedDictFILE = "./intent/USER_DEFINED.json")['result_pos'])
-        resultDICT["Parsed inputSTR"] = parseSTR
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束事件 (accomplishment) 語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
+        resultDICT["key"] = "結束體(accomplishment)"
 
     return resultDICT
