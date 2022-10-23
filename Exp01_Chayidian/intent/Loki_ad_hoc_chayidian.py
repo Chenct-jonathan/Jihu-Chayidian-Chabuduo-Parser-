@@ -22,7 +22,7 @@ from ArticutAPI import Articut
 accountDICT = json.load(open("account.info",encoding="utf-8"))
 articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
 
-DEBUG_ad_hoc_chayidian = False
+DEBUG_ad_hoc_chayidian = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
@@ -36,19 +36,19 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "即使差一點":
-        resultDICT["reason"] = "這個 [差一點] 不是討論範圍內的差一點。"
+        resultDICT["reason"] = "這個 [差一點] 指的是 worse 而非 approximative 的 [差一點]，不在討論範圍內。"
         
 
     if utterance == "若是評估質素差一點的":
-        resultDICT["reason"] = "這個 [差一點] 不是討論範圍內的差一點。"
+        resultDICT["reason"] = "這個 [差一點] 指的是 worse 而非 approximative 的 [差一點]，不在討論範圍內。"
         
 
     if utterance == "這些胎生的小苗萬一在第一次落下運氣差一點":
-        resultDICT["reason"] = "這個 [差一點] 不是討論範圍內的差一點。"
+        resultDICT["reason"] = "這個 [差一點] 指的是 worse 而非 approximative 的 [差一點]，不在討論範圍內。"
         
 
-    if utterance == "還差一點旅行社才開門辦公":
-        resultDICT["reason"] = "這個 [差一點] 不是討論範圍內的差一點。"
+    if utterance == "還差一點旅行社才開門辦公":#差一點所指意義待確認
+        resultDICT["reason"] = "這個 [差一點] 指的是 less than 而非 approximative 的 [差一點]，不在討論範圍內。"
         
 
     return resultDICT

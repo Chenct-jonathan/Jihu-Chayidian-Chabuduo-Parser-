@@ -106,8 +106,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         #print(re.findall(pat,tmpPosSTR ))
-        resultDICT["reason"] = "[差一點] 後的子句 [{}] 為一完成貌事件(perfective)語意，故可使用 [差一點]。".format("使"+tmpInputSTR.split("使")[1])
-        resultDICT["key"] = "完成貌 (perfective)"
+        resultDICT["reason"] = "[差一點] 後的子句 [{}] 為一完成貌事件(perfective)語意，故可使用 [差一點]。".format("使"+"".join(tmpInputSTR.split("使")[1:]))
         
     if utterance == "差一點被截肢":
         tmpInputSTR = inputSTRSpliter(inputSTR)

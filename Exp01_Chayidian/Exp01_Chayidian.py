@@ -281,13 +281,41 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    #with open("test_data.txt", encoding="utf-8") as k:
-        #lines = ''.join(k.readlines()).split("\n")
-    #for i in range(len(lines)):
-        #inputSTR = (lines[i])
-        #print("{}:".format(i+1))
-    #runLoki([inputSTR], filterLIST = [adv_sinica_chayidian, adv_extend_chayidian,])
-    inputSTR = "差一點就讓這種傳統工藝走不回來"
+    inputSTR = ""
+    if inputSTR == "":
+        with open("test_data.txt", encoding="utf-8") as k:
+            lines = ''.join(k.readlines()).split("\n")[31:]
+            for i in range(len(lines)):
+                inputSTR = lines[i]
+                print("{}:".format(i+32))
+                resultDICT = runLoki([inputSTR])#,filter = ["ad_hoc_chayidian"])
+                print("說明：")
+                if "reason" in resultDICT.keys():
+                    print("\t{}".format(resultDICT["reason"]))
+                    if "key" in resultDICT.keys():
+                        print("\t註：{}帶有一終點。".format(resultDICT["key"]))
+                    else:
+                        pass
+                else:
+                    print("根據 sinica corpus 平衡與料庫，此語句似乎不能和 [差一點] 連用")
+                    print("若與您的語感判斷結果不相符，請聯繫 chenjonathan901210@gmail.com")
+                    print(resultDICT)
+    else:
+        resultDICT = runLoki([inputSTR])#,filter = ["ad_hoc_chayidian"])
+        print("說明：")
+        if "reason" in resultDICT.keys():
+            print("\t{}".format(resultDICT["reason"]))
+            if "key" in resultDICT.keys():
+                print("\t註：{}帶有一終點。".format(resultDICT["key"]))
+            else:
+                pass
+        else:
+            print("根據 sinica corpus 平衡與料庫，此語句似乎不能和 [差一點] 連用")
+            print("若與您的語感判斷結果不相符，請聯繫 chenjonathan901210@gmail.com")
+            print(resultDICT)
+    '''
+    
+    inputSTR = "差一點吃掉了"
     resultDICT = runLoki([inputSTR])#,filter = ["ad_hoc_chayidian"])
     print("說明：")
     if "reason" in resultDICT.keys():
@@ -299,4 +327,6 @@ if __name__ == "__main__":
     else:
         print("根據 sinica corpus 平衡與料庫，此語句似乎不能和 [差一點] 連用")
         print("若與您的語感判斷結果不相符，請聯繫 chenjonathan901210@gmail.com")
-        print(resultDICT)
+        print(resultDICT)    
+        
+    '''
