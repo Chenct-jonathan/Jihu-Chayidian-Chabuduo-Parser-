@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-    Loki module for adv_extend_chiayidian
+    Loki module for adv_extend_chayidian
 
     Input:
         inputSTR      str,
@@ -24,7 +24,7 @@ articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
 userDefinedDictFILE = "./intent/USER_DEFINED.json"
 
 
-DEBUG_adv_extend_chiayidian = True
+DEBUG_adv_extend_chayidian = True
 try:
     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
 except:
@@ -32,8 +32,8 @@ except:
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
-    if DEBUG_adv_extend_chiayidian:
-        print("[adv_extend_chiayidian] {} ===> {}".format(inputSTR, utterance))
+    if DEBUG_adv_extend_chayidian:
+        print("[adv_extend_chayidian] {} ===> {}".format(inputSTR, utterance))
 
 def inputSTRSpliter(inputSTR, spliterSTR="差一點"):
     tmpInputSTR = inputSTR.split(spliterSTR)[-1]
@@ -83,13 +83,8 @@ def getResult(inputSTR, utterance, pat, resultDICT):
     if utterance == "差一點他那神父爸爸便看到這個孩子":
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
-<<<<<<< HEAD
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(17) 
         #print(re.findall(pat,tmpPosSTR ))
-=======
-        resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(17)
-        print(re.findall(pat,tmpPosSTR ))
->>>>>>> 96f266935fb9c415250fc3feaf1f165cb79bdf74
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件(accomplishment)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
         resultDICT["key"] = "結束體(accomplishment)"
 
@@ -100,7 +95,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         resultDICT["nouny"] = re.search(pat,tmpPosSTR).group(5)
         resultDICT["aspect"] = re.search(pat,tmpPosSTR).group(8)
         #print(re.findall(pat,tmpPosSTR ))
-        resultDICT["reason"] = "[差一點] 後的 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]。".format(resultDICT["negation"]+resultDICT["nouny"]+resultDICT["aspect"])
+        resultDICT["reason"] = "[差一點] 後的 [{}] 為一完成貌事件(perfective)語意，故可使用 [差一點]。".format(resultDICT["negation"]+resultDICT["nouny"]+resultDICT["aspect"])
         resultDICT["key"] = "完成貌 (perfective)"
 
     if utterance == "差一點就使這種傳統工藝走不回來":
@@ -111,7 +106,15 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         #print(re.findall(pat,tmpPosSTR ))
-        resultDICT["reason"] = "[差一點] 後的子句 [{}] 為一完成貌事件 (perfective) 語意，故可使用 [差一點]。".format("使"+tmpInputSTR.split("使")[1])
+        resultDICT["reason"] = "[差一點] 後的子句 [{}] 為一完成貌事件(perfective)語意，故可使用 [差一點]。".format("使"+tmpInputSTR.split("使")[1])
         resultDICT["key"] = "完成貌 (perfective)"
+        
+    if utterance == "差一點被截肢":
+        tmpInputSTR = inputSTRSpliter(inputSTR)
+        tmpPosSTR = formMSG(tmpInputSTR, pat)
+        resultDICT["passive"] = re.search(pat,tmpPosSTR).group(4)
+        print(re.findall(pat,tmpPosSTR ))
+        resultDICT["reason"] = "[差一點] 後的被動式子句 [{}] 為一完成貌事件 (perfective)語意，故可使用 [差一點]。".format(resultDICT["passive"]+tmpInputSTR.split(resultDICT["passive"])[1])
+        resultDICT["key"] = "完成貌(perfective)"
 
     return resultDICT

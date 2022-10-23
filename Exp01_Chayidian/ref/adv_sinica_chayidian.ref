@@ -60,7 +60,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(遭到|遭到了|遭受|受到|受到了|招致|遭致|遭遇|遭受了|受盡|遭遇了)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(<(ACTION_verb|VerbP)>(遭到)</(ACTION_verb|VerbP)>|<ACTION_lightVerb>([遭被])</ACTION_lightVerb>)"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([遭撞碰遇]{1,2}到)</(ACTION_verb|VerbP)>"
         },
         "差一點陰溝裡翻船": {
             "id": "c3fb29ae-e751-4ed1-b919-9dc4207bc6d8",
@@ -82,7 +82,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(挑戰|考驗|叩關|突破|問鼎|對決|攀登|衛冕|討教|爭霸|探索)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(?!(?:<ACTION_lightVerb>[把被讓]</ACTION_lightVerb>|<VerbP>|<ACTION_verb>|<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>).)+?.+?<(ACTION_verb|VerbP)>([^落溺]+[^上下出入了昏倒到出走來去爆死亡完光掉好成棄]+)</(ACTION_verb|VerbP)>.+?(?!(?:<(ACTION_verb|VerbP)>).)*?"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(?!(?:<ACTION_lightVerb>[把被讓]</ACTION_lightVerb>|<VerbP>|<ACTION_verb>|<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>).)+?.+?<(ACTION_verb|VerbP)>([^落溺]*?[^上下出入了昏倒到出走來去爆死亡完光掉好成棄]+?)</(ACTION_verb|VerbP)><MODIFIER>([^<]*?)</MODIFIER>"
         },
         "差一點沒把手指頭當菜切了": {
             "id": "10d26085-11e4-4b0a-bcb5-48918e1656ae",
@@ -152,7 +152,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(後還|)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(當選|連任|當選了|勝選|落選|獲選|參選|就任|獲任|增選|續任)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^落溺]+[^上下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<落溺]+[^<上下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>"
         },
         "爭三連霸的瑞典名將艾柏格則差一點落馬": {
             "id": "2c576347-ebe1-4394-ac03-1d6f980cc854",

@@ -48,6 +48,12 @@
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><MODIFIER>(不[^<]*?)</MODIFIER>"
         },
+        "差一點被截肢": {
+            "id": "a11cf686-25aa-4a3c-bd98-4e6c33a932a8",
+            "pos": "<MODIFIER>差一點</MODIFIER><ACTION_lightVerb>被</ACTION_lightVerb><ENTITY_nouny>截肢</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<ACTION_lightVerb>([遭被])</ACTION_lightVerb>"
+        },
         "差一點跑不動": {
             "id": "567dcf48-74aa-4a09-be1f-f3f6c4bae627",
             "pos": "<MODIFIER>差一點</MODIFIER><ACTION_verb>跑</ACTION_verb><FUNC_negation>不</FUNC_negation><ACTION_verb>動</ACTION_verb>",
