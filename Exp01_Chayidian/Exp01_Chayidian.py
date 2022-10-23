@@ -284,10 +284,10 @@ if __name__ == "__main__":
     inputSTR = ""
     if inputSTR == "":
         with open("test_data.txt", encoding="utf-8") as k:
-            lines = ''.join(k.readlines()).split("\n")[31:]
+            lines = ''.join(k.readlines()).split("\n")
             for i in range(len(lines)):
                 inputSTR = lines[i]
-                print("{}:".format(i+32))
+                print("{}:".format(i+1))
                 resultDICT = runLoki([inputSTR])#,filter = ["ad_hoc_chayidian"])
                 print("說明：")
                 if "reason" in resultDICT.keys():

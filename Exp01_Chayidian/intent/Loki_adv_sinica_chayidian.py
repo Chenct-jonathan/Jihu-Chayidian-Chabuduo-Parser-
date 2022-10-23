@@ -173,7 +173,6 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         else:
             pass
         #print(re.findall(pat,tmpPosSTR ))
-        
 
     if utterance == "最後還差一點就當選高雄區的立法委員":
         tmpInputSTR = inputSTRSpliter(inputSTR)
@@ -221,6 +220,9 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(6)
         print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一經驗貌事件(experiential)語意，故可使用 [差一點]".format(resultDICT["FirstVerb"])
-        resultDICT["key"] = "經驗貌(experiential)"        
+        resultDICT["key"] = "經驗貌(experiential)"
+        
+    if utterance == "差一點沒到九十分":
+        resultDICT["reason"] = "目前我還沒確定這邊是因為數字還是沒到"
 
     return resultDICT
