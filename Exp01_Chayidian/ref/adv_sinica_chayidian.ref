@@ -46,7 +46,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(昏倒|嚇昏|昏厥|暈倒|摔倒|滑倒|病倒|吐血|癱軟|暈厥|摔車)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^不<]*?[上下出入了昏倒斃出來去爆死亡完光掉好到成走]+)</(ACTION_verb|VerbP)>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(<ACTION_verb>([^<不]*?[上下入倒斃出爆死亡完光掉好到成走出來]+)</ACTION_verb>|<VerbP>([^不<]*?[了昏]+)</VerbP>)(<ASPECT>(了)</ASPECT>)?"
         },
         "差一點就沒命了": {
             "id": "2db1f26f-6461-45a1-8a8f-eecb31f38548",
@@ -61,6 +61,14 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(遭到|遭到了|遭受|受到|受到了|招致|遭致|遭遇|遭受了|受盡|遭遇了)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([遭撞碰遇]{1,2}到)</(ACTION_verb|VerbP)>"
+        },
+        "差一點沒到九十分": {
+            "id": "b7213fd9-3caf-45e0-961e-611469e10ed4",
+            "pos": "<MODIFIER>差一點</MODIFIER><FUNC_negation>沒</FUNC_negation><ACTION_verb>到</ACTION_verb><TIME_justtime>九十分</TIME_justtime>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(到|到了|到約|到受|到離|到包|到經過|到回|到隨|到死|到愛)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<FUNC_negation>[^<]*?</FUNC_negation><(ACTION_verb|VerbP)>到</(ACTION_verb|VerbP)>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}"
         },
         "差一點陰溝裡翻船": {
             "id": "c3fb29ae-e751-4ed1-b919-9dc4207bc6d8",
@@ -111,6 +119,15 @@
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><RANGE_(locality|period)>([^<]*?)</RANGE_(locality|period)>"
         },
+        "三個年輕人差一點就要去大鬧天宮": {
+            "id": "51239cee-a860-4af6-b4a6-6116b585dba7",
+            "pos": "<ENTITY_classifier>三個</ENTITY_classifier><ENTITY_noun>年輕人</ENTITY_noun><MODIFIER>差一點</MODIFIER><FUNC_inner>就</FUNC_inner><ACTION_verb>要去</ACTION_verb><ACTION_verb>大鬧</ACTION_verb><ENTITY_noun>天宮</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(要去|想去|跑去|去|去了|跑來|想來|回去|得去|硬要|忙著)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(大鬧|巧遇|誤闖|搗亂|衝進|碰見|潛入了|誤入|鬧|閒逛|溜進)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(<FUNC_negation>沒</FUNC_negation>)?<(ACTION_verb|VerbP)>([^<不起出]*?[來去始行])</(ACTION_verb|VerbP)>"
+        },
         "差一點就讓這種傳統工藝走不回來": {
             "id": "d98937f1-956b-4cb6-a67f-ce28967e07be",
             "pos": "<MODIFIER>差一點</MODIFIER><FUNC_inner>就</FUNC_inner><ACTION_verb>讓</ACTION_verb><ENTITY_DetPhrase>這種</ENTITY_DetPhrase><ENTITY_nouny>傳統工藝</ENTITY_nouny><ACTION_verb>走不回來</ACTION_verb>",
@@ -152,7 +169,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(後還|)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(當選|連任|當選了|勝選|落選|獲選|參選|就任|獲任|增選|續任)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<落溺]+[^<上下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<溺落不]*[^<不上溺落下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>"
         },
         "爭三連霸的瑞典名將艾柏格則差一點落馬": {
             "id": "2c576347-ebe1-4394-ac03-1d6f980cc854",
