@@ -61,7 +61,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(跑|往跑|屬跑|慢跑|小跑|跑步|跑賽|奔跑|跑等|跑手|到跑)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(動|動性|新動|溜放|動等|動亦|去產|大動|作動|驅動|費功)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><FUNC_negation>([^<]*?)</FUNC_negation>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><FUNC_negation>([^<]*?)</FUNC_negation><ACTION_verb>([^<]*?)</ACTION_verb>"
         },
         "差一點就沒時間了": {
             "id": "0abd632a-2a6c-4da1-865f-a192c8a4a76f",
@@ -92,6 +92,15 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看到|看見|見到|睇見|瞅見|瞧見|感覺到|看見了|聽見|瞥見|看到了)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<ENTITY_pronoun>([^<]+?)</ENTITY_pronoun>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?.+?(?!(?:<(ACTION_verb|VerbP)>).)*?(<FUNC_negation>(不)</FUNC_negation>)?(<MODAL>(能)</MODAL>)?<(ACTION_verb|VerbP)>([^<]+?[上下出入了昏倒到出走來去爆死亡完光掉好成棄]+)</(ACTION_verb|VerbP)>"
+        },
+        "差一點將爸爸心愛的上等酒給打翻了": {
+            "id": "f1fef8f1-972a-4c79-9e68-b308b4fc62b6",
+            "pos": "<MODIFIER>差一點</MODIFIER><MODAL>將</MODAL><ENTITY_pronoun>爸爸</ENTITY_pronoun><MODIFIER>心愛</MODIFIER><FUNC_inner>的</FUNC_inner><ENTITY_nouny>上等酒</ENTITY_nouny><ACTION_verb>給</ACTION_verb><ACTION_lightVerb>打</ACTION_lightVerb><VerbP>翻了</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(給|供給|帶給|提供|發放|資助|給對|予|給阿|留給|給老)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(翻了|成長了|翻漲|跌了|漲了|瘦了|上升了|增長了|上漲了|掉了|下降了)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<MODAL>將</MODAL>.+?(?!(?:<ACTION_verb>).)*?(<(ACTION_verb|VerbP)>給</(ACTION_verb|VerbP)>)?(<ACTION_lightVerb>[^給被]/ACTION_lightVerb>)?<(ACTION_verb|VerbP)>([^<]*?[上下出入了昏倒斃出來去爆死亡完光掉好到成走]+)</(ACTION_verb|VerbP)>"
         }
     }
 }

@@ -46,7 +46,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(昏倒|嚇昏|昏厥|暈倒|摔倒|滑倒|病倒|吐血|癱軟|暈厥|摔車)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(<ACTION_verb>([^<不]*?[上下入倒斃出爆死亡完光掉好到成走出來]+)</ACTION_verb>|<VerbP>([^不<]*?[了昏]+)</VerbP>)(<ASPECT>(了)</ASPECT>)?"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(<ACTION_verb>([^<不遭]*?[上下入倒斃出爆死亡完光掉好到成走出來]+)</ACTION_verb>|<VerbP>([^不<]*?[了昏]+)</VerbP>)(<ASPECT>(了)</ASPECT>)?"
         },
         "差一點就沒命了": {
             "id": "2db1f26f-6461-45a1-8a8f-eecb31f38548",
@@ -68,7 +68,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(到|到了|到約|到受|到離|到包|到經過|到回|到隨|到死|到愛)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<FUNC_negation>[^<]*?</FUNC_negation><(ACTION_verb|VerbP)>到</(ACTION_verb|VerbP)>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_negation>[^<]*?</FUNC_negation>)?<(ACTION_verb|VerbP)>到</(ACTION_verb|VerbP)>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}"
         },
         "差一點陰溝裡翻船": {
             "id": "c3fb29ae-e751-4ed1-b919-9dc4207bc6d8",
@@ -152,7 +152,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(做成|製成|作成|做出來|拼成|製做|切成|編織成|磨成|捲成|包住)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(?!(?:<ACTION_lightVerb>[把被讓使]</ACTION_lightVerb>|<VerbP>|<ACTION_verb>).)+?.+?<(ACTION_verb|VerbP)>([^<]*?[上下出入了昏倒斃出來去爆死亡完光掉好成走]+)</(ACTION_verb|VerbP)>(?!<ASPECT>)"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(?:(?!<ACTION_lightVerb>[把被讓使]</ACTION_lightVerb>|<VerbP>|<ACTION_verb>).)*?<(ACTION_verb|VerbP)>([^<]*?[上下出入了昏倒斃出來去爆死亡完光掉好成走]+)</(ACTION_verb|VerbP)>(?!<ASPECT>)"
         },
         "差一點他那神父爸爸便不能認這個孩子": {
             "id": "2d5b2d2e-7d5d-4c9d-af43-ff530355ee90",
@@ -169,7 +169,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(後還|)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(當選|連任|當選了|勝選|落選|獲選|參選|就任|獲任|增選|續任)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<溺落不]*[^<不上溺落下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<溺落不]*[^<不上溺落下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>(?!<MODIFIER>不)"
         },
         "爭三連霸的瑞典名將艾柏格則差一點落馬": {
             "id": "2c576347-ebe1-4394-ac03-1d6f980cc854",
