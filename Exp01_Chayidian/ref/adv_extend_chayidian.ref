@@ -40,6 +40,12 @@
         ]
     },
     "utterance": {
+        "差一點沒命": {
+            "id": "6581ec7c-1b03-426c-9520-dc9c6085af47",
+            "pos": "<MODIFIER>差一點</MODIFIER><MODIFIER>沒命</MODIFIER>",
+            "lexy": [],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(MODIFIER|ModifierP)>([沒]+?[^<]+?)</(MODIFIER|ModifierP)>"
+        },
         "差一點站不穩": {
             "id": "4dffb6ee-52c8-46e7-afb7-47f15eb6c0f3",
             "pos": "<MODIFIER>差一點</MODIFIER><ACTION_verb>站</ACTION_verb><MODIFIER>不穩</MODIFIER>",
@@ -62,6 +68,22 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(動|動性|新動|溜放|動等|動亦|去產|大動|作動|驅動|費功)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)><FUNC_negation>([^<]*?)</FUNC_negation><ACTION_verb>([^<]*?)</ACTION_verb>"
+        },
+        "他差一點天天玩": {
+            "id": "9ed8fb3d-c96c-4b45-9914-c453ca1c0437",
+            "pos": "<ENTITY_pronoun>他</ENTITY_pronoun><MODIFIER>差一點</MODIFIER><TIME_day>天天</TIME_day><ACTION_verb>玩</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(玩|玩忽|玩狎|玩著|買東西|玩耍|玩水|玩樂|逛|散步|遊玩)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?(<TIME_(holiday|justtime|day|week|month|season|year|decade)>([^<]*?)</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)>"
+        },
+        "我差一點沒趕上": {
+            "id": "155d6127-c857-46fa-8b40-1f01d7f368e5",
+            "pos": "<ENTITY_pronoun>我</ENTITY_pronoun><MODIFIER>差一點</MODIFIER><FUNC_negation>沒</FUNC_negation><ACTION_verb>趕</ACTION_verb><RANGE_locality>上</RANGE_locality>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(趕|趕上|趕到|趕工|趕忙|趕赴|趕路|追趕|促求|促請|催促)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<FUNC_negation>([沒有])</FUNC_negation><(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)>"
         },
         "差一點就沒時間了": {
             "id": "0abd632a-2a6c-4da1-865f-a192c8a4a76f",

@@ -44,7 +44,7 @@
             "id": "0d851f6a-fa76-4a52-a4e1-e9394cfe7f46",
             "pos": "<FUNC_inter>即使</FUNC_inter><MODIFIER>差一點</MODIFIER>",
             "lexy": [],
-            "pattern": "<MODIFIER>差一點</MODIFIER>$"
+            "pattern": "<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)><MODIFIER>差一點</MODIFIER>$"
         },
         "若是評估質素差一點的": {
             "id": "6313434a-86b9-4365-84e2-cbfa8e7ea912",
@@ -62,6 +62,14 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(辦公|辦事|辦案|勞動|工作|賣笑|運轉|郵電|候機|煩王|唱經)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<FUNC_in(ner|ter)>還</FUNC_in(ner|ter)><MODIFIER>差一點</MODIFIER>.+?(?!(?:<ACTION_verb>).)*?<MODAL>才</MODAL><(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>"
+        },
+        "照片內容也和原先想的大概差一點": {
+            "id": "4ca785b2-fbe0-480f-99cf-324b386512c2",
+            "pos": "<ENTITY_oov>照片內容</ENTITY_oov><MODIFIER>也</MODIFIER><FUNC_conjunction>和</FUNC_conjunction><MODIFIER>原先</MODIFIER><ACTION_verb>想</ACTION_verb><FUNC_inner>的</FUNC_inner><MODIFIER>大概</MODIFIER><MODIFIER>差一點</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(想|假想|冥想|回想|想像|想出|想到|想念|想拿|想望|想要)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)><MODIFIER>差一點</MODIFIER>$"
         },
         "這些胎生的小苗萬一在第一次落下運氣差一點": {
             "id": "4f2d6061-3aab-4865-90f0-2e428de1315a",
