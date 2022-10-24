@@ -50,5 +50,8 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "還差一點旅行社才開門辦公":#差一點所指意義待確認
         resultDICT["reason"] = "這個 [差一點] 指的是 less than 而非 approximative 的 [差一點]，不在討論範圍內。"
         
+        
+    if utterance == "照片內容也和原先想的大概差一點":
+        resultDICT["reason"] = "這個 [差一點] 指的是 less than 而非 approximative 的 [差一點]，不在討論範圍內。"
 
     return resultDICT

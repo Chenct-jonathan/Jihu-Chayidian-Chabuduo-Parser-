@@ -59,8 +59,12 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         else:
             tmpInputSTR = inputSTRSpliter(inputSTR)
             tmpPosSTR = formMSG(tmpInputSTR, pat)
-            #print(re.findall(pat,tmpPosSTR))
+            print(re.findall(pat,tmpPosSTR))
             resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(2)
+            if resultDICT["FirstVerb"] == None:
+                resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
+            else:
+                resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(2)
             resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件(accomplishment)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
             resultDICT["key"] = "結束體(accomplishment)"
 
