@@ -58,7 +58,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(3)+re.search(pat,tmpPosSTR).group(5)
-        print(re.findall(pat,tmpPosSTR ))
+        #print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 符合 [{}] 詞彙結構，為一結束體事件(accomplishment)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"],"V "+resultDICT["FirstVerb"][1:])
         resultDICT["key"] = "結束體(accomplishment)"
 
@@ -66,7 +66,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(3) + re.search(pat,tmpPosSTR).group(5) + re.search(pat,tmpPosSTR).group(6)
-        print(re.findall(pat,tmpPosSTR ))
+        #print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 符合 [{}] 詞彙結構，為一結束體事件(accomplishment)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"],"V "+resultDICT["FirstVerb"][1:])
         resultDICT["key"] = "結束體(accomplishment)"
 
@@ -112,7 +112,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         resultDICT["passive"] = re.search(pat,tmpPosSTR).group(4)
-        print(re.findall(pat,tmpPosSTR ))
+        #print(re.findall(pat,tmpPosSTR ))
         resultDICT["reason"] = "[差一點] 後的被動式子句 [{}] 為一完成貌事件(perfective)語意，故可使用 [差一點]。".format(resultDICT["passive"]+tmpInputSTR.split(resultDICT["passive"])[1])
         resultDICT["key"] = "完成貌(perfective)"
         

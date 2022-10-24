@@ -281,7 +281,7 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    inputSTR = "最後還差一點就當選高雄區的立法委員"
+    inputSTR = ""
     if inputSTR == "":
         with open("test_data.txt", encoding="utf-8") as k:
             lines = ''.join(k.readlines()).split("\n")
