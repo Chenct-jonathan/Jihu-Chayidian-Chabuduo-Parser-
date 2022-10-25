@@ -44,7 +44,13 @@
             "id": "6581ec7c-1b03-426c-9520-dc9c6085af47",
             "pos": "<MODIFIER>差一點</MODIFIER><MODIFIER>沒命</MODIFIER>",
             "lexy": [],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(MODIFIER|ModifierP)>([沒]+?[^<]+?)</(MODIFIER|ModifierP)>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(MODIFIER|ModifierP)>([沒]+?[^<把]+?)</(MODIFIER|ModifierP)>(?!<ASPECT>)"
+        },
+        "差一點笑死": {
+            "id": "455758ea-d62a-4391-9db4-e511c8f305fb",
+            "pos": "<MODIFIER>差一點</MODIFIER><DegreeP>笑死</DegreeP>",
+            "lexy": [],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<DegreeP>([^<]*?死)</DegreeP>"
         },
         "差一點站不穩": {
             "id": "4dffb6ee-52c8-46e7-afb7-47f15eb6c0f3",
@@ -77,19 +83,55 @@
             ],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?(<TIME_(holiday|justtime|day|week|month|season|year|decade)>([^<]*?)</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)>"
         },
+        "差一點氣得吐血": {
+            "id": "5d5affa1-e4ee-4f5c-9ad3-f46f7e1cd4db",
+            "pos": "<MODIFIER>差一點</MODIFIER><ENTITY_nounHead>氣</ENTITY_nounHead><ACTION_verb>得吐</ACTION_verb><ENTITY_nouny>血</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(得吐|大採|扮跑|見習元|勒殺)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?(<FUNC_negation>沒</FUNC_negation>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(氣)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>(得[^<]*?)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]*?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "我差一點二十歲": {
+            "id": "71387ddb-ad99-46dd-beb3-98cff0847734",
+            "pos": "<ENTITY_pronoun>我</ENTITY_pronoun><ENTITY_nouny>差</ENTITY_nouny><TIME_justtime>一點</TIME_justtime><TIME_justtime>二十</TIME_justtime><ENTITY_noun>歲</ENTITY_noun>",
+            "lexy": [],
+            "pattern": "(<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?差</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>一點</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?(<FUNC_negation>沒</FUNC_negation>)?(<TIME_(holiday|justtime|day|week|month|season|year|decade)>([^<]*?)</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]*?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
         "我差一點沒趕上": {
             "id": "155d6127-c857-46fa-8b40-1f01d7f368e5",
             "pos": "<ENTITY_pronoun>我</ENTITY_pronoun><MODIFIER>差一點</MODIFIER><FUNC_negation>沒</FUNC_negation><ACTION_verb>趕</ACTION_verb><RANGE_locality>上</RANGE_locality>",
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(趕|趕上|趕到|趕工|趕忙|趕赴|趕路|追趕|促求|促請|催促)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<FUNC_negation>([沒有])</FUNC_negation><(ACTION_verb|VerbP)>([^<]*?)</(ACTION_verb|VerbP)>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<FUNC_negation>([沒有])</FUNC_negation>(?!(?:<ACTION_lightVerb>).)*?<(ACTION_verb|VerbP)>([^<讓到]*?)</(ACTION_verb|VerbP)><RANGE_locality>([^<]*?)</RANGE_locality>"
         },
         "差一點就沒時間了": {
             "id": "0abd632a-2a6c-4da1-865f-a192c8a4a76f",
             "pos": "<MODIFIER>差一點</MODIFIER><FUNC_inner>就</FUNC_inner><FUNC_negation>沒</FUNC_negation><ENTITY_noun>時間</ENTITY_noun><ASPECT>了</ASPECT>",
             "lexy": [],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<FUNC_negation>(沒)</FUNC_negation><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]*?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><ASPECT>([^<]*?)</ASPECT>"
+        },
+        "差一點沒氣得吐血": {
+            "id": "c1762f62-8985-4f54-bfbb-d1913749bd21",
+            "pos": "<MODIFIER>差一點</MODIFIER><MODIFIER>沒氣</MODIFIER><ACTION_verb>得吐</ACTION_verb><ENTITY_nouny>血</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(得吐|大採|扮跑|見習元|勒殺)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(MODIFIER|ModifierP)>沒(氣)</(MODIFIER|ModifierP)><(ACTION_verb|VerbP)>(得[^<]*?)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]*?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "小明的身高差一點有一米八五": {
+            "id": "3ed9abbb-eaba-45df-b623-5bb94c42bcb9",
+            "pos": "<ENTITY_nouny>小明</ENTITY_nouny><FUNC_inner>的</FUNC_inner><ENTITY_nouny>身高</ENTITY_nouny><MODIFIER>差一點</MODIFIER><ACTION_verb>有</ACTION_verb><ENTITY_measurement>一米</ENTITY_measurement><ENTITY_num>八五</ENTITY_num>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?(<FUNC_negation>[^<]*?</FUNC_negation>)?<(ACTION_verb|VerbP)>([有到])</(ACTION_verb|VerbP)><ENTITY_measurement>([^<]*?)</ENTITY_measurement>(<ENTITY_num>([^<]*?)</ENTITY_num>)"
+        },
+        "小明的身高差一點沒有一米八五": {
+            "id": "1d5ab144-db42-4287-ae65-9f50c0e9ec12",
+            "pos": "<ENTITY_nouny>小明</ENTITY_nouny><FUNC_inner>的</FUNC_inner><ENTITY_nouny>身高</ENTITY_nouny><MODIFIER>差一點</MODIFIER><FUNC_negation>沒有</FUNC_negation><ENTITY_measurement>一米</ENTITY_measurement><ENTITY_num>八五</ENTITY_num>",
+            "lexy": [],
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<FUNC_negation>([沒有]+?)</FUNC_negation><ENTITY_measurement>([^<]*?)</ENTITY_measurement>(<ENTITY_num>([^<]*?)</ENTITY_num>)?"
         },
         "差一點就使這種傳統工藝走不回來": {
             "id": "c643dee2-0a97-4409-ab84-a0690760875f",

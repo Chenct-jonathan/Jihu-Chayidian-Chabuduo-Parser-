@@ -20,7 +20,7 @@ import re
 from ArticutAPI import Articut
 
 accountDICT = json.load(open("account.info",encoding="utf-8"))
-articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"])
+articut = Articut(username=accountDICT["username"],apikey=accountDICT["apikey"], version="v258")
 
 DEBUG_ad_hoc_chayidian = True
 try:

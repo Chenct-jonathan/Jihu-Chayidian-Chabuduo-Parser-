@@ -68,13 +68,22 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(到|到了|到約|到受|到離|到包|到經過|到回|到隨|到死|到愛)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_negation>[^<]*?</FUNC_negation>)?<(ACTION_verb|VerbP)>到</(ACTION_verb|VerbP)>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_negation>[^<]*?</FUNC_negation>)?<(ACTION_verb|VerbP)>(到)</(ACTION_verb|VerbP)>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>([^<]*?)</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}"
         },
         "差一點陰溝裡翻船": {
             "id": "c3fb29ae-e751-4ed1-b919-9dc4207bc6d8",
             "pos": "<MODIFIER>差一點</MODIFIER><UserDefined>陰溝裡翻船</UserDefined>",
             "lexy": [],
             "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]*?)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<IDIOM>[^<]*?</IDIOM>)"
+        },
+        "我差一點認不出她來": {
+            "id": "6893ad9e-ab32-4359-b87c-b5f0c8d44e09",
+            "pos": "<ENTITY_pronoun>我</ENTITY_pronoun><MODIFIER>差一點</MODIFIER><ACTION_verb>認</ACTION_verb><FUNC_negation>不</FUNC_negation><ENTITY_nouny>出</ENTITY_nouny><ENTITY_pronoun>她</ENTITY_pronoun><ACTION_verb>來</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(認|認出|認得|認識|辨認出|了解|懂得|掌握|明知|曉得|深知)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(來|上來|下來|來到|前來|回來|進來|學來|性來|出來|來第)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差一點</MODIFIER><(ACTION_verb|VerbP)>(認)</(ACTION_verb|VerbP)><FUNC_negation>([^<]*?)</FUNC_negation><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(出)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)?<(ACTION_verb|VerbP)>來</(ACTION_verb|VerbP)>"
         },
         "否則差一點看不到新中國": {
             "id": "f44295bb-35f2-4444-9464-a7679ebb1b7e",
@@ -99,7 +108,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(當|據當|供當|指當|令當|收酒|幫當|當水|佔當)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(切了|捲成|夾著|切成|佩戴著|鑲嵌了|放置著|插了|捏成|鑲著|擺了)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(MODIFIER|ModifierP)>沒把</(MODIFIER|ModifierP)>.+?(?!(?:<ACTION_verb>).)*?(<(ACTION_verb|VerbP)>(給)</(ACTION_verb|VerbP)>)?(<ACTION_lightVerb>[^給被]/ACTION_lightVerb>)?<(ACTION_verb|VerbP)>([^<]*?[上下出入了昏倒斃出來去爆死亡完光掉好到成走]+)</(ACTION_verb|VerbP)>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(MODIFIER|ModifierP)>沒(把)</(MODIFIER|ModifierP)>.+?(?!(?:<ACTION_verb>).)*?(<(ACTION_verb|VerbP)>(給)</(ACTION_verb|VerbP)>)?(<ACTION_lightVerb>[^給被]/ACTION_lightVerb>)?<(ACTION_verb|VerbP)>([^<]*?[上下出入了昏倒斃出來去爆死亡完光掉好到成走]+)</(ACTION_verb|VerbP)>"
         },
         "她差一點栽在印度芭娜姬的手中": {
             "id": "10aef23e-4dae-4f5a-bebe-9f2226b32130",
@@ -135,7 +144,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(讓|禮讓|讓位|讓步|避讓|任聽|任隨|屈服|拋開|放出|放過)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(走不回來|)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?<(ACTION_verb|VerbP)>讓</(ACTION_verb|VerbP)>.+?(?!(?:<ACTION_verb>).)*?(<ACTION_lightVerb>[給被]/ACTION_lightVerb>)?<ACTION_verb>([^<]*?)</ACTION_verb>"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>就</FUNC_inner>|<MODAL>便</MODAL>)?(<FUNC_negation>沒</FUNC_negation>)?<(ACTION_verb|VerbP)>讓</(ACTION_verb|VerbP)>.+?(?!(?:<ACTION_verb>).)*?(<ACTION_lightVerb>[給被]/ACTION_lightVerb>)?<ACTION_verb>([^<]*?)</ACTION_verb>"
         },
         "差一點把爸爸心愛的上等酒給打翻了": {
             "id": "64075a6e-5b8d-4ba5-8cb8-775d45eff3c1",
@@ -169,7 +178,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(後還|)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(當選|連任|當選了|勝選|落選|獲選|參選|就任|獲任|增選|續任)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<溺落不]*[^<不上溺落下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>(?!<MODIFIER>不)"
+            "pattern": "<MODIFIER>差一點</MODIFIER>(<FUNC_inner>(就)</FUNC_inner>|<MODAL>(便)</MODAL>)?<(ACTION_verb|VerbP)>([^<溺落不]*?[^<不上溺落下出入了昏倒到出來去爆死亡完光掉好成]+)</(ACTION_verb|VerbP)>(?!<MODIFIER>不|<ENTITY_measurement>)"
         },
         "爭三連霸的瑞典名將艾柏格則差一點落馬": {
             "id": "2c576347-ebe1-4394-ac03-1d6f980cc854",

@@ -283,7 +283,7 @@ def testIntent():
 if __name__ == "__main__":
     inputSTR = ""
     if inputSTR == "":
-        with open("shu_data.txt", encoding="utf-8") as k:
+        with open("test_data.txt", encoding="utf-8") as k:
             lines = ''.join(k.readlines()).split("\n")
             for i in range(len(lines)):
                 inputSTR = lines[i]
