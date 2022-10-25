@@ -131,11 +131,10 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 為一結束體事件(accomplishment)語意，故可使用 [差一點]".format(resultDICT["FirstVerb"]+resultDICT["range"])
         resultDICT["key"] = "結束體(accomplishment)"
 
-    if utterance == "差一點昏倒":
-        tmpInputSTR = inputSTRSpliter(inputSTR)
+    if utterance == "差一點昏倒": # 只有符合此 pattern 的句子會進此 code block 處理
+        tmpInputSTR = inputSTRSpliter(inputSTR) # 只取 input 字串中從 [差一點] 開始的字
         tmpPosSTR = formMSG(tmpInputSTR, pat)
-        #print(re.findall(pat,tmpPosSTR))
-        if re.search(pat,tmpPosSTR).group(5) == None:
+        if re.search(pat,tmpPosSTR).group(5) == None:# 以位置為依據找尋第一個動詞
             resultDICT["First Verb"] = re.search(pat,tmpPosSTR).group(6)
             if re.search(pat,tmpPosSTR).group(8) == None:
                 pass
@@ -153,10 +152,10 @@ def getResult(inputSTR, utterance, pat, resultDICT):
     if utterance == "差一點沒把手指頭當菜切了":#差一點把手指頭當菜切了
         tmpInputSTR = inputSTRSpliter(inputSTR)
         tmpPosSTR = formMSG(tmpInputSTR, pat)
-        #print(re.findall(pat,tmpPosSTR))
-        resultDICT["First Verb"] = re.search(pat,tmpPosSTR).group(12)
-        resultDICT["reason"] = "因為 [差一點] 後面的第一個動詞 [{}] 為完成貌事件(perfective)語意，故可使用 [差一點]。 ".format(resultDICT["First Verb"])
-        resultDICT["key"] = "完成貌(perfective)"
+        print(re.findall(pat,tmpPosSTR))
+        #resultDICT["First Verb"] = re.search(pat,tmpPosSTR).group(12)
+        #resultDICT["reason"] = "因為 [差一點] 後面的第一個動詞 [{}] 為完成貌事件(perfective)語意，故可使用 [差一點]。 ".format(resultDICT["First Verb"])
+        #resultDICT["key"] = "完成貌(perfective)"
 
     if utterance == "差一點遭到截肢":
         tmpInputSTR = inputSTRSpliter(inputSTR)
