@@ -281,7 +281,7 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    inputSTR = ""
+    inputSTR = "差一點跌倒"
     if inputSTR == "":
         with open("test_data.txt", encoding="utf-8") as k:
             lines = ''.join(k.readlines()).split("\n")

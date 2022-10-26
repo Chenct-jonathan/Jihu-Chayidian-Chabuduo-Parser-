@@ -12,7 +12,7 @@
 
     Output:
         resultDICT    dict
-"""
+"""ㄋ
 
 import json
 import os
