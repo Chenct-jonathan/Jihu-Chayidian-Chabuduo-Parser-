@@ -36,22 +36,22 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "即使差一點":
-        resultDICT["reason"] = "這個 [差一點] 指的是 worse 而非 approximative 的 [差一點]，不在討論範圍內。"
+        resultDICT["reason"] = "這個 [差一點] 是 predicate(worse) 而非 approximative adverb 的 [差一點]，不在討論範圍內。"
         
 
     if utterance == "若是評估質素差一點的":
-        resultDICT["reason"] = "這個 [差一點] 指的是 worse 而非 approximative 的 [差一點]，不在討論範圍內。"
+        resultDICT["reason"] = "這個 [差一點] 是 predicate(worse) 而非 approximative adverb 的 [差一點]，不在討論範圍內。"
         
 
     if utterance == "這些胎生的小苗萬一在第一次落下運氣差一點":
-        resultDICT["reason"] = "這個 [差一點] 指的是 worse 而非 approximative 的 [差一點]，不在討論範圍內。"
+        resultDICT["reason"] = "這個 [差一點] 是 predicate(worse) 而非 approximative adverb 的 [差一點]，不在討論範圍內。"
         
 
     if utterance == "還差一點旅行社才開門辦公":#差一點所指意義待確認
-        resultDICT["reason"] = "這個 [差一點] 指的是 less than 而非 approximative 的 [差一點]，不在討論範圍內。"
+        resultDICT["reason"] = "這個 [差一點] 是 predicate(less than) 而非 approximative adverb 的 [差一點]，不在討論範圍內。"
         
         
     if utterance == "照片內容也和原先想的大概差一點":
-        resultDICT["reason"] = "這個 [差一點] 指的是 less than 而非 approximative 的 [差一點]，不在討論範圍內。"
+        resultDICT["reason"] = "這個 [差一點] 是 predicate (less than) 而非 approximative adverb 的 [差一點]，不在討論範圍內。"
 
     return resultDICT
