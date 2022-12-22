@@ -58,7 +58,6 @@ with open("account.info", "r", encoding="utf-8") as f:
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 USERNAME = accountDICT["username"]
 LOKI_KEY = accountDICT["lokikey"]
-
 # 意圖過濾器說明
 # INTENT_FILTER = []        => 比對全部的意圖 (預設)
 # INTENT_FILTER = [intentN] => 僅比對 INTENT_FILTER 內的意圖
@@ -177,6 +176,14 @@ def runLoki(inputLIST, filterLIST=[]):
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
+                # extend_Chabuduo
+                if lokiRst.getIntent(index, resultIndex) == "extend_Chabuduo":
+                    resultDICT = Loki_extend_Chabuduo.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # ad_hoc_Chabuduo
+                if lokiRst.getIntent(index, resultIndex) == "ad_hoc_Chabuduo":
+                    resultDICT = Loki_ad_hoc_Chabuduo.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
                 # sinica_Chabuduo
                 if lokiRst.getIntent(index, resultIndex) == "sinica_Chabuduo":
                     resultDICT = Loki_sinica_Chabuduo.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
@@ -248,15 +255,27 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
+    # extend_Chabuduo
+    print("[TEST] extend_Chabuduo")
+    inputLIST = ['888']
+    testLoki(inputLIST, ['extend_Chabuduo'])
+    print("")
+
+    # ad_hoc_Chabuduo
+    print("[TEST] ad_hoc_Chabuduo")
+    inputLIST = ['000']
+    testLoki(inputLIST, ['ad_hoc_Chabuduo'])
+    print("")
+
     # sinica_Chabuduo
     print("[TEST] sinica_Chabuduo")
-    inputLIST = ['和諾可差不多','差不多有十年','情況也差不多','情況都差不多','各縣市情況差不多','好像意思上差不多','海青病得差不多了','說像海盜還差不多','差不多是二十八歲吧','每天給差不多五十塊','台灣現在也與大陸差不多','就是滿正常的差不多國一','然後逛了差不多半個鐘頭','人生閱歷方面的成熟度差不多']
+    inputLIST = ['和諾可差不多','差不多有十年','情況也差不多','情況都差不多','各縣市情況差不多','好像意思上差不多','海青病得差不多了','說像海盜還差不多','跟鮮奶價格差不多','差不多是二十八歲吧','所使用的工具差不多','每天給差不多五十塊','台灣現在也與大陸差不多','就是滿正常的差不多國一','然後逛了差不多半個鐘頭','人生閱歷方面的成熟度差不多','你其他的事情我差不多都知道了','隆乳費用差不多是三萬五千元泰幣','我接過的國宅案中差不多有９０％都發生這類情況']
     testLoki(inputLIST, ['sinica_Chabuduo'])
     print("")
 
 
 if __name__ == "__main__":
-    with open ("../sinicaCorpus_Chiabuduo_purged.txt", encoding='utf-8') as f:
+    with open ("./sinicaCorpus_Chiabuduo_purged.txt", encoding='utf-8') as f:
         lines = ''.join(f.readlines()).split("\n")
         for i in range(0,51):
             inputSTR = lines[i]
