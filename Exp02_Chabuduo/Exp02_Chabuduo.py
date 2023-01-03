@@ -170,7 +170,9 @@ class LokiResult():
 def runLoki(inputLIST, filterLIST=[]):
     # 將 intent 會使用到的 key 預先設爲空列表
     resultDICT = {
-       #"key": []
+        "Sinica": [],
+        "Extend":[],
+        "Ad_Hoc":[]
     }
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():

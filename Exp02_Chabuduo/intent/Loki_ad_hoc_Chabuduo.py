@@ -31,7 +31,6 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "000":
-        # write your code here
-        pass
+        resultDICT["Ad_Hoc"].append("ad_hoc")
 
     return resultDICT

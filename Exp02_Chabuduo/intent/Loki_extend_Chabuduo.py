@@ -31,7 +31,6 @@ def debugInfo(inputSTR, utterance):
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "888":
-        # write your code here
-        pass
+        resultDICT["Extend"].append("extend")
 
     return resultDICT

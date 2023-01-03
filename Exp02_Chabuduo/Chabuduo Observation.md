@@ -1,16 +1,25 @@
 # Observation
 
-- conjunction + nouny + 差不多
-- conjunction + location + 差不多
-- 差不多 +( aux 是)? + num
-- nouny + 都 + 差不多
-- 然後逛了差不多半個鐘頭 articut 
-- 每天給差不多五十塊 articut
-- verbP + 得 + 差不多 + (了) ? 
-- nouny + 上 + 差不多
-- nouny + 也 + 差不多 (也差不多你背的那麼重?)
-- nouny度 + 差不多
-- 差不多 + [小國高大] + [一二三四五六七八九]
-- 各...... + nouny + 差不多
+- conjunction...差不多
+- 差不多 + (verbP)? + time
+- noun + (也)? + (應該)? + 差不多 
+- 都 or quantifier 差不多 *
+- quantifier + ... + 差不多
+- ... + range + 差不多
+- verb + 得 + 差不多 + (aspect 了)
 - 還差不多
-- 15. 這差不多是所有機悟形式的烏托邦主義者的共同宿命
+- 跟鮮奶價格差不多 Articut *
+- 差不多 + (是)? + num
+- 所 + verb + 的 + entity + 差不多
+- 每天給差不多五十塊 Articut *
+- conjunction + location + 差不多
+- 差不多 [小國高大] [一二三四五六七八九]
+- 然後逛了差不多半個鐘頭 Articut *
+- ...度 + 差不多
+- 差不多 + quantifier + verb
+- 差不多 + (是) + currency
+- 差不多 + quantifier + classifier + ... + 都 (差不多每一個中央委員都捐了十萬元 )
+- 差不多 + (verb or 是) + mesurement
+- 差不多 + verb + 了 
+- 差不多 + degreeHead + 了 
+- 差不多 + quantifier
