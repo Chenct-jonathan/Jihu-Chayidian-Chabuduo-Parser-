@@ -32,14 +32,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "人生閱歷方面的成熟度差不多":
         resultDICT["Sinica"].append("sinica")
-
-
-    if utterance == "你其他的事情我差不多都知道了":
-        resultDICT["Sinica"].append("sinica")
-        
-
-    if utterance == "台灣現在也與大陸差不多":
-        resultDICT["Sinica"].append("sinica")
         
 
     if utterance == "各縣市情況差不多":
@@ -108,15 +100,14 @@ def getResult(inputSTR, utterance, args, resultDICT):
     
     if utterance == "認為科技的發展自從工業革命以來已差不多到了極致":
         resultDICT["Sinica"].append("sinica")
-        
-    
-    if utterance == "差不多每一個中央委員都捐了十萬元":
-        resultDICT["Sinica"].append("sinica")
-    
+
     if utterance == "差不多……好了……":
         resultDICT["Sinica"].append("sinica")
     
     if utterance == "香港差不多全部入口貨品都是免稅的":
+        resultDICT["Sinica"].append("sinica")
+        
+    if utterance == "身上器官也壞得差不多":
         resultDICT["Sinica"].append("sinica")
 
     return resultDICT
