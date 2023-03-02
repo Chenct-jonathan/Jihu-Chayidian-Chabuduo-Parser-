@@ -283,7 +283,7 @@ def testIntent():
 if __name__ == "__main__":
     inputSTR = ""
     if inputSTR == "":
-        with open("demo_data.txt", encoding="utf-8") as k:
+        with open("test_data.txt", encoding="utf-8") as k:
             lines = ''.join(k.readlines()).split("\n")
             for i in range(len(lines)):
                 inputSTR = lines[i]
@@ -293,7 +293,7 @@ if __name__ == "__main__":
                 if "reason" in resultDICT.keys():
                     print("\t{}".format(resultDICT["reason"]))
                     if "key" in resultDICT.keys():
-                        print("\t註：{}帶有一終點。".format(resultDICT["key"]))
+                        print("\t註：{}帶有一語意錨點。".format(resultDICT["key"]))
                     else:
                         pass
                 else:

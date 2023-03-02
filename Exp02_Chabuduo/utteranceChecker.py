@@ -12,7 +12,7 @@ with open("./sinicaCorpus_Chiabuduo_purged.txt", encoding="utf-8") as f:
 
 missingLIST = []
 
-for c in corpusLIST[:201]:
+for c in corpusLIST[:-1]:
     resultDICT = execLoki(c)
     if resultDICT["Sinica"] == []:
         print("Missing pattern: {}".format(c))
