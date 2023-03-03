@@ -170,22 +170,12 @@ class LokiResult():
 def runLoki(inputLIST, filterLIST=[]):
     # 將 intent 會使用到的 key 預先設爲空列表
     resultDICT = {
-        "Sinica": [],
-        "Extend":[],
-        "Ad_Hoc":[]
+       "Sinica": []
     }
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # extend_Chabuduo
-                if lokiRst.getIntent(index, resultIndex) == "extend_Chabuduo":
-                    resultDICT = Loki_extend_Chabuduo.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
-                # ad_hoc_Chabuduo
-                if lokiRst.getIntent(index, resultIndex) == "ad_hoc_Chabuduo":
-                    resultDICT = Loki_ad_hoc_Chabuduo.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
-
                 # sinica_Chabuduo
                 if lokiRst.getIntent(index, resultIndex) == "sinica_Chabuduo":
                     resultDICT = Loki_sinica_Chabuduo.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
@@ -257,21 +247,9 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # extend_Chabuduo
-    print("[TEST] extend_Chabuduo")
-    inputLIST = ['888']
-    testLoki(inputLIST, ['extend_Chabuduo'])
-    print("")
-
-    # ad_hoc_Chabuduo
-    print("[TEST] ad_hoc_Chabuduo")
-    inputLIST = ['000']
-    testLoki(inputLIST, ['ad_hoc_Chabuduo'])
-    print("")
-
     # sinica_Chabuduo
     print("[TEST] sinica_Chabuduo")
-    inputLIST = ['和諾可差不多','差不多有十年','情況也差不多','情況都差不多','各縣市情況差不多','好像意思上差不多','海青病得差不多了','說像海盜還差不多','跟鮮奶價格差不多','差不多是二十八歲吧','所使用的工具差不多','每天給差不多五十塊','台灣現在也與大陸差不多','就是滿正常的差不多國一','然後逛了差不多半個鐘頭','人生閱歷方面的成熟度差不多','你其他的事情我差不多都知道了','隆乳費用差不多是三萬五千元泰幣','我接過的國宅案中差不多有９０％都發生這類情況']
+    inputLIST = ['和諾可差不多','差不多有十年','情況也差不多','情況都差不多','聽起來差不多嗎','各縣市情況差不多','基本設計則差不多','好像意思上差不多','海青病得差不多了','生命已經差不多了','說像海盜還差不多','差不多到一半路程時','差不多是二十八歲吧','差不多都已查證清楚','所使用的工具差不多','那我不就差不多了嗎','雖然看起來差不多亮','夜晚差不多都在村子中','身上器官也壞得差不多','兒童奴隸差不多就可消除','就是滿正常的差不多國一','所以兩地人民性情差不多','人生閱歷方面的成熟度差不多','差不多的古蹟都變成了「活古蹟」','隆乳費用差不多是三萬五千元泰幣','香港差不多全部入口貨品都是免稅的','我接過的國宅案中差不多有９０％都發生這類情況','認為科技的發展自從工業革命以來已差不多到了極致']
     testLoki(inputLIST, ['sinica_Chabuduo'])
     print("")
 
