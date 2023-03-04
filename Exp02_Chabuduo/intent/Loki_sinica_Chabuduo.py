@@ -120,4 +120,35 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "這差不多就是其第一個系統所用的詞典":
         resultDICT["Sinica"].append("sinica")
 
+    if utterance == "其實差不多啦":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "差不多有廿十來個人要去":
+        resultDICT["Sinica"].append("sinica")
+        #後處理，拿來後面的 ENTITY 加數字斷詞看是否會變成 classifier
+
+    if utterance == "然而大體上說差不多沒有進步":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "差不多兩個半鐘頭就到了":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "差不多每七個將軍中就有一個紅安縣人和兩任國家主席":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "因為差不多的人都回中南部去了":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "摩托車差不多一輛":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "當大家把漢字學得差不多了":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "由於大家年齡差不多":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "大小差不多和地球一般":
+        resultDICT["Sinica"].append("sinica")
+
     return resultDICT

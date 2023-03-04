@@ -6,7 +6,7 @@ from Exp02_Chabuduo import execLoki
 
 import json
 
-with open("./sinicaCorpus_Chiabuduo_purged.txt", encoding="utf-8") as f:
+with open("../corpus/sinicaCorpus_Chiabuduo_purged.txt", encoding="utf-8") as f:
     corpusLIST = f.readlines()
     #corpusLIST = list(json.load(jFILE).keys())
 
@@ -18,5 +18,5 @@ for c in corpusLIST[:-1]:
         print("Missing pattern: {}".format(c))
         missingLIST.append(c)
 
-with open("missing_Chabuduo.json", "w", encoding="utf-8") as jFILE:
+with open("missing_Chabuduo_V3.json", "w", encoding="utf-8") as jFILE:
     json.dump(missingLIST, jFILE, ensure_ascii=False, indent=4)
