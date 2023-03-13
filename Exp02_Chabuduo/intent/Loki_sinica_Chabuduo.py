@@ -166,4 +166,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "因為一般人吃一個半饅頭差不多":
         resultDICT["Sinica"].append("sinica")
 
+    if utterance == "我想三位差不多":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "說來說去差不多把這個Ｔａｐｅ給說完了":
+        resultDICT["Sinica"].append("sinica")
+
     return resultDICT
