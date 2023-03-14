@@ -172,4 +172,13 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "說來說去差不多把這個Ｔａｐｅ給說完了":
         resultDICT["Sinica"].append("sinica")
 
+    if utterance == "所以勞逸之勢實在差不多":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "鄭華娟的回答是差不多的":
+        resultDICT["Sinica"].append("sinica")
+
+    if utterance == "差不多的年紀":
+        resultDICT["Sinica"].append("sinica")
+
     return resultDICT
