@@ -18,5 +18,5 @@ for c in corpusLIST[:-1]:
         print("Missing pattern: {}".format(c))
         missingLIST.append(c)
 
-with open("missing_Chabuduo_V4.json", "w", encoding="utf-8") as jFILE:
+with open("missing_Chabuduo_V5.json", "w", encoding="utf-8") as jFILE:
     json.dump(missingLIST, jFILE, ensure_ascii=False, indent=4)
