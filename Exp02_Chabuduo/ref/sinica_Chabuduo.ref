@@ -143,6 +143,12 @@
             ],
             "pattern": "<FUNC_inner>還</FUNC_inner><MODIFIER>差不多</MODIFIER>"
         },
+        "差不多……好了……": {
+            "id": "2f4b89d9-2fab-4dc1-a479-f10c626fae89",
+            "pos": "<MODIFIER>差不多</MODIFIER><FUNC_degreeHead>好</FUNC_degreeHead><ASPECT>了</ASPECT>",
+            "lexy": [],
+            "pattern": "<MODIFIER>差不多</MODIFIER><FUNC_degreeHead>[^<]*?</FUNC_degreeHead><ASPECT>了</ASPECT>"
+        },
         "差不多到一半路程時": {
             "id": "4b2ecfb2-432d-4249-9de2-bafd720eb447",
             "pos": "<MODIFIER>差不多</MODIFIER><ACTION_verb>到</ACTION_verb><MODIFIER>一半</MODIFIER><ENTITY_nounHead>路程</ENTITY_nounHead><FUNC_inner>時</FUNC_inner>",
@@ -171,7 +177,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(使用|利用|動用|應用|採用|施用|沿用|活用|運用|假借|憑靠)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<FUNC_inner>所</FUNC_inner>)?<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>的</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><MODIFIER>差不多</MODIFIER>"
+            "pattern": "(<FUNC_inner>所</FUNC_inner>)?<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><FUNC_in(ner|ter)>的</FUNC_in(ner|ter)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><MODIFIER>差不多</MODIFIER>"
         },
         "由於大家年齡差不多": {
             "id": "8e24b1e5-8270-483a-af35-ec9044ca6332",
