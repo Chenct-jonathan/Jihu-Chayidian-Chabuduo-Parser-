@@ -180,5 +180,8 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
     if utterance == "差不多的年紀":
         resultDICT["Sinica"].append("sinica")
+        
+    if utterance == "差不多……好了……":
+        resultDICT["Sinica"].append("sinica")
 
     return resultDICT
