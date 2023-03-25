@@ -20,7 +20,12 @@
             "漢字",
             "耶穌",
             "上海話",
-            "勞逸之勢"
+            "勞逸之勢",
+            "講題範圍",
+            "沈從文",
+            "標準答案",
+            "張聞天",
+            "彭德懷"
         ],
         "_asPunc": [
             "..."
@@ -39,7 +44,7 @@
             "id": "7d2a336b-0ff5-4311-ace8-079fe29836e3",
             "pos": "<ENTITY_nouny>大體</ENTITY_nouny><MODIFIER>差不多</MODIFIER>",
             "lexy": [],
-            "pattern": "(<MODIFIER>大概</MODIFIER>|<ENTITY_nouny>大體</ENTITY_nouny>)<MODIFIER>差不多</MODIFIER>"
+            "pattern": "(<MODIFIER>大[概致]</MODIFIER>|<ENTITY_nouny>大體</ENTITY_nouny>)<MODIFIER>差不多</MODIFIER>"
         },
         "其實差不多啦": {
             "id": "0ed0077b-1d1f-4362-be1a-e02c89f7b889",
@@ -51,7 +56,7 @@
             "id": "205f52e1-2c4a-49a7-ad90-fceeb1ec29b4",
             "pos": "<FUNC_conjunction>和</FUNC_conjunction><UserDefined>諾可</UserDefined><MODIFIER>差不多</MODIFIER>",
             "lexy": [],
-            "pattern": "<FUNC_conjunction>[^<]*?</FUNC_conjunction>(<FUNC_negation>[^<]*?</FUNC_negation>)?(<ENTITY_possessive>[^<]*?</ENTITY_possessive>)?(<FUNC_determiner>[^<]*?</FUNC_determiner>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>|<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>|<FUNC_conjunction>或</FUNC_conjunction>|<RANGE_locality>[^<]*?</RANGE_locality>|<MODIFIER>[^<]*?</MODIFIER>|<ENTITY_num>[^<]*?</ENTITY_num>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}|<LOCATION>[^<]*?</LOCATION>|<ENTITY_classifier>[^<]*?</ENTITY_classifier>|<LOCATION>([^<]*?)</LOCATION>|<IDIOM>[^<]*?</IDIOM>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<ModifierP>[^<]*?</ModifierP>)+(<QUANTIFIER>[也都]+?</QUANTIFIER>)?(<MODAL>應該</MODAL>)?(<AUX>是</AUX>)?<MODIFIER>差不多</MODIFIER>(<FUNC_inner>的</FUNC_inner>)?"
+            "pattern": "(<MODIFIER>同</MODIFIER>|<FUNC_conjunction>[^<且及]*?</FUNC_conjunction>)(<FUNC_negation>[^<]*?</FUNC_negation>)?(<ENTITY_possessive>[^<]*?</ENTITY_possessive>)?(<FUNC_determiner>[^<]*?</FUNC_determiner>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>|<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>|<FUNC_conjunction>或</FUNC_conjunction>|<RANGE_locality>[^<]*?</RANGE_locality>|<MODIFIER>[^<]*?</MODIFIER>|<ENTITY_num>[^<]*?</ENTITY_num>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}|<LOCATION>[^<]*?</LOCATION>|<ENTITY_classifier>[^<]*?</ENTITY_classifier>|<LOCATION>([^<]*?)</LOCATION>|<IDIOM>[^<]*?</IDIOM>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<ModifierP>[^<]*?</ModifierP>)+(<QUANTIFIER>[也都]+?</QUANTIFIER>)?(<MODAL>應該</MODAL>)?(<AUX>是</AUX>)?<MODIFIER>差不多</MODIFIER>(<FUNC_inner>的</FUNC_inner>)?"
         },
         "差不多有十年": {
             "id": "b0bc482a-bef0-4a51-825a-cc4b88d41dca",
@@ -115,6 +120,12 @@
             "lexy": [],
             "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><RANGE_(locality|period)>上</RANGE_(locality|period)><MODIFIER>差不多</MODIFIER>"
         },
+        "差不多也是經典了": {
+            "id": "955084a2-3714-407e-b898-71a63f6ab59e",
+            "pos": "<MODIFIER>差不多</MODIFIER><MODIFIER>也</MODIFIER><AUX>是</AUX><ENTITY_nouny>經典</ENTITY_nouny><ASPECT>了</ASPECT>",
+            "lexy": [],
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<MODIFIER>也</MODIFIER>)?<AUX>[^<]*?</AUX><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><ASPECT>了</ASPECT>"
+        },
         "摩托車差不多一輛": {
             "id": "4f02671a-f407-44d7-bc4f-29cee5ce328e",
             "pos": "<ENTITY_noun>摩托車</ENTITY_noun><MODIFIER>差不多</MODIFIER><ENTITY_classifier>一輛</ENTITY_classifier>",
@@ -155,13 +166,13 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(到|到了|到約|到受|到離|到包|到經過|到回|到隨|到死|到愛)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ASPECT>[^<]*?</ASPECT>)+?(<FUNC_inner>時</FUNC_inner>|<FUNC_inner>的</FUNC_inner><TIME_justtime>時候</TIME_justtime>)"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<AUX>[^<]*?</AUX>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ASPECT>[^<]*?</ASPECT>|<QUANTIFIER>[^<]*?</QUANTIFIER>)+?(<FUNC_inner>時</FUNC_inner>|<FUNC_inner>的</FUNC_inner><TIME_justtime>時候</TIME_justtime>)"
         },
         "差不多是二十八歲吧": {
             "id": "c6124dc9-24a2-409f-b55e-eda692272c2a",
             "pos": "<MODIFIER>差不多</MODIFIER><AUX>是</AUX><ENTITY_num>二十八</ENTITY_num><ENTITY_noun>歲</ENTITY_noun><CLAUSE_particle>吧</CLAUSE_particle>",
             "lexy": [],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<ACTION_verb>有</ACTION_verb>|<AUX>是</AUX>)?<ENTITY_num>([^<]*?)</ENTITY_num>"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<ACTION_verb>有</ACTION_verb>|<AUX>是</AUX>|<MODIFIER>快</MODIFIER>|<ACTION_verb>快要</ACTION_verb>)?<ENTITY_num>([^<]*?)</ENTITY_num>"
         },
         "差不多都已查證清楚": {
             "id": "1d836f1c-8e7a-45f7-9fe9-eb16c39886b8",
@@ -177,7 +188,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(使用|利用|動用|應用|採用|施用|沿用|活用|運用|假借|憑靠)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<FUNC_inner>所</FUNC_inner>)?<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><FUNC_in(ner|ter)>的</FUNC_in(ner|ter)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><MODIFIER>差不多</MODIFIER>"
+            "pattern": "(<FUNC_inner>所</FUNC_inner>)?<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><FUNC_in(ner|ter)>的</FUNC_in(ner|ter)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<比例]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><MODIFIER>差不多</MODIFIER>"
         },
         "由於大家年齡差不多": {
             "id": "8e24b1e5-8270-483a-af35-ec9044ca6332",
@@ -189,7 +200,7 @@
             "id": "53c0ce09-fa7b-4ac1-adc1-55872c3f7010",
             "pos": "<FUNC_determiner>那</FUNC_determiner><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_negation>不</FUNC_negation><FUNC_inner>就</FUNC_inner><MODIFIER>差不多</MODIFIER><ASPECT>了</ASPECT><CLAUSE_YesNoQ>嗎</CLAUSE_YesNoQ>",
             "lexy": [],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<ASPECT>了</ASPECT>)?<CLAUSE_YesNoQ>[^<]*?</CLAUSE_YesNoQ>"
+            "pattern": "<MODIFIER>差不多</MODIFIER><ASPECT>了</ASPECT>"
         },
         "雖然看起來差不多亮": {
             "id": "3c216ba4-b0d5-4161-9467-749a49073bf9",
@@ -197,7 +208,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看起來|看做|顯得|感覺|看來|讀起來|看起|吃起來|乍看|聽起來|覺得)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<QUANTIFIER>都</QUANTIFIER>)?(<MODIFIER>一[樣般]</MODIFIER>|<ENTITY_classifier>一樣</ENTITY_classifier>|<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)+"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<QUANTIFIER>都</QUANTIFIER>)?(<MODIFIER>一[樣般]</MODIFIER>|<ENTITY_classifier>一樣</ENTITY_classifier>|<(MODIFIER|ModifierP)>[^<同只也]*?</(MODIFIER|ModifierP)>)+(?!(?:<ACTION_verb>).)*?"
         },
         "可是吃飯的時候差不多": {
             "id": "f98b32e0-3f63-4abc-afec-505262c7a315",
@@ -211,13 +222,13 @@
             "id": "4f137127-7b70-419c-9d12-97c6edcdb4df",
             "pos": "<TIME_day>夜晚</TIME_day><MODIFIER>差不多</MODIFIER><QUANTIFIER>都</QUANTIFIER><FUNC_inner>在</FUNC_inner><ENTITY_noun>村子</ENTITY_noun><RANGE_locality>中</RANGE_locality>",
             "lexy": [],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<CLAUSE_WhatQ>[甚什]麼</CLAUSE_WhatQ>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]{2}</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)?<QUANTIFIER>都</QUANTIFIER>(<FUNC_inner>在</FUNC_inner>|<MODAL>[^<]*?</MODAL>|<AUX>是</AUX>)"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<CLAUSE_WhatQ>[甚什]麼</CLAUSE_WhatQ>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]{2}</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>([^<]*?)</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})?<QUANTIFIER>都</QUANTIFIER>(<FUNC_inner>在</FUNC_inner>|<MODAL>[^<]*?</MODAL>|<AUX>是</AUX>)"
         },
         "大小差不多和地球一般": {
             "id": "f89a7702-98f9-4f86-aba1-f2680374d84e",
             "pos": "<MODIFIER>大</MODIFIER><MODIFIER>小</MODIFIER><MODIFIER>差不多</MODIFIER><FUNC_conjunction>和</FUNC_conjunction><LOCATION>地球</LOCATION><MODIFIER>一般</MODIFIER>",
             "lexy": [],
-            "pattern": "<MODIFIER>差不多</MODIFIER><FUNC_conjunction>[^<]*?</FUNC_conjunction>(<LOCATION>[^<]*?</LOCATION>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)+?(<MODIFIER>一[樣般]</MODIFIER>|<ENTITY_classifier>一樣</ENTITY_classifier>)"
+            "pattern": "<MODIFIER>差不多</MODIFIER><FUNC_conjunction>[^<]*?</FUNC_conjunction>(<LOCATION>[^<]*?</LOCATION>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)+?(<MODIFIER>一[樣般]</MODIFIER>|<ENTITY_classifier>一樣</ENTITY_classifier>|<TIME_justtime>同[^<]*?</TIME_justtime>)"
         },
         "身上器官也壞得差不多": {
             "id": "00c621ed-b6c7-4228-883f-90a6f695ae20",
@@ -239,7 +250,7 @@
             "id": "e75f49f1-48af-4f1c-a76d-2a7e6ff8cdd6",
             "pos": "<AUX>就是</AUX><ENTITY_nouny>滿</ENTITY_nouny><MODIFIER>正常</MODIFIER><FUNC_inner>的</FUNC_inner><MODIFIER>差不多</MODIFIER><ENTITY_noun>國一</ENTITY_noun>",
             "lexy": [],
-            "pattern": "<MODIFIER>差不多</MODIFIER><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[小國高大][一二三四五六七八九]"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<AUX>[^<]*?</AUX>)?(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[小國高大][一二三四五六七八九]|<ENTITY_num>[^<]*?</ENTITY_num><ENTITY_oov>年級</ENTITY_oov>)"
         },
         "差不多兩個半鐘頭就到了": {
             "id": "c69456a2-2e07-467f-9a4b-267f66ab0c2a",
@@ -269,7 +280,7 @@
             "id": "6d68efda-98bf-4da4-96d3-fa90f12c49df",
             "pos": "<FUNC_inter>所以</FUNC_inter><ENTITY_num>兩</ENTITY_num><ENTITY_oov>地</ENTITY_oov><ENTITY_noun>人民</ENTITY_noun><ENTITY_noun>性情</ENTITY_noun><MODIFIER>差不多</MODIFIER>",
             "lexy": [],
-            "pattern": "(<ENTITY_num>[^一]</ENTITY_num><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[處地]</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ENTITY_classifier>[^一][^<]*?</ENTITY_classifier>)(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)*<MODIFIER>差不多</MODIFIER>"
+            "pattern": "(<ENTITY_num>[^一]</ENTITY_num><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[處地]</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ENTITY_classifier>[^一][^<]*?</ENTITY_classifier>)(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ACTION_verb>[^<]*?</ACTION_verb>)*?<MODIFIER>差不多</MODIFIER>"
         },
         "所以勞逸之勢實在差不多": {
             "id": "5e76bcb6-8a67-4d89-9618-b94ced6ebd7c",
@@ -300,6 +311,14 @@
             "lexy": [],
             "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]*?度)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><MODIFIER>差不多</MODIFIER>"
         },
+        "伊的手掌差不多有我的兩倍大": {
+            "id": "2ec9e3a3-5452-4c0e-900c-7505d45b3f03",
+            "pos": "<ENTITY_pronoun>伊</ENTITY_pronoun><FUNC_inner>的</FUNC_inner><ENTITY_noun>手掌</ENTITY_noun><MODIFIER>差不多</MODIFIER><ACTION_verb>有</ACTION_verb><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_inner>的</FUNC_inner><ENTITY_measurement>兩倍</ENTITY_measurement><MODIFIER>大</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<MODIFIER>只有</MODIFIER>|<ACTION_verb>有</ACTION_verb>|<AUX>是</AUX>)(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)+?<FUNC_in(ner|ter)>的</FUNC_in(ner|ter)><ENTITY_measurement>[^<]*?倍</ENTITY_measurement>"
+        },
         "然而大體上說差不多沒有進步": {
             "id": "2ac025dd-bbd7-496a-a4a3-6f8406937c15",
             "pos": "<FUNC_inter>然而</FUNC_inter><ENTITY_nouny>大體</ENTITY_nouny><RANGE_locality>上</RANGE_locality><ACTION_verb>說</ACTION_verb><MODIFIER>差不多</MODIFIER><FUNC_negation>沒有</FUNC_negation><ACTION_verb>進步</ACTION_verb>",
@@ -326,6 +345,15 @@
             ],
             "pattern": "<MODIFIER>差不多</MODIFIER><FUNC_inner>的</FUNC_inner>(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)?<QUANTIFIER>都</QUANTIFIER>"
         },
+        "看伊的手骨差不多有我的小腿粗": {
+            "id": "c0318f89-5214-4c72-b430-0aebcf81909b",
+            "pos": "<ACTION_verb>看</ACTION_verb><ENTITY_pronoun>伊</ENTITY_pronoun><FUNC_inner>的</FUNC_inner><ENTITY_nouny>手骨</ENTITY_nouny><MODIFIER>差不多</MODIFIER><ACTION_verb>有</ACTION_verb><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_inner>的</FUNC_inner><ENTITY_nouny>小腿</ENTITY_nouny><MODIFIER>粗</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看|探看|收看|看守|看戲|看望|看護|看顧|觀看|光顧|探望)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<MODIFIER>只有</MODIFIER>|<ACTION_verb>有</ACTION_verb>|<AUX>是</AUX>)(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)+?<FUNC_in(ner|ter)>的</FUNC_in(ner|ter)>(<ENTITY_classifier>[^<]*?</ENTITY_classifier>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<也]*?</(MODIFIER|ModifierP)>|<DegreeP>那麼[^<]*?</DegreeP>)"
+        },
         "差不多的古蹟都變成了「活古蹟」": {
             "id": "1b88a08b-6200-4d1b-b7e2-e34803b4de3d",
             "pos": "<MODIFIER>差不多</MODIFIER><FUNC_inner>的</FUNC_inner><ENTITY_noun>古蹟</ENTITY_noun><QUANTIFIER>都</QUANTIFIER><VerbP>變成了</VerbP><ACTION_verb>活</ACTION_verb><ENTITY_noun>古蹟</ENTITY_noun>",
@@ -341,7 +369,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(隆乳|隆鼻|清創|切除|隆胸|穿刺|刮除|電燒|抽脂|結紮|摘除)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<AUX>[^<]*?</AUX>)?<KNOWLEDGE_currency>([^<]*?)</KNOWLEDGE_currency>"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<AUX>[^<]*?</AUX>)+?(<ENTITY_num>[^<]*?</ENTITY_num>)?<KNOWLEDGE_currency>([^<]*?)</KNOWLEDGE_currency>"
         },
         "香港差不多全部入口貨品都是免稅的": {
             "id": "f0f68497-b93c-4527-a1b9-ebf45e9536a5",
@@ -349,7 +377,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(免稅|專賣|直營|退稅|小賣|量販|徵稅|結匯|自營|租售|減免)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差不多</MODIFIER><QUANTIFIER>[^<]*?</QUANTIFIER>(<ENTITY_classifier>[^<]*?</ENTITY_classifier>)?(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<RANGE_locality>[^<]*?</RANGE_locality>)*<QUANTIFIER>都</QUANTIFIER>"
+            "pattern": "<MODIFIER>差不多</MODIFIER><QUANTIFIER>[^<]*?</QUANTIFIER>(<ENTITY_classifier>[^<]*?</ENTITY_classifier>)?(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<RANGE_locality>[^<]*?</RANGE_locality>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)*?<QUANTIFIER>都</QUANTIFIER>"
         },
         "差不多個個都在批判會上登台自我檢查": {
             "id": "a5263211-2d76-496a-9b87-2e9e51af65e7",
@@ -379,7 +407,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(去|要去|回去|想去|去了|跑去|回來|跑來|趕去|出去|來)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(說完了|)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<ASPECT>已經</ASPECT>)?<ACTION_lightVerb>把</ACTION_lightVerb>(<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<MODIFIER>[^<]*?</MODIFIER>|<FUNC_inner>[^<]*?</FUNC_inner>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)+?(<ACTION_lightVerb>給</ACTION_lightVerb>)?(<(ACTION_verb|VerbP)>([^<]*?[^上下出入了昏倒到出走來去爆死亡完光掉好成棄]*?)</(ACTION_verb|VerbP)>|<ACTION_verb>[^<]*?</ACTION_verb>(<ACTION_verb>到</ACTION_verb>|<ASPECT>了</ASPECT>))"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<ASPECT>已經</ASPECT>)?<ACTION_lightVerb>把</ACTION_lightVerb>(<QUANTIFIER>[^<]*?</QUANTIFIER>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<MODIFIER>[^<]*?</MODIFIER>|<FUNC_inner>[^<]*?</FUNC_inner>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)+?(<ACTION_lightVerb>給</ACTION_lightVerb>)?(<(ACTION_verb|VerbP)>([^<]*?[^上下出入了昏倒到出走來去爆死亡完光掉好成棄]*?)</(ACTION_verb|VerbP)>|<ACTION_verb>[^<]*?</ACTION_verb>(<ACTION_verb>到</ACTION_verb>|<ASPECT>了</ASPECT>))"
         },
         "我接過的國宅案中差不多有９０％都發生這類情況": {
             "id": "8813c2e6-5924-429f-8029-e87f68fb4f98",
@@ -389,7 +417,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(發生|出生|來到|到來|到達|抵達|案發|遇到|遭遇|出現|爆發了)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(MODIFIER>差不多</MODIFIER>|<ENTITY_nouny>差不多</ENTITY_nouny>)(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>)?<ENTITY_measurement>[^<]*?</ENTITY_measurement>"
+            "pattern": "(MODIFIER>差不多</MODIFIER>|<ENTITY_nouny>差不多</ENTITY_nouny>)(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>)?(<QUANTIFIER>半</QUANTIFIER>)?<ENTITY_measurement>[^<]*?</ENTITY_measurement>"
         },
         "認為科技的發展自從工業革命以來已差不多到了極致": {
             "id": "246a7608-af01-4ae4-9733-6fe0d90e632d",
@@ -401,13 +429,13 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(來|上來|下來|來到|前來|回來|進來|來第|值來|性來|學來)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(到了|到|到約|來到|來到了|到達了|到離|到為了|到臨|走到了|跑到)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<ASPECT>[已經]</ASPECT>)?(<QUANTIFIER>[^<]*?</QUANTIFIER>)?(<MODAL>該</MODAL>)?(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>)?<(ACTION_verb|VerbP)>[^<]*?了</(ACTION_verb|VerbP)>"
+            "pattern": "(<ASPECT>[已經]</ASPECT>)?<MODIFIER>差不多</MODIFIER>(<MODIFIER>(快|快要)</MODIFIER>|<MODAL>[應該]+</MODAL>|<ASPECT>[已經]</ASPECT>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<QUANTIFIER>[^<]*?</QUANTIFIER>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)*?(<(ACTION_verb|VerbP)>([落結定訂][^<]*?|[^<不遭]*?[上下入倒斃出爆死亡完光掉好到成走出來]+|[^<]*?了)</(ACTION_verb|VerbP)>|<ASPECT>了</ASPECT>)"
         },
         "這差不多是所有機悟形式的烏托邦主義者的共同宿命": {
             "id": "d51fa7a1-b114-4b03-a6a9-26fffe1eab31",
             "pos": "<FUNC_determiner>這</FUNC_determiner><MODIFIER>差不多</MODIFIER><AUX>是</AUX><QUANTIFIER>所有</QUANTIFIER><UserDefined>機悟形式</UserDefined><FUNC_inner>的</FUNC_inner><UserDefined>烏托邦</UserDefined><ENTITY_oov>主義者</ENTITY_oov><FUNC_inner>的</FUNC_inner><MODIFIER>共同</MODIFIER><ENTITY_nounHead>宿命</ENTITY_nounHead>",
             "lexy": [],
-            "pattern": "<MODIFIER>差不多</MODIFIER><AUX>是</AUX><QUANTIFIER>[^<]*?</QUANTIFIER>(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)+?<FUNC_inner>的</FUNC_inner>"
+            "pattern": "<MODIFIER>差不多</MODIFIER><AUX>是</AUX>"
         },
         "差不多每七個將軍中就有一個紅安縣人和兩任國家主席": {
             "id": "f4e26961-f06f-48d1-949e-5011549466ad",
