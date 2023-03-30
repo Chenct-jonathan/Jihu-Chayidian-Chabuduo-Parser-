@@ -150,9 +150,6 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "大小差不多和地球一般":
         resultDICT["Sinica"].append("sinica")
 
-    if utterance == "這差不多是所有機悟形式的烏托邦主義者的共同宿命":
-        resultDICT["Sinica"].append("sinica")
-
     if utterance == "差不多個個都在批判會上登台自我檢查":
         resultDICT["Sinica"].append("sinica")
 
