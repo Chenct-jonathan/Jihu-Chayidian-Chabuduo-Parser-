@@ -12,11 +12,11 @@ with open("../corpus/sinicaCorpus_Chiabuduo_purged.txt", encoding="utf-8") as f:
 
 missingLIST = []
 
-for c in corpusLIST[:-1]:
+for c in corpusLIST[:]:
     resultDICT = execLoki(c)
     if resultDICT["Sinica"] == []:
         print("Missing pattern: {}".format(c))
         missingLIST.append(c)
 
-with open("missing_Chabuduo_V6.json", "w", encoding="utf-8") as jFILE:
+with open("missing_Chabuduo_V7.json", "w", encoding="utf-8") as jFILE:
     json.dump(missingLIST, jFILE, ensure_ascii=False, indent=4)
