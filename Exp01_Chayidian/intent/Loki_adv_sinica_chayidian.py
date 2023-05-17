@@ -182,7 +182,7 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         tmpPosSTR = formMSG(tmpInputSTR, pat)
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(5)
         #print(re.findall(pat,tmpPosSTR ))
-        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 若為一達成體事件(achievement)語意，故可使用 [差一點]。".format(resultDICT["FirstVerb"])
+        resultDICT["reason"] = "[差一點] 後的第一個動詞 [{}] 若為一達成體事件(achievement)語意，則可使用 [差一點]。".format(resultDICT["FirstVerb"])
         resultDICT["key"] = "達成體事件(achievement)"
 
     if utterance == "爭三連霸的瑞典名將艾柏格則差一點落馬":

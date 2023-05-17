@@ -281,7 +281,7 @@ def testIntent():
 
 
 if __name__ == "__main__":
-    inputSTR = ""
+    inputSTR = input("input utterance : \n (按下 enter 查看 Sinica Corpus 分析結果)")
     if inputSTR == "":
         with open("test_data.txt", encoding="utf-8") as k:
             lines = ''.join(k.readlines()).split("\n")

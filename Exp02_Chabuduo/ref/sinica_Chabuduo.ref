@@ -197,12 +197,6 @@
             "lexy": [],
             "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>大家[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><MODIFIER>差不多</MODIFIER>"
         },
-        "那我不就差不多了嗎": {
-            "id": "53c0ce09-fa7b-4ac1-adc1-55872c3f7010",
-            "pos": "<FUNC_determiner>那</FUNC_determiner><ENTITY_pronoun>我</ENTITY_pronoun><FUNC_negation>不</FUNC_negation><FUNC_inner>就</FUNC_inner><MODIFIER>差不多</MODIFIER><ASPECT>了</ASPECT><CLAUSE_YesNoQ>嗎</CLAUSE_YesNoQ>",
-            "lexy": [],
-            "pattern": "<MODIFIER>差不多</MODIFIER><ASPECT>了</ASPECT>"
-        },
         "雖然看起來差不多亮": {
             "id": "3c216ba4-b0d5-4161-9467-749a49073bf9",
             "pos": "<FUNC_inter>雖然</FUNC_inter><ACTION_verb>看起來</ACTION_verb><MODIFIER>差不多</MODIFIER><MODIFIER>亮</MODIFIER>",
@@ -361,7 +355,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(隆乳|隆鼻|清創|切除|隆胸|穿刺|刮除|電燒|抽脂|結紮|摘除)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>差不多</MODIFIER>(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<AUX>[^<]*?</AUX>)+?(<ENTITY_num>[^<]*?</ENTITY_num>)?<KNOWLEDGE_currency>([^<]*?)</KNOWLEDGE_currency>"
+            "pattern": "<MODIFIER>差不多</MODIFIER>(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<AUX>[^<]*?</AUX>)+(<ENTITY_num>[^<]*?</ENTITY_num>)?<KNOWLEDGE_currency>([^<]*?)</KNOWLEDGE_currency>"
         },
         "香港差不多全部入口貨品都是免稅的": {
             "id": "f0f68497-b93c-4527-a1b9-ebf45e9536a5",
@@ -432,5 +426,8 @@
             ],
             "pattern": "<MODIFIER>差不多</MODIFIER><QUANTIFIER>每</QUANTIFIER>(<ACTION_verb>[^<]*?</ACTION_verb>)?<ENTITY_classifier>[^<]*?</ENTITY_classifier>(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)+(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>中</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)?<FUNC_inner>就</FUNC_inner>(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>)*?<ENTITY_classifier>[^<]*?</ENTITY_classifier>"
         }
-    }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
 }

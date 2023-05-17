@@ -210,6 +210,9 @@ def getResult(inputSTR, utterance, pat, resultDICT):
         #print(re.findall(pat,tmpPosSTR ))
         resultDICT["FirstVerb"] = re.search(pat,tmpPosSTR).group(3) + re.search(pat,tmpPosSTR).group(6) + re.search(pat,tmpPosSTR).group(10)
         resultDICT["reason"] = "因為 [差一點] 後面的子句 [{}] 為一完成貌事件(perfective)語意，故可使用 [差一點]。 ".format(resultDICT["FirstVerb"] + tmpInputSTR.split(resultDICT["FirstVerb"])[-1])
-        resultDICT["key"] = "完成貌(perfective)"        
+        resultDICT["key"] = "完成貌(perfective)"
+        
+    if utterance == "差一點把到學妹":
+        resultDICT["reason"] = "可以這樣用喔"
     
     return resultDICT
