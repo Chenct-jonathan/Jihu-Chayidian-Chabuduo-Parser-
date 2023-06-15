@@ -120,5 +120,125 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             resultDICT['Sinica'].append('sinica')
+    
+    if utterance == "幾乎和小朋友美術課的大張圖畫紙一樣大":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎等同於外界利益獨立的經營體":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎有十二億的中國人在等待這一天的來臨":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎打破福特內部產品發展的每項紀錄":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎看不見灰塵":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎年年都獲得全國的各種名次":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+    
+    if utterance == "幾乎損壞殆盡":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎只有團體":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎多為如何投資":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎不可或缺的參考資料":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎不做講解":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎把荷商擠出歐洲市場":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎適合各種場合":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎比生母施虐高出一倍":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎令我斷氣":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎要令他爆炸了":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎把那小販的祖宗三代都罵過了":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎無限長的百科全書":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎要休學的時候":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')
+            
+    if utterance == "幾乎就有自己的使用文字了":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            resultDICT['Sinica'].append('sinica')        
 
     return resultDICT

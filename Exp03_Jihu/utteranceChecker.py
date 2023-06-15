@@ -7,8 +7,8 @@ import json
 
 missingLIST = []
 with open('../corpus/sinicaCorpus_Jihu_purged.txt', 'r', encoding='utf-8') as f:
-    utteranceLIST = f.readlines(100)
-    for i in utteranceLIST:
+    utteranceLIST = f.readlines()
+    for i in utteranceLIST[:501]:
         print(i)
         resultDICT = execLoki(i)
         if 'sinica' in resultDICT['Sinica']:
@@ -16,7 +16,7 @@ with open('../corpus/sinicaCorpus_Jihu_purged.txt', 'r', encoding='utf-8') as f:
         else:
             missingLIST.append(i)
 
-with open('missing_Jihu_0614.txt', 'w', encoding='utf-8') as j:
+with open('./log/missing_Jihu_0616.txt', 'w', encoding='utf-8') as j:
     for i in missingLIST:
         j.write(i)
     
