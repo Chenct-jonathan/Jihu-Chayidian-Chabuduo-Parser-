@@ -313,7 +313,20 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+    
+    if utterance == "幾乎被認定為民主進步必經之路":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎全武行的紀錄":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
             resultDICT[utterance].append(inputSTR)        
-                
 
     return resultDICT
