@@ -51,7 +51,7 @@ import re
 try:
     from intent import Loki_sinica_Jihu
 except:
-    from .intent import Loki_sinica_Jihu
+    from intent import Loki_sinica_Jihu
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
@@ -215,7 +215,15 @@ def runLoki(inputLIST, filterLIST=[]):
        "幾乎清一色丹麥裔":[],
        "幾乎全身被割傷":[],
        "幾乎包羅了所有可能的片語結構":[],
-       "幾乎撞個正著":[]
+       "幾乎撞個正著":[],
+       "幾乎被認定為民主進步必經之路": [],
+       "幾乎全武行的紀錄": [],
+       "幾乎在一夜之間統統升級": [],
+       "幾乎全村七十九戶有適齡的孩子都會共襄盛舉": [],
+       "幾乎純理性的思維習慣": [],
+       "幾乎被破壞殆盡": [],
+       "幾乎平均二名打者就有一名被三振": [],
+       "幾乎全面漲停的榮景之際": []
     }
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
@@ -223,7 +231,7 @@ def runLoki(inputLIST, filterLIST=[]):
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
                 # sinica_Jihu
                 if lokiRst.getIntent(index, resultIndex) == "sinica_Jihu":
-                    resultDICT = Loki_sinica_Jihu.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_sinica_Jihu.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getPattern(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
@@ -304,11 +312,10 @@ def testIntent():
 
 if __name__ == "__main__":
     # 測試所有意圖
-    testIntent()
-
+    #testIntent()
     # 測試其它句子
     #filterLIST = []
     #splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST)            # output => ["今天天氣"]
+    resultDICT = execLoki("幾乎遠近皆知")            # output => ["今天天氣"]
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]

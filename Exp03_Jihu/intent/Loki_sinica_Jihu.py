@@ -17,13 +17,18 @@
 from random import sample
 import json
 import os
+from ArticutAPI import Articut
+import re
+
+accountDICT = json.load(open("account.info",encoding="utf-8"))
+articut = Articut(username=accountDICT["username"],apikey=accountDICT["api_key"])
 
 DEBUG_sinica_Jihu = True
 CHATBOT_MODE = False
 
 userDefinedDICT = {}
 try:
-    userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
+    userDefinedDICT = json.load(open('USER_DEFINED.json', 'r', encoding='utf-8'))
 except Exception as e:
     print("[ERROR] userDefinedDICT => {}".format(str(e)))
 
@@ -47,7 +52,20 @@ def getResponse(utterance, args):
 
     return resultSTR
 
-def getResult(inputSTR, utterance, args, resultDICT):
+def formMSG(tmpInputSTR, pat):
+    '''
+    input: 我差一點跌倒ㄟ
+    output : <MODIFIER>差一點</MODIFIER><ACTION_verb>跌倒</ACTION_verb><ENTITY_nouny>ㄟ</ENTITY_nouny>
+    把 inputSTR 轉成 Articut 結果
+    '''
+    tmpResultDICT = articut.parse(tmpInputSTR, userDefinedDictFILE="./USER_DEFINED.json")
+    if tmpResultDICT["status"] == True:
+        posSTR = ''.join(tmpResultDICT["result_pos"])
+        return posSTR
+    else:
+        raise Exception("Invalid Articut result:{}".format(tmpResultDICT["message"]))
+
+def getResult(inputSTR, utterance, pat, args, resultDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "幾乎一樣":
         if CHATBOT_MODE:
@@ -327,6 +345,49 @@ def getResult(inputSTR, utterance, args, resultDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎在一夜之間統統升級":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎全村七十九戶有適齡的孩子都會共襄盛舉":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+    
+    if utterance == "幾乎純理性的思維習慣":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎被破壞殆盡":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎平均二名打者就有一名被三振":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎全面漲停的榮景之際":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
             resultDICT[utterance].append(inputSTR)        
+
 
     return resultDICT
