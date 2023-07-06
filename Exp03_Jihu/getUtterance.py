@@ -2,8 +2,6 @@
 # -*- coding:utf-8 -*-
 
 import json
-from pprint import pprint
-
 
 def get_UtteranceFormat(file):
     catDICT = {}
@@ -11,6 +9,6 @@ def get_UtteranceFormat(file):
         utteranceDICT = json.load(jFILE)
         for i in utteranceDICT['utterance'].keys():
             catDICT[i] = []
-    catDICT['missing'] = []
-    pprint(catDICT)
+    #catDICT['missing'] = []
+    #pprint(catDICT)
     return catDICT

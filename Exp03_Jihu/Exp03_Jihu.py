@@ -44,6 +44,8 @@
 
 from requests import post
 from requests import codes
+from getUtterance import get_UtteranceFormat
+from pprint import pprint
 import json
 import math
 import os
@@ -69,7 +71,9 @@ except Exception as e:
 # INTENT_FILTER = [intentN] => 僅比對 INTENT_FILTER 內的意圖
 INTENT_FILTER = []
 INPUT_LIMIT = 20
-
+#utteranceDICT =  get_UtteranceFormat('./ref/sinica_Jihu.ref')
+#pprint(utteranceDICT)
+#pprint(len(utteranceDICT))
 class LokiResult():
     status = False
     message = ""
@@ -176,7 +180,9 @@ class LokiResult():
 
 def runLoki(inputLIST, filterLIST=[]):
     # 將 intent 會使用到的 key 預先設爲空列表
-    resultDICT = {
+    resultDICT = get_UtteranceFormat('./ref/sinica_Jihu.ref')
+    '''
+    {
        #'Sinica': [],
        '幾乎一樣': [],
        '幾乎不做講解': [],
@@ -232,8 +238,12 @@ def runLoki(inputLIST, filterLIST=[]):
        "幾乎逐字拷貝之行為":[],
        "幾乎全是視力健全的少年":[],
        "幾乎再次暈過去":[],
-       "幾乎想也沒想":[]
+       "幾乎想也沒想":[],
+       "佈佔幾乎全部的畫面":[],
+       "幾乎難以辨認":[],
+       "幾乎「太親切」啦":[]
     }
+    '''
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):

@@ -8,6 +8,7 @@ from pprint import pprint
 import json
 
 catDICT = get_UtteranceFormat('./ref/sinica_Jihu.ref')
+catDICT['missing'] = []
 pprint(catDICT)
 
 count = 1
@@ -27,7 +28,7 @@ with open('../corpus/sinicaCorpus_Jihu_purged.txt', 'r', encoding='utf-8') as f:
                     pass
         count += 1
         
-with open('./log/Jihu_cat_0705.txt', 'w', encoding='utf-8') as jFILE:
+with open('./log/Jihu_cat_0706.txt', 'w', encoding='utf-8') as jFILE:
     json.dump(catDICT, jFILE, ensure_ascii=False, indent='\t')
 
 '''
