@@ -229,7 +229,10 @@ def runLoki(inputLIST, filterLIST=[]):
        "幾乎像窗邊族這樣":[],
        "幾乎多為他們員工撰寫":[],
        "幾乎使她致命的車禍和因車禍而起的官司":[],
-       "幾乎逐字拷貝之行為":[]
+       "幾乎逐字拷貝之行為":[],
+       "幾乎全是視力健全的少年":[],
+       "幾乎再次暈過去":[],
+       "幾乎想也沒想":[]
     }
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
@@ -322,6 +325,6 @@ if __name__ == "__main__":
     # 測試其它句子
     #filterLIST = []
     #splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    resultDICT = execLoki("幾乎付諸闕如")            # output => ["今天天氣"]
+    resultDICT = execLoki("肝等內臟各部器官也幾乎完好如初")            # output => ["今天天氣"]
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]

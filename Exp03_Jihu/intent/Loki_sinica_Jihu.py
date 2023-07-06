@@ -224,11 +224,16 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
             #print(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])
             #print(re.search(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])).group(2))
             pass
-        if re.search(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])).group(2) == "":
+        #print(re.findall(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])))
+        if re.search(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])).group(2) != "":
+            print("2")
+            print(re.findall(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])))
             resultDICT[utterance].append(inputSTR)
         else:
             pass
-        if re.search(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])).group(2) in userDefinedDICT['_asIdiom']:
+        if re.search(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])).group(3) in userDefinedDICT['_asIdiom']:
+            print("3")
+            print(re.findall(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])))
             resultDICT[utterance].append(inputSTR)
         else:
             pass
@@ -437,6 +442,27 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
             resultDICT[utterance].append(inputSTR)
             
     if utterance == "幾乎逐字拷貝之行為":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎全是視力健全的少年":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎再次暈過去":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎想也沒想":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
