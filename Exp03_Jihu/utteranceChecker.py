@@ -14,7 +14,7 @@ pprint(catDICT)
 count = 1
 with open('../corpus/sinicaCorpus_Jihu_purged.txt', 'r', encoding='utf-8') as f:
     utteranceLIST = f.readlines()
-    for i in utteranceLIST[:1501]:
+    for i in utteranceLIST[1501:]:
         print(f'({count}) : {i}')
         resultDICT = execLoki(i)
         if all(value == [] for value in resultDICT.values()) == True:
@@ -28,7 +28,7 @@ with open('../corpus/sinicaCorpus_Jihu_purged.txt', 'r', encoding='utf-8') as f:
                     pass
         count += 1
         
-with open('./log/Jihu_cat_0706.txt', 'w', encoding='utf-8') as jFILE:
+with open('./log/Jihu_cat_0707.txt', 'w', encoding='utf-8') as jFILE:
     json.dump(catDICT, jFILE, ensure_ascii=False, indent='\t')
 
 '''

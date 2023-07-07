@@ -132,13 +132,6 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
             #resultDICT['Sinica'].append('sinica')
             resultDICT[utterance].append(inputSTR)
 
-    if utterance == "幾乎注定是會賠錢的":
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            #resultDICT['Sinica'].append('sinica')
-            resultDICT[utterance].append(inputSTR)
-
     if utterance == "幾乎瓦解於旦夕":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
@@ -484,6 +477,13 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
             resultDICT[utterance].append(inputSTR)
             
     if utterance == "幾乎「太親切」啦":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎人手一台":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
