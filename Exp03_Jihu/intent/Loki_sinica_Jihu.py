@@ -399,13 +399,6 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
             #resultDICT['Sinica'].append('sinica')
             resultDICT[utterance].append(inputSTR)
             
-    if utterance == "幾乎難以見一次面":
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            #resultDICT['Sinica'].append('sinica')
-            resultDICT[utterance].append(inputSTR)
-            
     if utterance == "幾乎涵蓋所有的中文字":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
@@ -488,6 +481,23 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             #resultDICT['Sinica'].append('sinica')
-            resultDICT[utterance].append(inputSTR)        
-
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎每一頁出現":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            pass
+        if re.search(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])).group(5) != None:
+            maybeVERB = re.search(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])).group(5)
+            #print(re.findall(pat, ''.join(articut.parse(inputSTR, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])))
+            #print(maybeVERB)
+            if re.search('<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>', ''.join(articut.parse(maybeVERB, userDefinedDictFILE="./USER_DEFINED.json")['result_pos'])) != None:
+                resultDICT[utterance].append(inputSTR)
+            else:
+                pass            
+        else:
+            resultDICT[utterance].append(inputSTR)
+        
+           
     return resultDICT
