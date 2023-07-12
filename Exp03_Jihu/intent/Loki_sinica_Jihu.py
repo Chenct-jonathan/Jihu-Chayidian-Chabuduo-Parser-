@@ -498,6 +498,12 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
                 pass            
         else:
             resultDICT[utterance].append(inputSTR)
-        
+            
+    if utterance == "幾乎從那一次起":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)        
            
     return resultDICT
