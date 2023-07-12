@@ -335,6 +335,6 @@ if __name__ == "__main__":
     # 測試其它句子
     #filterLIST = []
     #splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    resultDICT = execLoki("幾乎每個人也都「剛好」是前三名")            # output => ["今天天氣"]
+    resultDICT = execLoki("幾乎遠近皆知")            # output => ["今天天氣"]
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST, splitLIST) # output => ["今天天氣", "後天氣象"]
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST)      # output => ["今天天氣", "後天氣象"]

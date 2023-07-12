@@ -504,6 +504,13 @@ def getResult(inputSTR, utterance, pat, args, resultDICT):
             resultDICT["response"] = getResponse(utterance, args)
         else:
             #resultDICT['Sinica'].append('sinica')
+            resultDICT[utterance].append(inputSTR)
+            
+    if utterance == "幾乎全部來自本省籍的民眾":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            #resultDICT['Sinica'].append('sinica')
             resultDICT[utterance].append(inputSTR)        
            
     return resultDICT
