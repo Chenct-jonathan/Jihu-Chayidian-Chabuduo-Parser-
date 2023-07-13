@@ -28,7 +28,7 @@ with open('../corpus/sinicaCorpus_Jihu_purged.txt', 'r', encoding='utf-8') as f:
                     pass
         count += 1
         
-with open('./log/Jihu_cat_0711.txt', 'w', encoding='utf-8') as jFILE:
+with open('./log/Jihu_cat_0713.txt', 'w', encoding='utf-8') as jFILE:
     json.dump(catDICT, jFILE, ensure_ascii=False, indent='\t')
 
 '''

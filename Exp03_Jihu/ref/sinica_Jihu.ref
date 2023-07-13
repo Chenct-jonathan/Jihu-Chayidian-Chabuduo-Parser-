@@ -36,7 +36,10 @@
             "員工",
             "手腕",
             "屋頂",
-            "北美"
+            "北美",
+            "婚前性經驗",
+            "家家",
+            "色彩"
         ],
         "_asIdiom": [
             "遠近皆知",
@@ -53,7 +56,7 @@
             "id": "689b13ca-78f6-45af-9de6-4e4a0180b91b",
             "pos": "<MODIFIER>幾乎</MODIFIER><MODIFIER>一樣</MODIFIER>",
             "lexy": [],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>(<QUANTIFIER>完全</QUANTIFIER>)?(<ModifierP>(一致|一樣|相同)地</ModifierP>|<MODIFIER>(一致|一樣|相同)</MODIFIER>|<MODIFIER>同</MODIFIER>(<ENTITY_classifier>一個</ENTITY_classifier>|<ENTITY_num>一</ENTITY_num>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<MODIFIER>同樣</MODIFIER>|<ACTION_verb>持平</ACTION_verb>)"
+            "pattern": "<MODIFIER>幾乎</MODIFIER>(<QUANTIFIER>完全</QUANTIFIER>)?(<ModifierP>(一致|一樣|相同)地</ModifierP>|<MODIFIER>(一致|一樣|相同|同樣)</MODIFIER>|<MODIFIER>同</MODIFIER>(<ENTITY_classifier>一個</ENTITY_classifier>|<ENTITY_num>一</ENTITY_num>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<MODIFIER>同樣</MODIFIER>|<ACTION_verb>持平</ACTION_verb>)"
         },
         "幾乎可以看": {
             "id": "cf25f8ac-8174-4bf0-a23d-766ee4796b91",
@@ -153,7 +156,7 @@
             "id": "82e4b9bf-0c7a-4384-83cb-41ebac7c78cb",
             "pos": "<MODIFIER>幾乎</MODIFIER><FUNC_inner>從</FUNC_inner><ENTITY_DetPhrase>那一次</ENTITY_DetPhrase><RANGE_period>起</RANGE_period>",
             "lexy": [],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>(<FUNC_inner>從</FUNC_inner>)?<ENTITY_DetPhrase>那[^<]*?</ENTITY_DetPhrase><RANGE_period>起</RANGE_period>"
+            "pattern": "<MODIFIER>幾乎</MODIFIER><FUNC_inner>從</FUNC_inner>"
         },
         "幾乎每一頁出現": {
             "id": "2d21acab-2352-4d14-8439-19bf130e26b6",
@@ -175,7 +178,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看不見|看不到|看不清|看得見|聽不到|聽不見|看不出|見不到|看得到)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>(<MODIFIER>(快|快要)</MODIFIER>|<FUNC_conjunction>[^<]*?</FUNC_conjunction>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<QUANTIFIER>(完全|全)</QUANTIFIER>)*?(<(ACTION_verb|VerbP)>([^<]*?不[^<]*?)</(ACTION_verb|VerbP)>|(<ACTION_lightVerb>使</ACTION_lightVerb>|<ACTION_verb>[^<]*?</ACTION_verb>)(<FUNC_negation>不</FUNC_negation>|<MODIFIER>不很</MODIFIER>)(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<ENTITY_nouny>出</ENTITY_nouny>|<RANGE_locality>[^<]*?</RANGE_locality>)|<ACTION_verb>[^<]*?</ACTION_verb><MODIFIER>不(成|及)</MODIFIER>|<ACTION_verb>[^<]*?</ACTION_verb><FUNC_negation>不</FUNC_negation><ASPECT>著</ASPECT>|<ACTION_verb>[^<]*?</ACTION_verb><FUNC_inner>不過</FUNC_inner>)"
+            "pattern": "<MODIFIER>幾乎</MODIFIER>(<MODIFIER>(快|快要)</MODIFIER>|<FUNC_conjunction>[^<]*?</FUNC_conjunction>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<QUANTIFIER>(完全|全)</QUANTIFIER>)*?(<(ACTION_verb|VerbP)>([^<]*?不[^<]*?)</(ACTION_verb|VerbP)>|(<ACTION_lightVerb>使</ACTION_lightVerb>|<ACTION_verb>[^<]*?</ACTION_verb>)(<FUNC_negation>不</FUNC_negation>|<MODIFIER>不很</MODIFIER>)(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<ENTITY_nouny>出</ENTITY_nouny>|<RANGE_locality>[^<]*?</RANGE_locality>)|<ACTION_verb>[^<]*?</ACTION_verb><MODIFIER>不(成|及)</MODIFIER>|<ACTION_verb>[^<]*?</ACTION_verb><FUNC_negation>不</FUNC_negation><ASPECT>著</ASPECT>|<ACTION_verb>[^<]*?</ACTION_verb><FUNC_inner>不過</FUNC_inner>|<ACTION_verb>[^<]{2,2}</ACTION_verb><FUNC_negation>不</FUNC_negation><MODAL>能</MODAL>)"
         },
         "幾乎被破壞殆盡": {
             "id": "46d22db0-9ab3-457b-87a7-16caead63157",
@@ -230,7 +233,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(要|想要|需要|想拿|想買|渴望|渴求|得照|真要|更要|餓了)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(爆炸了|引爆|炸垮|炸掉|炸毀|爆燃|爆破|爆裂|轟炸|投彈|炮轟)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>幾乎</MODIFIER><(ACTION_verb|VerbP)>要</(ACTION_verb|VerbP)>(<ACTION_lightVerb>[^<]*?</ACTION_lightVerb>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)*?(<(ACTION_verb|VerbP)>[^<]*?了</(ACTION_verb|VerbP)>|<ASPECT>了</ASPECT>|<ACTION_verb>[^<]*?</ACTION_verb><RANGE_locality>[上下]+</RANGE_locality><ACTION_verb>去</ACTION_verb>|<(ACTION_verb|VerbP)>([^<不遭]*?[破去上下入住倒斃出爆昏死亡完落失光掉好到成走出絕來為著沒化棄]+)</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>(<RANGE_locality>[^<]*?</RANGE_locality>)?<ENTITY_classifier>[^<]*?</ENTITY_classifier>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><ACTION_verb>起來</ACTION_verb>)"
+            "pattern": "<MODIFIER>幾乎</MODIFIER><(ACTION_verb|VerbP)>要</(ACTION_verb|VerbP)>(<ACTION_lightVerb>[^<]*?</ACTION_lightVerb>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)*?(<(ACTION_verb|VerbP)>[^<]*?了</(ACTION_verb|VerbP)>|<ASPECT>了</ASPECT>|<ACTION_verb>[^<]*?</ACTION_verb><RANGE_locality>[上下]+</RANGE_locality><ACTION_verb>去</ACTION_verb>|<(ACTION_verb|VerbP)>([^<不遭]*?[毀破去上下入住倒斃出爆昏死亡完落失光掉好到成走出絕來為著沒化棄]+)</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>(<RANGE_locality>[^<]*?</RANGE_locality>)?<ENTITY_classifier>[^<]*?</ENTITY_classifier>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><ACTION_verb>起來</ACTION_verb>)"
         },
         "幾乎要休學的時候": {
             "id": "b8c0129f-2f99-4143-92ad-137b8f5813ed",
@@ -285,7 +288,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(撰寫|寫下|撰擬|撰述|著述|記載|記述|執筆|編撰|作序|編纂)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>((<MODIFIER>大</MODIFIER>)?<QUANTIFIER>多數</QUANTIFIER>|<ENTITY_nouny>大部分</ENTITY_nouny>|<QUANTIFIER>大多</QUANTIFIER>|<(MODIFIER|ModifierP)>多</(MODIFIER|ModifierP)>)(<FUNC_inner>由</FUNC_inner>|<AUX>[^<]*?</AUX>)"
+            "pattern": "<MODIFIER>幾乎</MODIFIER>((<MODIFIER>大</MODIFIER>)?<QUANTIFIER>多數</QUANTIFIER>|<ENTITY_nouny>大部分</ENTITY_nouny>|<QUANTIFIER>大多</QUANTIFIER>|<(MODIFIER|ModifierP)>多</(MODIFIER|ModifierP)>|<QUANTIFIER>[^<]*?以[^<]*?</QUANTIFIER>)(<ASPECT>[^<]*?</ASPECT>)?(<FUNC_inner>由</FUNC_inner>|<AUX>[^<]*?</AUX>|<ACTION_verb>[^<]*?</ACTION_verb>)"
         },
         "幾乎涵蓋所有的中文字": {
             "id": "86e2ae1b-6178-457b-94a7-41bbf8162180",
@@ -321,7 +324,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(參考|參照|參看|參閱|討教|請教|查閱|檢視|借鑑|參酌|佐證)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>(<ACTION_verb>還</ACTION_verb>|<MODIFIER>[^<]*?已</MODIFIER>|<ASPECT>[^<]*?</ASPECT>)?(<IDIOM>([^<]*?)</IDIOM>|<UserDefined>([^<]*?)</UserDefined>|<ENTITY_nounHead>([^<]*?){2,2}兼([^<]*?){1,1}</ENTITY_nounHead>)"
+            "pattern": "<MODIFIER>幾乎</MODIFIER>(<ACTION_verb>還</ACTION_verb>|<MODIFIER>[^<]*?已</MODIFIER>|<ASPECT>[^<]*?</ASPECT>)?(<IDIOM>([^<]*?)</IDIOM>|<UserDefined>([^<]*?)</UserDefined>|<ENTITY_nounHead>[^<]{2,2}兼[^<]{1,1}</ENTITY_nounHead>)"
         },
         "幾乎全是視力健全的少年": {
             "id": "0f69ca30-b4c6-4b74-9ba4-65e10b94052c",
@@ -392,7 +395,15 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(屬於|歸屬|隸屬|合得來|滑到了|放予|游近|佔餘|轄鄉|集誕|放給)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<MODIFIER>幾乎</MODIFIER>|<ENTITY_nouny>幾乎</ENTITY_nouny>)(<FUNC_inner>(在|對)</FUNC_inner>|(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>)?(<MODIFIER>到處</MODIFIER>|(<LOCATION>全[^<]*?</LOCATION>|<QUANTIFIER>全</QUANTIFIER><LOCATION>[^<]*?</LOCATION>|<LOCATION>那裡</LOCATION>|<CLAUSE_WhereQ>[^<]*?</CLAUSE_WhereQ>|<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ>|<QUANTIFIER>(各|全|所有)</QUANTIFIER>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<QUANTIFIER>每</QUANTIFIER>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})|<MODIFIER>(各|每)[^<]*?</MODIFIER>|<MODIFIER>通通</MODIFIER>|<ENTITY_nouny>大部分</ENTITY_nouny>)*?(<QUANTIFIER>(皆|也都|都|全都|均)</QUANTIFIER>|<ENTITY_oov>都</ENTITY_oov>)"
+            "pattern": "(<MODIFIER>幾乎</MODIFIER>|<ENTITY_nouny>幾乎</ENTITY_nouny>)(<FUNC_inner>(在|對)</FUNC_inner>|(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>)?(<MODIFIER>到處</MODIFIER>|(<LOCATION>全[^<]*?</LOCATION>|<QUANTIFIER>全</QUANTIFIER>(<LOCATION>[^<]*?</LOCATION>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})|<LOCATION>那裡</LOCATION>|<CLAUSE_WhereQ>[^<]*?</CLAUSE_WhereQ>|<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ>|<QUANTIFIER>(各|全|所有)</QUANTIFIER>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<QUANTIFIER>每</QUANTIFIER>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})|<MODIFIER>(各|每)[^<]*?</MODIFIER>|<MODIFIER>通通</MODIFIER>|<ENTITY_nouny>大部分</ENTITY_nouny>)*?(<QUANTIFIER>(皆|也都|都|全都|均)</QUANTIFIER>|<ENTITY_oov>都</ENTITY_oov>)"
+        },
+        "蔚藍色的眼珠幾乎看不出色彩": {
+            "id": "4388935f-b677-4e9c-be88-25d547ee2932",
+            "pos": "<MODIFIER_color>蔚藍色</MODIFIER_color><FUNC_inner>的</FUNC_inner><ENTITY_nouny>眼珠</ENTITY_nouny><MODIFIER>幾乎</MODIFIER><ACTION_verb>看不出</ACTION_verb><UserDefined>色彩</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(看不出|看不到|想不出|看不見|聽不出|記不起|聽不到|找不出|挑不出)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER_color>蔚藍色</MODIFIER_color>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>眼珠</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>看不出</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>色彩</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         },
         "幾乎包羅了所有可能的片語結構": {
             "id": "c581918a-6103-4c81-b017-5fc0dcb8db57",
@@ -408,7 +419,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(獲得|博得|取得|奪得|得出|得到|得著|拾獲|掙得|爭得|獲取)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>(<(ACTION_verb|VerbP)>[^<要]*?</(ACTION_verb|VerbP)>|<CLAUSE_HowQ>[^<]*?</CLAUSE_HowQ>|<ENTITY_num>[^<]*?</ENTITY_num>|<ENTITY_nouny>[^<]*?</ENTITY_nouny>)*?(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]{2,2}(都)?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]{2,2}</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})"
+            "pattern": "<MODIFIER>幾乎</MODIFIER>(<(ACTION_verb|VerbP)>[^<不要]*?</(ACTION_verb|VerbP)>|<CLAUSE_HowQ>[^<]*?</CLAUSE_HowQ>|<ENTITY_num>[^<]*?</ENTITY_num>|<ENTITY_nouny>[^<]*?</ENTITY_nouny>)*?(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]{2,2}(都)?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]{2,2}</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})"
         },
         "幾乎被認定為民主進步必經之路": {
             "id": "9eaf1f85-fb5e-4cf0-96ff-83e0afb3fcad",
@@ -435,7 +446,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(罵過|問過|懷疑過|傷害過|告訴過|抓過|喜歡過|霸凌過|打敗過|質疑過|起訴過)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>(<MODIFIER>快</MODIFIER>)?<ACTION_lightVerb>把</ACTION_lightVerb>(<ENTITY_num>[^<]*?</ENTITY_num>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}|<ENTITY_possessive>[^<]*?</ENTITY_possessive>|<LOCATION>[^<]*?</LOCATION>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>|<FUNC_determiner>[^<]*?</FUNC_determiner>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>|<ENTITY_classifier>[^<]*?</ENTITY_classifier>|<QUANTIFIER>[^<都]*?</QUANTIFIER>)*?<QUANTIFIER>[^<]*?</QUANTIFIER>(<IDIOM>[^<]*?</IDIOM><FUNC_inner>的</FUNC_inner>)?(<(ACTION_verb|VerbP)>[^<]*?了</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><ASPECT>了</ASPECT>|<(ACTION_verb|VerbP)>([^<不遭]*?[破上下入倒斃出爆死亡完光掉好到成走出來為]+)</(ACTION_verb|VerbP)|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)"
+            "pattern": "<MODIFIER>幾乎</MODIFIER>(<MODIFIER>(快要|快)</MODIFIER>)?<ACTION_lightVerb>把</ACTION_lightVerb>(<ENTITY_num>[^<]*?</ENTITY_num>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}|<ENTITY_possessive>[^<]*?</ENTITY_possessive>|<LOCATION>[^<]*?</LOCATION>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>|<FUNC_determiner>[^<]*?</FUNC_determiner>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>|<ENTITY_classifier>[^<]*?</ENTITY_classifier>|<QUANTIFIER>[^<都]*?</QUANTIFIER>|<RANGE_(period|locality)>[^<]*?</RANGE_(period|locality)>)*?(<QUANTIFIER>[^<]*?</QUANTIFIER>)(<IDIOM>[^<]*?</IDIOM><FUNC_inner>的</FUNC_inner>)?(<(ACTION_verb|VerbP)>[^<]*?了</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><ASPECT>了</ASPECT>|<(ACTION_verb|VerbP)>([^<不遭]*?[破上下入倒斃出爆死亡完光掉好到成走出來為]+)</(ACTION_verb|VerbP)|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)"
         },
         "幾乎未訂捐贈公共設施的回饋辦法": {
             "id": "37e59141-19aa-4ceb-8f61-c5106cc2d8bf",
@@ -445,7 +456,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(捐贈|捐助|捐款|捐獻|捐資|樂捐|貢獻|捐予|捐了|捐給|捐)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(回饋|回來|回去|回報|回擊|回敬|回返|返回|退回|償付|報答)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(<MODIFIER>幾乎</MODIFIER>|<ENTITY_nouny>幾乎</ENTITY_nouny>)(<ACTION_verb>快要</ACTION_verb>|<MODIFIER>(快|快要)</MODIFIER>)?(<ASPECT>已(經)?</ASPECT>)?(<QUANTIFIER>(完全|全)</QUANTIFIER>|<MODIFIER>全[^<]*?</MODIFIER>|<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ><MODIFIER>也</MODIFIER>|<MODIFIER>毫</MODIFIER>)?(<MODIFIER>不[^<]*?</MODIFIER>|<FUNC_negation>[^<]*?</FUNC_negation>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>無[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<MODIFIER>[^<]*?無</MODIFIER>)"
+            "pattern": "(<MODIFIER>幾乎</MODIFIER>|<ENTITY_nouny>幾乎</ENTITY_nouny>)(<ACTION_verb>快要</ACTION_verb>|<MODIFIER>(快|快要)</MODIFIER>)?(<ASPECT>已(經)?</ASPECT>)?(<QUANTIFIER>(完全|全)</QUANTIFIER>|<MODIFIER>全[^<]*?</MODIFIER>|<CLAUSE_WhatQ>什麼</CLAUSE_WhatQ><MODIFIER>也</MODIFIER>|<MODIFIER>毫</MODIFIER>|<MODIFIER>隨[^<]*?</MODIFIER>)?(<MODIFIER>不[^<]*?</MODIFIER>|<FUNC_negation>[^<]*?</FUNC_negation>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>無[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<MODIFIER>[^<]*?無</MODIFIER>)"
         },
         "幾乎等同於外界利益獨立的經營體": {
             "id": "26b56bcb-66e1-401b-8ece-64d417bc7f93",
@@ -455,6 +466,15 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(獨立|分離|自決|分裂|分立|自立|解放)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<MODIFIER>幾乎</MODIFIER><(ACTION_verb|VerbP)>等(同|於)</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>於</FUNC_in(ner|ter)>)?"
+        },
+        "幾乎見過她本人的人都會這麼認為": {
+            "id": "f7fc7b19-6dbf-42f0-8ae5-b1c128f8c239",
+            "pos": "<MODIFIER>幾乎</MODIFIER><VerbP>見過</VerbP><ENTITY_pronoun>她</ENTITY_pronoun><FUNC_determiner>本</FUNC_determiner><ENTITY_noun>人</ENTITY_noun><FUNC_inner>的</FUNC_inner><ENTITY_noun>人</ENTITY_noun><QUANTIFIER>都</QUANTIFIER><MODAL>會</MODAL><MODIFIER>這麼</MODIFIER><ACTION_verb>認為</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(見過|碰過|看過|遇過|看到過|聽說過|接觸過|聽過|再見過|問過|遇到過)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(認為|供認|承認|招認|自認|認作|認定|企劃|企盼|假想|假設)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<MODIFIER>幾乎</MODIFIER>(<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)>|<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>|<FUNC_determiner>[^<]*?</FUNC_determiner>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)*?<FUNC_inner>(之|的)</FUNC_inner>(<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>)<QUANTIFIER>都</QUANTIFIER>"
         },
         "幾乎每個家庭的物質生活都相當富裕": {
             "id": "0b554952-ce73-49ab-9512-734a88f18f90",
@@ -469,7 +489,7 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(打破|扯破|破壞|破碎|破裂|砸破|突破|截斷|打斷|扣殺|折斷)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(發展|拓展|推展|培養|增加|打造|研發|研製|開發|擴展|轉型)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<MODIFIER>幾乎</MODIFIER>(<QUANTIFIER>[^都]</QUANTIFIER>|<LOCATION>[^<]*?</LOCATION>|<MODAL>[^<]*?</MODAL>|<ENTITY_person>[^<]*?</ENTITY_person>|<FUNC_inner>[^<]*?</FUNC_inner>|<ACTION_lightVerb>被</ACTION_lightVerb>|<ACTION_verb>[要讓]</ACTION_verb>|<ASPECT>[^<]*?</ASPECT>|<FUNC_conjunction>[^<]*?</FUNC_conjunction>|<MODIFIER>[^<]*?</MODIFIER>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>)*?(<(ACTION_verb|VerbP)>([停達失喪斷]+[^<]*?)</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>([^<不遭]*?[定起了止破跌去上下入住倒斃出爆昏死亡完落失光掉好到成走出絕來為著沒化]+)</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>[^不<]*?</(ACTION_verb|VerbP)>(<FUNC_negation>沒</FUNC_negation>)?<ASPECT>(了)</ASPECT>|<ACTION_verb>[^<]*?</ACTION_verb><ACTION_verb>得到</ACTION_verb>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><RANGE_locality>[^<]*?</RANGE_locality>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><MODIFIER>[^<]*?</MODIFIER>|<ACTION_verb>[^<]*?</ACTION_verb><ACTION_verb>[死掉到]+</ACTION_verb>|<ACTION_verb>[^<]*?</ACTION_verb><ACTION_verb>出[^<]*?</ACTION_verb><ACTION_verb>來</ACTION_verb>|<VerbP>奪[^<]*?</VerbP><FUNC_inner>而</FUNC_inner><ACTION_verb>出</ACTION_verb>|<ACTION_verb>[^<]*?</ACTION_verb><FUNC_inner>在</FUNC_inner><MODIFIER>一起</MODIFIER>)"
+            "pattern": "<MODIFIER>幾乎</MODIFIER>(<QUANTIFIER>[^都]</QUANTIFIER>|<LOCATION>[^<]*?</LOCATION>|<MODAL>[^<]*?</MODAL>|<ENTITY_person>[^<]*?</ENTITY_person>|<FUNC_inner>[^<]*?</FUNC_inner>|<ACTION_lightVerb>被</ACTION_lightVerb>|<ACTION_verb>[要讓]</ACTION_verb>|<ASPECT>[^<]*?</ASPECT>|<FUNC_conjunction>[^<]*?</FUNC_conjunction>|<MODIFIER>[^<]*?</MODIFIER>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<RANGE_(period|locality)>[^<]*?</RANGE_(period|locality)>)*?(<(ACTION_verb|VerbP)>([絕停達失喪斷]+[^<]*?)</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>([^<不遭]*?[消棄斷定起了止破跌去上下入住倒斃出爆昏死亡完落失光掉好到成走出絕來為著沒化]+)</(ACTION_verb|VerbP)>|<(ACTION_verb|VerbP)>[^不<]*?</(ACTION_verb|VerbP)>(<FUNC_negation>沒</FUNC_negation>)?<ASPECT>(了)</ASPECT>|<ACTION_verb>[^<]*?</ACTION_verb><ACTION_verb>得到</ACTION_verb>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><RANGE_locality>[^<]*?</RANGE_locality>|<(ACTION_verb|VerbP)>[^<]*?</(ACTION_verb|VerbP)><MODIFIER>[^<]*?</MODIFIER>|<ACTION_verb>[^<]*?</ACTION_verb><ACTION_verb>[死掉到]+</ACTION_verb>|<ACTION_verb>[^<]*?</ACTION_verb><ACTION_verb>出[^<]*?</ACTION_verb><ACTION_verb>來</ACTION_verb>|<VerbP>奪[^<]*?</VerbP><FUNC_inner>而</FUNC_inner><ACTION_verb>出</ACTION_verb>|<ACTION_verb>[^<]*?</ACTION_verb><FUNC_inner>在</FUNC_inner><MODIFIER>一起</MODIFIER>)"
         },
         "幾乎使她致命的車禍和因車禍而起的官司": {
             "id": "463e8e94-a313-4d92-b25f-e705ea5ebaf4",
@@ -483,7 +503,7 @@
             "id": "f4d8ecec-b490-40c5-8c52-af4e819052c6",
             "pos": "<MODIFIER>幾乎</MODIFIER><FUNC_conjunction>和</FUNC_conjunction><ENTITY_nouny>小朋友</ENTITY_nouny><ENTITY_nounHead>美術課</ENTITY_nounHead><FUNC_inner>的</FUNC_inner><MODIFIER>大</MODIFIER><ENTITY_person>張圖畫</ENTITY_person><ENTITY_nouny>紙</ENTITY_nouny><ENTITY_classifier>一樣</ENTITY_classifier><MODIFIER>大</MODIFIER>",
             "lexy": [],
-            "pattern": "(<MODIFIER>幾乎</MODIFIER>|<ENTITY_nouny>幾乎</ENTITY_nouny>)(<FUNC_inner>就</FUNC_inner>)?(<MODIFIER>也</MODIFIER>)?(<MODAL>[^<]*?</MODAL>)?<FUNC_conjunction>[^<]*?</FUNC_conjunction>(<RANGE_locality>[^<]*?</RANGE_locality>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<MODIFIER_color>[^<]*?</MODIFIER_color>|<LOCATION>[^<]*?</LOCATION>|<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>|<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>|<ENTITY_person>[^<]*?</ENTITY_person>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ACTION_verb>[^<]*?</ACTION_verb>|<ENTITY_num>[^<]*?</ENTITY_num>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})*?(<ENTITY_classifier>一樣</ENTITY_classifier>|<(ACTION_verb|VerbP)>劃</(ACTION_verb|VerbP)><RANGE_(locality|period)>上</RANGE_(locality|period)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>等號</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<MODIFIER>(無關|相反|一樣|一起|一致|相同)</MODIFIER>|<FUNC_negation>無</FUNC_negation><MODIFIER>異</MODIFIER>|<ACTION_verb>相[^<]*?</ACTION_verb>|<IDIOM>如出一轍</IDIOM>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>畫</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><RANGE_(locality|period)>上</RANGE_(locality|period)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>等號</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ACTION_verb>同步</ACTION_verb>)"
+            "pattern": "(<MODIFIER>幾乎</MODIFIER>|<ENTITY_nouny>幾乎</ENTITY_nouny>)(<FUNC_inner>就</FUNC_inner>)?(<MODIFIER>也</MODIFIER>)?(<FUNC_inner>(仍|仍然)</FUNC_inner>)?(<MODAL>[^<]*?</MODAL>)?<FUNC_conjunction>[^<]*?</FUNC_conjunction>(<RANGE_locality>[^<]*?</RANGE_locality>|<ENTITY_DetPhrase>[^<]*?</ENTITY_DetPhrase>|<MODIFIER_color>[^<]*?</MODIFIER_color>|<LOCATION>[^<]*?</LOCATION>|<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>|<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>|<ENTITY_person>[^<]*?</ENTITY_person>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ACTION_verb>[^<]*?</ACTION_verb>|<ENTITY_num>[^<]*?</ENTITY_num>|(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10})*?(<ENTITY_classifier>一樣</ENTITY_classifier>|<(ACTION_verb|VerbP)>劃</(ACTION_verb|VerbP)><RANGE_(locality|period)>上</RANGE_(locality|period)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>等號</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<MODIFIER>(無關|相反|一樣|一起|一致|相同)</MODIFIER>|<FUNC_negation>無</FUNC_negation><MODIFIER>異</MODIFIER>|<ACTION_verb>相[^<]*?</ACTION_verb>|<IDIOM>如出一轍</IDIOM>|<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>畫</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><RANGE_(locality|period)>上</RANGE_(locality|period)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>等號</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>|<ACTION_verb>同步</ACTION_verb>|<FUNC_negation>(沒有|沒)</FUNC_negation>(<QUANTIFIER>什麼</QUANTIFIER>)?<ENTITY_nouny>差別</ENTITY_nouny>)"
         },
         "幾乎有十二億的中國人在等待這一天的來臨": {
             "id": "0d7c8251-75e4-4979-8c86-7b5cbbab3584",
